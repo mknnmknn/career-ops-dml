@@ -21,7 +21,32 @@ Leer `portals.yml` que contiene:
 - `tracked_companies`: Empresas específicas con `careers_url` para navegación directa
 - `title_filter`: Keywords positive/negative/seniority_boost para filtrado de títulos
 
-## Estrategia de descubrimiento (3 niveles)
+## Estrategia de descubrimiento (4 niveles)
+
+### Nivel 0 — Indeed MCP (EJECUTAR EN SESIÓN PRINCIPAL, no en subagente)
+
+**IMPORTANTE:** El Indeed MCP solo está disponible en la sesión principal. Ejecutar ANTES de lanzar el subagente de scan.
+
+Llamar al tool `mcp__cba7cedd-66ac-46f9-94f1-facda6e02e6b__search_jobs` con estas búsquedas (en paralelo donde sea posible):
+
+| search | location | notas |
+|--------|----------|-------|
+| `Chief AI Officer` | `remote` | |
+| `VP of AI` | `remote` | |
+| `Head of AI` | `remote` | |
+| `Chief Technology Officer` | `remote` | |
+| `VP Technology` | `remote` | |
+| `AI Transformation` | `remote` | |
+| `Chief AI Officer` | `Houston, TX` | |
+| `VP of AI` | `Houston, TX` | |
+| `CTO` | `Houston, TX` | |
+| `VP Engineering` | `remote` | solo si archetypes incluyen eng leadership |
+| `Head of Engineering` | `New York, NY` | |
+| `Chief Data Officer` | `remote` | |
+
+Siempre pasar `country_code: "US"` y `job_type: "fulltime"`.
+
+Para cada resultado: extraer título + URL de aplicación, aplicar title_filter, deduplicar contra scan-history + pipeline, y añadir los que pasen.
 
 ### Nivel 1 — Playwright directo (PRINCIPAL)
 

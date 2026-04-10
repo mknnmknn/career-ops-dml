@@ -95,3 +95,5 @@ Directed enterprise-wide technology strategy and execution across infrastructure
 
 **PhD, Religious Studies** | Rice University — Houston, TX
 **BA, English** | Columbia University — New York, NY
+
+<!-- CV generation note: Do NOT add descriptive text under education entries unless it is explicitly listed here. The PhD is in Comparative Religion / Religious Studies. Organizational change theory, transformational leadership, and human relations expertise were developed professionally -- NOT through the degree program. Do not infer or invent educational descriptions. -->

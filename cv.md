@@ -35,7 +35,7 @@ Track record of architecting scalable data platforms, modernizing legacy systems
 ## Professional Experience
 
 ### Technology Consultant
-**Independent Contractor** | Houston, TX | November 2024 – Present
+**Independent Consultant** | Houston, TX | November 2024 – Present
 
 Deliver specialized AI consulting focused on enterprise-grade generative and agentic AI solutions for call center and customer communications platforms. Provide solution architecture leadership and pre-sales technical expertise to support AI platform evaluation, vendor selection, and execution decisions. Enable executive stakeholders to assess architectural trade-offs and make informed AI adoption decisions aligned with enterprise strategy.
 
@@ -55,6 +55,7 @@ Directed enterprise-wide technology strategy and execution across infrastructure
 - Established a mission-aligned technology culture by embedding performance analytics into daily operations, which produced a sustained 10–20% improvement across key IT performance metrics.
 - Spearheaded multi-year transition to a digital-first, cloud-first, security-first enterprise model; instituted leading-edge InfoSec practices with full HIPAA and CARD Act compliance, attained and maintained 100% audited PCI-DSS certification over multiple years, and successfully migrated all enterprise workloads to cloud.
 - Doubled development throughput and reduced concept-to-deployment timelines by up to 20% year-over-year by modernizing Software Development Lifecycle (SDLC) governance through adoption of Agile delivery models.
+- Owned product roadmap and strategic prioritization for MMI's homegrown enterprise platform (ERP/CRM) over eight years, directing a 45–50 person delivery organization across BA, QA, and software development; architected the platform's evolution from a single-product tool to a variable multi-product financial platform, and operated a multi-factor prioritization model (ROI × user satisfaction × efficiency × cross-departmental equity) governing sprint-over-sprint decisions across 12+ executive and operations stakeholders.
 - Created Enterprise Project Management Organization (ePMO), leading to significant efficiency gains, improved strategic alignment, and 25% improvement on overall project budget and time adherence.
 - Maintained year-over-year budget adherence and accurate financial forecasting throughout major pandemic-related disruption and recovery.
 

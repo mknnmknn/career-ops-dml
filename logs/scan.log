@@ -1,0 +1,26 @@
+[2026-04-14 02:00:04] === career-ops weekly scan starting ===
+Scan complete. Here's the summary:
+
+```
+Portal Scan ΓÇö 2026-04-14
+ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+Sources executed: 29 (5 APIs + 19 WebSearch + tracked companies)
+Offers found (before filter): ~60+
+Filtered to relevant: 12
+Duplicates skipped: 8
+Expired/dead: 7
+New added to pipeline.md: 4
+
+  + World Surf League | Chief Technology Officer | Greenhouse
+  + Nova Credit | Chief Technology Officer | Greenhouse (NYC, hybrid)
+  + ShyftLabs | Chief Technology Officer | Lever
+  + Loop | VP of Engineering | Lever
+```
+
+**Notable from this run:**
+- Celonis had 7 new Enterprise Architect Director roles ΓÇö all EU (Madrid, Munich, Zurich, etc.), skipped
+- 7 expired postings caught and discarded (including AssetWatch Head of AI, Acrisure CDO x2, Carbon Direct VP Digital)
+- Twilio, Glean, NTT DATA APIs returned no executive-level matches
+
+4 new offers are queued in `data/pipeline.md`. Run `/career-ops pipeline` to evaluate them.
+[2026-04-14 02:10:06] === scan complete ===

@@ -77,8 +77,12 @@ func ParseApplications(careerOpsPath string) []model.CareerApplication {
 		}
 
 		num++
+		rowNum, _ := strconv.Atoi(strings.TrimSpace(fields[0]))
+		if rowNum == 0 {
+			rowNum = num
+		}
 		app := model.CareerApplication{
-			Number:  num,
+			Number:  rowNum,
 			Date:    fields[1],
 			Company: fields[2],
 			Role:    fields[3],

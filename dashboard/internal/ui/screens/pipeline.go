@@ -723,15 +723,20 @@ func (m PipelineModel) renderAppLine(app model.CareerApplication, selected bool)
 	padStyle := lipgloss.NewStyle().Padding(0, 2)
 
 	// Column widths
+	idW := 4    // "096 "
 	scoreW := 5 // "4.5  "
 	companyW := 20
 	statusW := 12
 	compW := 14
 	// Role gets remaining space
-	roleW := m.width - scoreW - companyW - statusW - compW - 10
+	roleW := m.width - idW - scoreW - companyW - statusW - compW - 11
 	if roleW < 15 {
 		roleW = 15
 	}
+
+	// ID column
+	idStyle := lipgloss.NewStyle().Foreground(m.theme.Subtext).Width(idW)
+	idText := idStyle.Render(fmt.Sprintf("%d", app.Number))
 
 	// Score with color
 	scoreStyle := m.scoreStyle(app.Score)
@@ -759,7 +764,8 @@ func (m PipelineModel) renderAppLine(app model.CareerApplication, selected bool)
 		compText = compStyle.Render(comp)
 	}
 
-	line := fmt.Sprintf(" %s %s %s %s %s",
+	line := fmt.Sprintf(" %s %s %s %s %s %s",
+		idText,
 		score,
 		companyStyle.Render(company),
 		roleStyle.Render(role),

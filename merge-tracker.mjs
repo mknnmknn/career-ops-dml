@@ -34,7 +34,7 @@ mkdirSync(join(CAREER_OPS, 'data'), { recursive: true });
 mkdirSync(ADDITIONS_DIR, { recursive: true });
 
 // Canonical states and aliases
-const CANONICAL_STATES = ['Evaluated', 'Applied', 'Responded', 'Interview', 'Offer', 'Rejected', 'Discarded', 'SKIP'];
+const CANONICAL_STATES = ['Evaluated', 'Applied', 'Responded', 'Interview', 'Offer', 'Rejected', 'Discarded', 'SKIP', 'Needs JD'];
 
 function validateStatus(status) {
   const clean = status.replace(/\*\*/g, '').replace(/\s+\d{4}-\d{2}-\d{2}.*$/, '').trim();
@@ -56,6 +56,7 @@ function validateStatus(status) {
     'descartado': 'Discarded', 'descartada': 'Discarded', 'cerrada': 'Discarded', 'cancelada': 'Discarded',
     'no aplicar': 'SKIP', 'no_aplicar': 'SKIP', 'skip': 'SKIP', 'monitor': 'SKIP',
     'geo blocker': 'SKIP',
+    'needs jd': 'Needs JD', 'pending jd': 'Needs JD', 'jd unfetchable': 'Needs JD', 'unfetchable': 'Needs JD',
   };
 
   if (aliases[lower]) return aliases[lower];

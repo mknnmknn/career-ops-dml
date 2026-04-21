@@ -36,6 +36,7 @@ mkdirSync(REPORTS_DIR, { recursive: true });
 const CANONICAL_STATUSES = [
   'evaluated', 'applied', 'responded', 'interview',
   'offer', 'rejected', 'discarded', 'skip',
+  'needs jd',
 ];
 
 const ALIASES = {

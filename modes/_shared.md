@@ -72,18 +72,30 @@ Block G assesses whether a posting is likely a real, active opening. It does NOT
 
 ## Archetype Detection
 
-Classify every offer into one of these types (or hybrid of 2):
+<!-- LOCAL PATCH (2026-04-22): replaces the default 6-archetype AI-engineering
+     taxonomy with Daniel's 8-archetype executive taxonomy. See patches/README.md
+     for divergence rationale and re-apply instructions after upstream updates. -->
 
-| Archetype | Key signals in JD |
-|-----------|-------------------|
-| AI Platform / LLMOps | "observability", "evals", "pipelines", "monitoring", "reliability" |
-| Agentic / Automation | "agent", "HITL", "orchestration", "workflow", "multi-agent" |
-| Technical AI PM | "PRD", "roadmap", "discovery", "stakeholder", "product manager" |
-| AI Solutions Architect | "architecture", "enterprise", "integration", "design", "systems" |
-| AI Forward Deployed | "client-facing", "deploy", "prototype", "fast delivery", "field" |
-| AI Transformation | "change management", "adoption", "enablement", "transformation" |
+Classify every offer into one of these archetypes (or hybrid of 2). Flat taxonomy — no ranked order.
 
-After detecting archetype, read `modes/_profile.md` for the user's specific framing and proof points for that archetype.
+| Archetype | Context / Shape | Key JD signals | What they're buying |
+|-----------|-----------------|----------------|---------------------|
+| **Chief Technology Officer** | Full-function head, reports to CEO, regulated or mission-driven midsize org | "CTO", "Chief Technology Officer", "reports to CEO", "enterprise-wide technology", "transformation mandate" | Proven enterprise CTO arc; cross-functional operator; has built the seat from nothing |
+| **Chief Information Officer / Head of IT** | IT org head where scope includes infrastructure, security, end-user, applications — not just engineering | "CIO", "Chief Information Officer", "Head of IT", "enterprise IT", "IT leadership" | Whole-IT operator with transformation discipline, not just engineering management |
+| **Head of Data / Chief Data Officer / VP Data** | Data function leader with cross-functional reach | "Chief Data Officer", "CDO", "Head of Data", "VP Data", "data strategy", "data governance", "AI-ready foundations" | Data operator who earned it bottom-up: DBA → architect → CTO, full lifecycle including production ML |
+| **Chief Transformation Officer / Digital Transformation** | Cross-functional transformation mandate spanning more than IT | "Chief Transformation Officer", "Digital Transformation", "enterprise modernization", "transformation leader" | Multi-year modernization operator against live regulated operations without disruption |
+| **AI Transformation Lead** *(substance-check required)* | AI-specific transformation with real mandate | "AI transformation", "enterprise AI adoption", "agentic AI strategy" — plus substance signals: named problem, disclosed budget, existing data/infrastructure, named sponsor | Executive who can evaluate, govern, and adopt AI with discipline rather than theater |
+| **Enterprise Technology Strategy** *(VP/Director)* | Architecture-led strategy role, often sub-CTO scope | "enterprise architecture", "technology strategy", "VP technology strategy", "Director of technology strategy" | Strategic thinker with architecture instinct, multi-year planning, vendor + modernization discipline |
+| **Chief of Staff to CEO / Technology Chief of Staff** | Exec operator, translator between business and tech, influence-only | "Chief of Staff", "Technology Chief of Staff", "strategic advisor to CEO" | Senior operator running programs through influence; complexity-compressor; consensus-facilitator |
+| **Fractional / Advisory CTO** | Advisory seat, no line authority | "Fractional CTO", "advisory CTO", "interim CTO", "technology advisor" | Senior CTO experience on advisory cadence |
+
+**AI Transformation Lead — substance check:** When classifying a role as AI Transformation Lead, explicitly assess substance in the evaluation output.
+- **Signals of substance:** named business problem with metrics, disclosed budget or headcount for AI work, existing data or infrastructure referenced, named executive sponsor, concrete deliverables.
+- **Signals of theater:** "explore AI opportunities", "lead AI adoption" without specifics, "AI maturity journey" without targets, no budget named, buzzword-heavy ("cutting-edge", "bleeding-edge"), no existing data or process named.
+
+Substance-light roles don't auto-disqualify but the flag should surface in the evaluation for screening consideration.
+
+After detecting archetype, read `modes/_profile.md` for adaptive framing, proof-point mapping, role-shape rules, and anti-patterns.
 
 ## Global Rules
 

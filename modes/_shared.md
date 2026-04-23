@@ -124,7 +124,17 @@ After detecting archetype, read `modes/_profile.md` for adaptive framing, proof-
 8. Native tech English for generated text. Short sentences, action verbs, no passive voice.
 8b. Case study URLs in PDF Professional Summary (recruiter may only read this).
 9. **Tracker additions as TSV** -- NEVER edit applications.md directly. Write TSV in `batch/tracker-additions/`.
-10. **Include `**URL:**` in every report header.**
+10. **Report header canonical format.** Every report begins with an H1 title, then these fields in order (first three are always required):
+    - `**#:** {tracker_number}` — integer, matches the report filename's leading number
+    - `**Company:** {name}` — short company name
+    - `**Role:** {title}` — role title
+    - `**Score:** {X.X/5}` — global score
+    - `**URL:** {url}` — original JD URL (mandatory)
+    - `**Legitimacy:** {tier}` — High Confidence / Proceed with Caution / Suspicious
+    - `**PDF:** {path-or-❌}` — path to generated PDF, or ❌ if none
+    - `**Verification:** {status}` — e.g., "confirmed (Playwright)" or "unconfirmed (batch mode)"
+    - `**Date:** {YYYY-MM-DD}`
+    - Additional mode-specific fields (e.g., `**Archetype:**`, `**Batch ID:**`) may follow.
 
 ### Tools
 

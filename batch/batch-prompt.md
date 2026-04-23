@@ -62,6 +62,7 @@ Format:
 ```markdown
 # Evaluation: {Company} -- {Role}
 
+**#:** {{REPORT_NUM}}
 **Date:** {{DATE}}
 **Archetype:** {detected}
 **Score:** {X/5}

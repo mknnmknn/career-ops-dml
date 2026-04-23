@@ -67,6 +67,62 @@ PR upstream to add a taxonomy-override mechanism in `_shared.md` so this kind of
 
 ---
 
+### 2. `dashboard/internal/ui/screens/pipeline.go` — JobID shown as first column
+
+- **Applied:** before 2026-04-22 (documenting an existing local divergence)
+- **File:** `dashboard/internal/ui/screens/pipeline.go`
+- **Function:** `renderAppLine`
+
+**What was changed:**
+An "ID" column showing `app.Number` (the tracker application number) was added as the leftmost column of each pipeline row. Column widths: `idW := 4`, rendered with `idStyle.Render(fmt.Sprintf("%d", app.Number))`, styled in muted Subtext color.
+
+Current column order in `renderAppLine`:
+```
+ID | Score | Company | Role | Status | Comp
+```
+
+**Why:**
+Daniel uses the tracker number as the primary handle when referencing applications in-session and across tooling (e.g., "evaluate Celonis #188", "fix the Akumin CV, #138"). Upstream's layout without a JobID column forced visual correlation of Company+Role to find the tracker entry for a row, which is slower and more error-prone at scale.
+
+**Re-apply after upstream update:**
+1. Open the incoming `dashboard/internal/ui/screens/pipeline.go` and locate `renderAppLine`.
+2. Confirm whether upstream has adopted a JobID column. If not:
+   - Restore the `idW := 4` column width declaration
+   - Restore the `idText := idStyle.Render(fmt.Sprintf("%d", app.Number))` rendering
+   - Restore the leading `%s` in the row format string so `idText` is the first positional arg
+   - Adjust the `roleW` remainder calculation to subtract `idW` (see current file for exact math)
+3. Rebuild `dashboard/career-ops-dashboard.exe` via `go build` in the `dashboard/` directory.
+
+**Upstream action worth considering:**
+PR upstream to add the JobID column as a default. Most career-ops users will want tracker numbers visible in the pipeline view.
+
+---
+
+### 3. Report header — `**#:**` tracker-number field
+
+- **Applied:** 2026-04-22
+- **Files:** `batch/batch-prompt.md`, `modes/_shared.md` (rule #10), existing reports in `reports/*.md`
+
+**What was changed:**
+Every evaluation report now begins (after the H1 title) with a `**#:** {tracker_number}` line before the existing header fields (`**Company:**`, `**Role:**`, `**Score:**`, etc.). This makes reports self-describing — the tracker number that identifies the application is now visible in the report body, in the Go dashboard's viewer, in any markdown preview, and greppable via `^\*\*#:\*\*`.
+
+**Why:**
+When opening a report in the Go dashboard viewer, the header shown to the user did not include the tracker number even though the filename encodes it. Rather than teaching the viewer to extract and overlay the number (code change, rebuild required), the cleaner approach is to make the report file self-describing. The viewer's existing `styleLine` function already handles `**Label:** value` lines, so zero Go code changes are required — the new line renders automatically.
+
+**Implementation components:**
+1. `batch/batch-prompt.md` — Step 3 report template updated to include `**#:** {{REPORT_NUM}}` as the first field after the H1.
+2. `modes/_shared.md` rule #10 — expanded from "Include `**URL:**` in every report header" to canonicalize the full header field order and include `**#:**`.
+3. `batch/add-report-number.mjs` — one-off idempotent migration script that inserts `**#:** N` into every existing report in `reports/*.md` (parses N from the filename). Safe to re-run; skips reports that already have the line.
+
+**Re-apply after upstream update:**
+1. Check `batch/batch-prompt.md` and `modes/_shared.md` — if upstream canonicalized a report-header spec that includes a tracker-number field, migrate to that. Otherwise restore our changes.
+2. The migration script (`batch/add-report-number.mjs`) is idempotent and can be re-run safely after any prompt-template change to ensure existing reports remain conformant.
+
+**Upstream action worth considering:**
+PR upstream to canonicalize a report-header schema across all modes (oferta.md currently has a stale Spanish template that doesn't match what the system actually generates — this is a systemic drift issue worth fixing in the mainline).
+
+---
+
 ## Retired patches
 
 *(none yet)*

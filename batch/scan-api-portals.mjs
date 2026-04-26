@@ -91,10 +91,11 @@ const LOC_REJECT = [
 
 const DEFENSE = ["lockheed","raytheon","northrop","bae systems","general dynamics","l3harris","saic","booz allen","leidos","caci"];
 
-function titlePasses(title) {
+function titlePasses(title, extraNegatives = []) {
   if (!title) return false;
   const t = title.toLowerCase();
   if (NEGATIVE.some(n => t.includes(n.toLowerCase()))) return false;
+  if (extraNegatives.some(n => t.includes(n.toLowerCase()))) return false;
   return POSITIVE.some(p => t.includes(p.toLowerCase()));
 }
 
@@ -116,6 +117,7 @@ function dealBreaker(company) {
 // --- Dedup sources ---
 const histPath = path.join(ROOT, 'data/scan-history.tsv');
 const pipePath = path.join(ROOT, 'data/pipeline.md');
+const pipeArchivePath = path.join(ROOT, 'data/pipeline-archive.md');
 const appsPath = path.join(ROOT, 'data/applications.md');
 
 const histUrls = new Set();
@@ -128,7 +130,11 @@ if (fs.existsSync(histPath)) {
     }
   }
 }
-const pipelineText = fs.existsSync(pipePath) ? fs.readFileSync(pipePath, 'utf8') : '';
+// Dedup against both the live pipeline and its archive (cruft was moved out 2026-04-26).
+const pipelineText = [
+  fs.existsSync(pipePath) ? fs.readFileSync(pipePath, 'utf8') : '',
+  fs.existsSync(pipeArchivePath) ? fs.readFileSync(pipeArchivePath, 'utf8') : '',
+].join('\n');
 const appsText = fs.existsSync(appsPath) ? fs.readFileSync(appsPath, 'utf8').toLowerCase() : '';
 
 function inPipeline(url) {
@@ -283,7 +289,7 @@ for (const c of apiCompanies) {
       locStr = j.locationsText || j.primaryLocation || '';
     }
 
-    if (!titlePasses(title)) continue;
+    if (!titlePasses(title, c.title_negative || [])) continue;
     stats.afterTitle++;
     if (!locationPasses(locStr)) continue;
     stats.afterLoc++;

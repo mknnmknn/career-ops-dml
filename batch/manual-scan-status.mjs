@@ -81,7 +81,7 @@ if (!logContent.includes(currentWeekHeader) || forceNewWeek) {
   const weekSection = [
     currentWeekHeader,
     '',
-    ...manualCompanies.map(c => `- [ ] ${c.name}`),
+    ...manualCompanies.map(c => c.careers_url ? `- [ ] ${c.name} — ${c.careers_url}` : `- [ ] ${c.name}`),
     '',
     '',
   ].join('\n');

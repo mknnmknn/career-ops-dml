@@ -1,0 +1,78 @@
+{
+  "subtitle": "Sr. Director, Enterprise Data & AI Platform -- Agentic AI Strategy | Azure Data Architecture | Global Team Leadership",
+  "lang": "en",
+  "format": "letter",
+  "summary_text": "Senior data and AI platform leader with 14 years owning the data function end-to-end at Money Management International -- a national 501(c)(3) financial services nonprofit operating under continuous regulatory scrutiny across all 50 states plus federal regulators (HIPAA, PCI-DSS, CARD Act, CFPB). DBA / SQL Architect origin, enterprise data warehouse maturation on Azure, production ML deployment via DataRobot for credit and servicing decisions, and full data governance under audit conditions. Currently consulting on AI architecture, automation, and implementation -- including a structured methodology for evaluating and comparing generative AI architectures with primary emphasis on agentic systems, adopted by a national CX consulting firm. Built and led a 35+ direct (75+ extended) technology team across data, infrastructure, software engineering, and global vendor partners.",
+  "competencies": [
+    "Agentic AI Strategy",
+    "Enterprise Data Architecture",
+    "Production Machine Learning Governance",
+    "Azure Data Platform Leadership",
+    "Global Team Leadership (35+ direct / 75+ extended)",
+    "Data Governance & Security",
+    "Vendor Selection & Platform Evaluation",
+    "AI/ML Operations & Lifecycle",
+    "Multi-Year Roadmap & Prioritization",
+    "Cross-Functional Stakeholder Influence",
+    "Mission-Driven Technology Leadership",
+    "Build-Buy-Partner Strategy"
+  ],
+  "experience": [
+    {
+      "company": "Independent Consultant",
+      "period": "Nov 2024 - Present",
+      "role": "Technology Consultant",
+      "location": "Houston, TX",
+      "bullets": [
+        "Designed a <strong>structured, repeatable methodology to evaluate and compare generative AI architectures with primary emphasis on agentic systems</strong> -- scoring rubric, capability taxonomy, evaluation flow -- adopted by a national CX consulting firm to compare enterprise AI platforms across NICE / Genesys-tier solutions and AI-focused startups.",
+        "Provide client-facing advisory on generative and agentic AI architectures, automation, and implementation; translate executive priorities into architectural trade-offs and concrete platform decisions for enterprise environments.",
+        "Hands-on AI-assisted engineering daily with Claude and GitHub Copilot; published thinking on AI adoption realities, the automation-vs-AI distinction, and reflexive AI governance practice on LinkedIn."
+      ]
+    },
+    {
+      "company": "Money Management International",
+      "period": "Nov 2010 - Oct 2024",
+      "role": "Chief Technology Officer",
+      "location": "Houston, TX",
+      "bullets": [
+        "Directed enterprise technology for a <strong>national 501(c)(3) nonprofit</strong> -- under continuous regulatory scrutiny across all 50 states plus federal regulators including the CFPB, with HIPAA, PCI-DSS, and CARD Act overlays.",
+        "Owned the <strong>data function end-to-end</strong> for 14 years -- DBA / SQL Architect origin, enterprise data warehouse maturation on Azure (reactive reporting -> proper DW -> self-service trajectory), and <strong>production ML deployment via DataRobot</strong> for credit and servicing decisions under regulatory governance.",
+        "Spearheaded multi-year transition to a <strong>digital-first, cloud-first, security-first model</strong>; migrated all enterprise workloads to Azure across the data and platform stack.",
+        "Led <strong>cross-functional data-definitions discipline</strong> across 12+ executive and operations stakeholders -- agreement on metric calculations, definitions, and the cross-team incentive conflicts that surface around them.",
+        "Owned <strong>vendor governance</strong> across the full vendor lifecycle: SoW authorship, vendor budget and burn-rate tracking, multi-year vendor relationships, and resource leveling across in-house, nearshore, and offshore teams.",
+        "Modernized SDLC through Agile transformation (SAFe-style 10-week to 2-week sprints); <strong>doubled development throughput</strong> and reduced concept-to-deployment timelines by up to 20% YoY.",
+        "Built and led a 35+ direct (75+ extended) technology team across data, infrastructure, software engineering, and global vendor partners; sustained highest retention and satisfaction in the enterprise across 14 years; team-of-teams structure including Head of Data, Head of Infrastructure, ePMO leader, and two software development leads.",
+        "Advanced through progressive roles: <strong>DBA / SQL Architect -> IT Manager -> VP IT -> first CTO</strong> in the organization's 45+ year history."
+      ]
+    },
+    {
+      "company": "DMLCo",
+      "period": "Jan 1996 - Jan 2012",
+      "role": "Founder & President",
+      "location": "Houston, TX",
+      "bullets": [
+        "Founded and ran a web development and IT consulting firm for 17 years -- full P&amp;L ownership; delivered custom digital solutions for dozens of clients across content-driven and transactional verticals.",
+        "Architected and operated a proprietary commercial-grade CMS supporting dozens of production sites; direct client engagement across discovery, scope, architecture, build, and ongoing support."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "github.com/mknnmknn/about-mknn",
+      "badge": "GitHub",
+      "desc": "Overview of public projects, with access to private repositories on request. Featured project: career-ops-dml -- a private fork of santifer/career-ops, customized into the LLM-assisted pipeline used daily in my job search. Working code extended alongside Claude Code (Node.js, Claude API, Playwright, Go)."
+    }
+  ],
+  "education": [
+    {"title": "PhD, Religious Studies", "org": "Rice University", "location": "Houston, TX"},
+    {"title": "BA, English", "org": "Columbia University", "location": "New York, NY"}
+  ],
+  "skills": [
+    {"category": "AI & ML", "items": "Agentic AI, Generative AI, AI Architecture Evaluation, LLM Platforms, DataRobot (Production ML), AI Governance, MLOps Discipline"},
+    {"category": "Data & Analytics", "items": "Enterprise Data Architecture, Data Warehousing, Data Pipelines, Data Governance, Cross-Functional Data Definitions, Power BI, Tableau"},
+    {"category": "Azure & Cloud", "items": "Microsoft Azure, Azure DevOps, GitHub, CI/CD, Cloud Migration, Azure Data Platform"},
+    {"category": "Databases", "items": "SQL / T-SQL, MSSQL, MySQL, PostgreSQL -- DBA / SQL Architect origin"},
+    {"category": "Compliance & Risk", "items": "PCI-DSS, HIPAA, CARD Act, CFPB, Multi-State Regulatory, GRC Programs"},
+    {"category": "Methodology", "items": "Agile/SAFe, SDLC Modernization, ePMO Governance, Multi-Stakeholder Roadmap, Build-Buy-Partner"}
+  ]
+}

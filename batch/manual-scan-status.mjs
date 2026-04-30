@@ -1,15 +1,18 @@
 #!/usr/bin/env node
-// manual-scan-status.mjs — Weekly checklist for manual-scan companies
+// manual-scan-status.mjs — Per-week checklist for manual-scan companies
 //
 // Reads portals.yml for companies with scan_method: manual,
-// maintains data/manual-scan-log.md with a rolling weekly checklist.
+// generates one file per ISO week in data/manual-scans/.
 //
 // Usage:
-//   node batch/manual-scan-status.mjs             # show current week status, add week section if missing
-//   node batch/manual-scan-status.mjs --new-week  # force-append a new week (idempotent if already exists)
-//   node batch/manual-scan-status.mjs --prune=20  # keep only the most recent N weeks
+//   node batch/manual-scan-status.mjs             # show this week's status; create week file if missing
+//   node batch/manual-scan-status.mjs --new-week  # force-recreate this week's file (backs up existing as .bak)
+//   node batch/manual-scan-status.mjs --prune=20  # keep only the most recent N week files
 //
-// Idempotent: safe to run any time. Weekly section keyed by ISO week.
+// Idempotent: safe to run any time. One file per ISO week.
+//
+// Filename format: data/manual-scans/{YYMMDD}-week{##}-manual.md
+//   where YYMMDD is the Monday of the ISO week.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -17,7 +20,7 @@ import yaml from 'js-yaml';
 
 const ROOT = 'C:/Users/danie/Dropbox/claudeCodex/JobSearch/career-ops-dml';
 const PORTALS = path.join(ROOT, 'portals.yml');
-const LOG = path.join(ROOT, 'data/manual-scan-log.md');
+const SCAN_DIR = path.join(ROOT, 'data/manual-scans');
 
 const args = process.argv.slice(2);
 const forceNewWeek = args.includes('--new-week');
@@ -49,6 +52,14 @@ function mondayOfIsoWeek(key) {
   return target.toISOString().slice(0, 10);
 }
 
+// Filename: 260427-week18-manual.md  (YYMMDD = Monday of ISO week)
+function weekFilename(key) {
+  const monday = mondayOfIsoWeek(key);                  // "2026-04-27"
+  const yymmdd = monday.slice(2).replace(/-/g, '');     // "260427"
+  const weekNum = key.split('-W')[1];                   // "18"
+  return `${yymmdd}-week${weekNum}-manual.md`;
+}
+
 // --- Load manual companies from portals.yml ---
 const portals = yaml.load(fs.readFileSync(PORTALS, 'utf8'));
 const manualCompanies = (portals.tracked_companies || [])
@@ -56,91 +67,73 @@ const manualCompanies = (portals.tracked_companies || [])
   .map(c => ({ name: c.name, careers_url: c.careers_url, notes: c.notes || '' }))
   .sort((a, b) => a.name.localeCompare(b.name));
 
-// --- Load existing log or initialize ---
-let logContent = '';
-if (fs.existsSync(LOG)) {
-  logContent = fs.readFileSync(LOG, 'utf8');
-} else {
-  logContent = `# Manual Scan Log
-
-Weekly checklist for \`scan_method: manual\` companies in \`portals.yml\`. These are companies whose careers pages aren't scannable via the L1/L2 automated paths (custom ATSes, SPA-heavy sites, no public API). Each week, check off companies after you've browsed their careers page; add notes in the same line.
-
-Run \`node batch/manual-scan-status.mjs\` to see current week progress and auto-generate the current week's section if missing.
-
----
-
-`;
+// --- Ensure scan dir exists ---
+if (!fs.existsSync(SCAN_DIR)) {
+  fs.mkdirSync(SCAN_DIR, { recursive: true });
 }
 
-// --- Check whether current week section exists ---
+// --- This week's file ---
 const currentWeek = isoWeekKey();
-const currentWeekHeader = `## Week of ${mondayOfIsoWeek(currentWeek)} (${currentWeek})`;
+const monday = mondayOfIsoWeek(currentWeek);
+const weekFile = path.join(SCAN_DIR, weekFilename(currentWeek));
 
-if (!logContent.includes(currentWeekHeader) || forceNewWeek) {
-  // Build a new week section
-  const weekSection = [
-    currentWeekHeader,
+function buildWeekFileContent() {
+  return [
+    `# Manual Scan — Week of ${monday} (${currentWeek})`,
+    '',
+    `Checklist for \`scan_method: manual\` companies in \`portals.yml\` — careers pages not scannable via L1/L2 automated paths. Tick \`- [ ]\` → \`- [x]\` after browsing each; add notes inline.`,
     '',
     ...manualCompanies.map(c => c.careers_url ? `- [ ] ${c.name} — ${c.careers_url}` : `- [ ] ${c.name}`),
     '',
-    '',
   ].join('\n');
+}
 
-  // Insert after the header/separator block, before any existing week sections
-  const separator = '\n---\n\n';
-  const sepIdx = logContent.indexOf(separator);
-  if (sepIdx >= 0) {
-    const after = sepIdx + separator.length;
-    logContent = logContent.slice(0, after) + weekSection + logContent.slice(after);
-  } else {
-    // No separator found — append
-    logContent += '\n' + weekSection;
-  }
-
-  fs.writeFileSync(LOG, logContent, 'utf8');
-  console.log(`Added new week section: ${currentWeekHeader}`);
+if (forceNewWeek && fs.existsSync(weekFile)) {
+  const bak = weekFile + '.bak';
+  fs.renameSync(weekFile, bak);
+  console.log(`Backed up existing file: ${path.basename(bak)}`);
+  fs.writeFileSync(weekFile, buildWeekFileContent(), 'utf8');
+  console.log(`Recreated week file:     ${path.basename(weekFile)}`);
+} else if (!fs.existsSync(weekFile)) {
+  fs.writeFileSync(weekFile, buildWeekFileContent(), 'utf8');
+  console.log(`Created week file:       ${path.basename(weekFile)}`);
 }
 
 // --- Optional pruning ---
 if (PRUNE_KEEP && PRUNE_KEEP > 0) {
-  const weekHeaderRegex = /^## Week of \d{4}-\d{2}-\d{2} \(\d{4}-W\d{2}\)/gm;
-  const matches = [...logContent.matchAll(weekHeaderRegex)];
-  if (matches.length > PRUNE_KEEP) {
-    const cutoffMatch = matches[PRUNE_KEEP];
-    logContent = logContent.slice(0, cutoffMatch.index).trimEnd() + '\n';
-    fs.writeFileSync(LOG, logContent, 'utf8');
-    console.log(`Pruned to most recent ${PRUNE_KEEP} weeks.`);
+  const files = fs.readdirSync(SCAN_DIR)
+    .filter(f => /^\d{6}-week\d{2}-manual\.md$/.test(f))
+    .sort()      // YYMMDD prefix sorts chronologically
+    .reverse();  // newest first
+  if (files.length > PRUNE_KEEP) {
+    const toDelete = files.slice(PRUNE_KEEP);
+    for (const f of toDelete) {
+      fs.unlinkSync(path.join(SCAN_DIR, f));
+    }
+    console.log(`Pruned ${toDelete.length} older week file(s); kept most recent ${PRUNE_KEEP}.`);
   }
 }
 
 // --- Report current-week status ---
-const weekStart = logContent.indexOf(currentWeekHeader);
+const content = fs.existsSync(weekFile) ? fs.readFileSync(weekFile, 'utf8') : '';
 let weekCompleted = 0;
 let weekTotal = 0;
-if (weekStart >= 0) {
-  const nextHeader = logContent.indexOf('\n## ', weekStart + currentWeekHeader.length);
-  const weekBody = logContent.slice(weekStart, nextHeader === -1 ? undefined : nextHeader);
-  for (const line of weekBody.split('\n')) {
-    if (line.match(/^- \[ \]/)) weekTotal++;
-    else if (line.match(/^- \[[xX]\]/)) { weekTotal++; weekCompleted++; }
-  }
+for (const line of content.split('\n')) {
+  if (line.match(/^- \[ \]/)) weekTotal++;
+  else if (line.match(/^- \[[xX]\]/)) { weekTotal++; weekCompleted++; }
 }
 
 const pct = weekTotal ? Math.round((weekCompleted / weekTotal) * 100) : 0;
 console.log('');
-console.log(`Manual-scan log:    ${LOG}`);
-console.log(`Current week:       ${currentWeek}  (${mondayOfIsoWeek(currentWeek)})`);
+console.log(`Week file:          ${weekFile}`);
+console.log(`Current week:       ${currentWeek}  (${monday})`);
 console.log(`Manual companies:   ${manualCompanies.length} tracked`);
 console.log(`This week progress: ${weekCompleted}/${weekTotal} done (${pct}%)`);
 console.log('');
-if (weekCompleted < weekTotal) {
+if (weekCompleted < weekTotal && content) {
   console.log('Not yet checked this week:');
-  if (weekStart >= 0) {
-    const nextHeader = logContent.indexOf('\n## ', weekStart + currentWeekHeader.length);
-    const weekBody = logContent.slice(weekStart, nextHeader === -1 ? undefined : nextHeader);
-    for (const line of weekBody.split('\n')) {
-      const m = line.match(/^- \[ \] (.+)$/);
-      if (m) console.log('  ·', m[1]);
-    }
+  for (const line of content.split('\n')) {
+    const m = line.match(/^- \[ \] (.+)$/);
+    if (m) console.log('  ·', m[1]);
   }
 }

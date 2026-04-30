@@ -1,0 +1,78 @@
+{
+  "subtitle": "Senior Transformation & AI Leader -- Enterprise AI Adoption | Cross-Functional Workflow Redesign | Governance & Change",
+  "lang": "en",
+  "format": "letter",
+  "summary_text": "Senior technology and transformation executive with 14 years running enterprise transformation from inside the technology function at Money Management International -- a national 501(c)(3) financial services nonprofit operating under continuous regulatory scrutiny across all 50 states plus federal regulators (HIPAA, PCI-DSS, CARD Act, CFPB). Drove an 8-year digital-first, cloud-first, security-first transformation that delivered 200%+ growth in SEO and digital acquisition, full Azure cloud migration, contact center AI transformation with zero service disruption on day-one go-live, and an Enterprise PMO that delivered 25% improvement in project budget and time adherence across a $30-50M portfolio. Earlier: 17 years founding and running DMLCo, a web/IT consulting firm with full P&L. Currently consulting on AI architecture, automation, and implementation -- including a structured evaluation methodology adopted by a national CX consulting firm.",
+  "competencies": [
+    "Enterprise AI Transformation",
+    "Cross-Functional Workflow Redesign",
+    "AI Architecture Evaluation",
+    "Change Management & Adoption",
+    "Governance, Risk & Responsible AI",
+    "Playbooks, Standards & Reusable Assets",
+    "Multi-Stakeholder Leadership",
+    "Vendor Selection & Build-Buy-Partner",
+    "ROI & KPI Architecture",
+    "Production Machine Learning Governance",
+    "Cloud-First & Security-First Operating Model",
+    "Mission-Driven Technology Leadership"
+  ],
+  "experience": [
+    {
+      "company": "Independent Consultant",
+      "period": "Nov 2024 - Present",
+      "role": "Technology Consultant",
+      "location": "Houston, TX",
+      "bullets": [
+        "Designed an algorithmic <strong>AI architecture evaluation framework</strong> -- scoring rubric, capability taxonomy, evaluation flow -- adopted by a national CX consulting firm to compare enterprise AI platforms with explicit governance, integration-fit, and capability dimensions.",
+        "Provide client-facing advisory on generative and agentic AI architectures, automation, and implementation; translate executive priorities into architectural trade-offs and concrete platform decisions for enterprise environments.",
+        "Hands-on AI-assisted engineering daily with Claude and GitHub Copilot; published thinking on AI adoption realities, the automation-vs-AI distinction, and reflexive AI governance practice on LinkedIn."
+      ]
+    },
+    {
+      "company": "Money Management International",
+      "period": "Nov 2010 - Oct 2024",
+      "role": "Chief Technology Officer",
+      "location": "Houston, TX",
+      "bullets": [
+        "Directed enterprise technology for a <strong>national 501(c)(3) nonprofit</strong> -- under continuous regulatory scrutiny across all 50 states plus federal regulators including the CFPB, with HIPAA, PCI-DSS, and CARD Act overlays.",
+        "Drove enterprise <strong>digital-first, cloud-first, security-first transformation</strong> over 8 years; led full Azure cloud migration; sustained <strong>100% PCI-DSS certification</strong> across multiple audit cycles alongside HIPAA and CARD Act compliance.",
+        "Led full enterprise <strong>contact center AI transformation</strong> -- intelligent routing, AI-assisted coaching and monitoring, integrated knowledge bots (human-in-the-loop AI throughout) -- with <strong>zero service disruption on day-one go-live</strong>.",
+        "Built <strong>Enterprise PMO</strong> from scratch; consolidated cross-functional project governance and delivered <strong>25% improvement in project budget and time adherence</strong> across a $30-50M annual portfolio; multi-factor prioritization model (ROI x user satisfaction x efficiency x cross-departmental equity) across 12+ executive and operations stakeholders.",
+        "Owned <strong>data function end-to-end</strong> -- DBA / SQL Architect origin, enterprise data warehouse maturation, and production ML deployment via DataRobot for credit and servicing decisions under regulatory governance.",
+        "Led digital transformation driving <strong>200%+ growth in SEO and digital acquisition</strong>; modernized SDLC through Agile transformation (SAFe 10-week to 2-week sprints) -- doubled development throughput.",
+        "Built and led a 35+ direct (75+ extended) technology team; sustained highest retention and satisfaction in the enterprise across 14 years.",
+        "Advanced through progressive roles: <strong>DBA / SQL Architect -> IT Manager -> VP IT -> first CTO</strong> in the organization's 45+ year history."
+      ]
+    },
+    {
+      "company": "DMLCo",
+      "period": "Jan 1996 - Jan 2012",
+      "role": "Founder & President",
+      "location": "Houston, TX",
+      "bullets": [
+        "Founded and ran a web development and IT consulting firm for 17 years -- full P&amp;L ownership; delivered custom digital solutions for dozens of clients; managed stakeholders across complex organizational structures.",
+        "Architected and operated a proprietary commercial-grade CMS supporting dozens of production sites; direct client engagement across discovery, scope, architecture, build, and ongoing support."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "github.com/mknnmknn/about-mknn",
+      "badge": "GitHub",
+      "desc": "Overview of public projects, with access to private repositories on request. Featured project: career-ops-dml -- a private fork of santifer/career-ops, customized into the LLM-assisted pipeline used daily in my job search. Working code extended alongside Claude Code (Node.js, Claude API, Playwright, Go)."
+    }
+  ],
+  "education": [
+    {"title": "PhD, Religious Studies", "org": "Rice University", "location": "Houston, TX"},
+    {"title": "BA, English", "org": "Columbia University", "location": "New York, NY"}
+  ],
+  "skills": [
+    {"category": "Transformation & Strategy", "items": "Enterprise AI Adoption, Cross-Functional Workflow Redesign, Change Management, Operating Model Design, Roadmap Governance"},
+    {"category": "AI & ML", "items": "Generative AI, Agentic AI, AI Architecture Evaluation, LLM Platforms, DataRobot (Production ML), AI Governance"},
+    {"category": "Cloud & DevOps", "items": "Microsoft Azure, Azure DevOps, GitHub, CI/CD, Cloud Migration"},
+    {"category": "Methodology", "items": "Agile/SAFe, SDLC Modernization, ePMO Governance, Multi-Stakeholder Roadmap, Build-Buy-Partner"},
+    {"category": "Compliance & Risk", "items": "PCI-DSS, HIPAA, CARD Act, CFPB, Multi-State Regulatory, GRC Programs"},
+    {"category": "Leadership", "items": "Executive Stakeholder Engagement, Multi-Factor Prioritization, Vendor Selection, Mission-Driven Leadership"}
+  ]
+}

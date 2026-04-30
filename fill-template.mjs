@@ -85,7 +85,7 @@ function buildExperience(jobs) {
     const bullets = (j.bullets || [])
       .map(b => `        <li>${b}</li>`)
       .join('\n');
-    return `    <div class="job avoid-break">
+    return `    <div class="job">
       <div class="job-header">
         <span class="job-company">${esc(j.company)}</span>
         <span class="job-period">${esc(j.period)}</span>

@@ -1,0 +1,83 @@
+{
+  "subtitle": "Senior Director, Experience Acceleration -- CCaaS Platform | AI-Native Enablement | Solutions Consulting",
+  "lang": "en",
+  "format": "letter",
+  "summary_text": "Technology executive with 14 years of enterprise leadership and deep CCaaS platform expertise — uniquely positioned as both an enterprise buyer who has run contact center transformations at scale and a consultant who now evaluates and compares AI-native CCaaS solutions for national CX firms. Built evaluation frameworks for Genesys- and NICE-level platforms. Led a zero-downtime enterprise contact center transformation integrating intelligent routing, AI-assisted coaching, and knowledge systems. Directed 35+ person technology organizations with multi-year roadmaps, global vendor alignment, and cross-functional stakeholder governance. Hands-on with Claude and CoPilot; published thinking on AI adoption, demo-stage AI/automation distinction, and enterprise readiness.",
+  "competencies": [
+    "CCaaS Platform Strategy",
+    "AI-Native Customer Experience",
+    "Demo & Pre-Sales Enablement",
+    "Solutions Consulting Architecture",
+    "Technical Enablement Programs",
+    "Multi-Year Roadmap Development",
+    "Contact Center AI Integration",
+    "Global Team Leadership",
+    "Executive Stakeholder Engagement",
+    "Digital Transformation Leadership",
+    "AI Architecture Evaluation",
+    "Enterprise SaaS Platform Governance"
+  ],
+  "experience": [
+    {
+      "company": "Independent Consultant",
+      "period": "Nov 2024 - Present",
+      "role": "Technology Consultant",
+      "location": "Houston, TX",
+      "bullets": [
+        "Built AI architecture <strong>evaluation framework</strong> for a national CX consulting firm -- scoring rubric, capability taxonomy, and structured evaluation flow for comparing Genesys- and NICE-level CCaaS platforms down to AI-native startups; framework adopted and used in active client engagements.",
+        "Designed repeatable methodology to assess AI/CCaaS platforms across integration depth, native AI capability, third-party extensibility, and enterprise suitability -- directly applicable to demo environment strategy and SC enablement.",
+        "Deliver solution architecture guidance and pre-sales technical assessments to support AI platform evaluation and vendor selection for contact center environments."
+      ]
+    },
+    {
+      "company": "Money Management International",
+      "period": "Nov 2010 - Oct 2024",
+      "role": "Chief Technology Officer",
+      "location": "Houston, TX",
+      "bullets": [
+        "Led enterprise-wide <strong>contact center and communications platform transformation</strong>: directed solution design, multi-channel integration, AI-assisted routing and coaching, internal and external knowledge systems -- zero service disruption on day-one go-live.",
+        "Owned product roadmap and strategic prioritization for MMI's homegrown enterprise platform over 8 years, directing a 45-50 person delivery org across BA, QA, and development with 12+ cross-level business stakeholders; operated a multi-factor prioritization model (ROI x user satisfaction x efficiency x dept-equity).",
+        "Built and led technology organizations of 35+ direct / 75+ extended staff with $15M+ annual operating budget; sustained highest employee retention and satisfaction results across the organization for 14 years.",
+        "Doubled development throughput and reduced concept-to-deployment timelines by up to <strong>20% year-over-year</strong> through Agile SDLC transformation (SAFe 10-week to 2-week sprint cadence).",
+        "Directed digital transformation delivering <strong>200%+ SEO and digital acquisition improvement</strong>; complete rebuild of web properties, mobile applications, and operational analytics.",
+        "Maintained <strong>100% audited PCI-DSS certification</strong> across multiple years; full HIPAA and CARD Act compliance across nationally distributed operations."
+      ]
+    },
+    {
+      "company": "DMLCo",
+      "period": "Jan 1996 - Jan 2012",
+      "role": "Founder & President",
+      "location": "Houston, TX",
+      "bullets": [
+        "Founded and scaled a web development and IT consulting firm over 17 years with full P&L ownership; peak ~12 employees, peak revenue $4-5M.",
+        "Delivered client-facing technical platforms and digital experiences across dozens of enterprise and content-driven clients -- built and sold the technical product, the roadmap, and the implementation."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "AI Architecture Evaluation Framework (CX Consulting)",
+      "badge": "Consulting",
+      "desc": "Scoring rubric, evaluation flow, and capability taxonomy for comparing AI-native CCaaS platforms -- Genesys/NICE enterprise down to AI-focused startups. Adopted by national CX consulting firm for active client engagements.",
+      "tech": "CCaaS, AI Architecture, Evaluation Frameworks, Contact Center AI"
+    },
+    {
+      "title": "career-ops-dml (github.com/mknnmknn/career-ops-dml)",
+      "badge": "AI Engineering",
+      "desc": "Forked and customized open-source AI job search pipeline. Running an executive job search on agentic AI infrastructure -- 57+ roles evaluated, 20+ tailored CVs generated.",
+      "tech": "Claude AI, Node.js, Playwright, Agentic Pipelines"
+    }
+  ],
+  "education": [
+    {"title": "PhD, Religious Studies", "org": "Rice University", "location": "Houston, TX"},
+    {"title": "BA, English", "org": "Columbia University", "location": "New York, NY"}
+  ],
+  "skills": [
+    {"category": "CCaaS & Contact Center", "items": "CCaaS Platforms, Contact Center AI, Intelligent Routing, AI-Assisted Coaching, Knowledge Systems"},
+    {"category": "AI & Architecture", "items": "Generative AI, Agentic AI, AI Architecture Evaluation, LLM Platforms, DataRobot"},
+    {"category": "Cloud & DevOps", "items": "Azure Enterprise Platform, Azure DevOps, GitHub, ServiceNow"},
+    {"category": "Data & Analytics", "items": "PowerBI, Tableau, SQL Server, SQL, PostgreSQL"},
+    {"category": "Enterprise Platforms", "items": "Sitecore, WordPress, JIRA, Monday.com, Microsoft 365"},
+    {"category": "Compliance & Governance", "items": "PCI-DSS, HIPAA, GRC Programs, CARD Act"}
+  ]
+}

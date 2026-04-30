@@ -1,0 +1,72 @@
+{
+  "subtitle": "Senior Digital Solutions Leader -- AI Guidance | BI & Analytics | Enterprise SDLC",
+  "lang": "en",
+  "format": "letter",
+  "summary_text": "Technology executive and delivery leader with 28 years building custom digital solutions and leading technical teams across consulting and enterprise environments. Founded and ran a web development consultancy for 17 years, delivering custom solutions and proprietary CMS infrastructure for dozens of clients. Then directed a 35+ person technology organization for 14 years as the first CTO in a 45-year-old enterprise -- full SDLC ownership, BI/analytics maturation including production ML, and Azure cloud migration. Currently consulting on AI architecture evaluation: scoring rubrics, capability taxonomies, and platform decisions for enterprise contact center environments. Comfortable across client-facing delivery, executive stakeholder engagement, and the practical translation between business outcomes and technical decisions.",
+  "competencies": [
+    "Custom Digital Solution Delivery",
+    "AI-Centric Guidance & Architecture",
+    "SQL & Data Management",
+    "Business Intelligence & Analytics",
+    "Microsoft Azure & Cloud Platforms",
+    "Software Development Lifecycle (SDLC)",
+    "Team Leadership & Development",
+    "Client-Facing Consulting",
+    "Power BI & Data Visualization",
+    "Agile Delivery & SDLC Modernization",
+    "Enterprise Architecture",
+    "Digital Transformation Leadership"
+  ],
+  "experience": [
+    {
+      "company": "Independent Consultant",
+      "period": "Nov 2024 - Present",
+      "role": "Technology Consultant",
+      "location": "Houston, TX",
+      "bullets": [
+        "Designed scoring rubric, evaluation flow, and AI capability taxonomy for a national CX consulting firm -- adopted to streamline vendor recommendations across enterprise contact center platforms including NICE and Genesys-tier solutions.",
+        "Deliver <strong>AI-centric guidance</strong> to executive stakeholders on generative and agentic AI architectures; designed a structured, repeatable methodology for comparing AI platforms against enterprise requirements.",
+        "Engineered algorithmic evaluation frameworks to assess AI software platforms for enterprise contact center use cases, mapping capabilities to specific technologies with relative strengths and integration compatibility."
+      ]
+    },
+    {
+      "company": "Money Management International",
+      "period": "Nov 2010 - Oct 2024",
+      "role": "Chief Technology Officer",
+      "location": "Houston, TX",
+      "bullets": [
+        "Led enterprise-wide <strong>contact center AI transformation</strong> -- intelligent call routing, AI-assisted coaching and monitoring, integrated knowledge bots -- with <strong>zero service disruption on day-one go-live</strong> of full platform replacement.",
+        "Owned product roadmap for MMI's homegrown ERP/CRM for 8 years, directing a <strong>45-50 person delivery organization</strong> (BA, QA, software development) across 12+ executive stakeholders; multi-factor prioritization model (ROI x user satisfaction x efficiency x departmental equity) governed sprint-over-sprint decisions.",
+        "Modernized SDLC through Agile transformation (SAFe 10-week to 2-week sprints); <strong>doubled development throughput</strong> and reduced concept-to-deployment timelines by up to 20% year-over-year.",
+        "Delivered BI and analytics maturation using DataRobot, Power BI, and SQL-based data warehousing; transitioned the organization from reactive reporting to <strong>predictive ML models in production</strong> for credit and servicing use cases.",
+        "Directed full Azure cloud migration across all enterprise workloads; maintained <strong>100% PCI-DSS certification</strong> over multiple audit cycles alongside HIPAA and CARD Act compliance across all 50 states.",
+        "Created Enterprise PMO from scratch; consolidated enterprise project governance across IT and non-IT functions -- delivered <strong>25% improvement in project budget and time adherence</strong>.",
+        "Led digital transformation driving <strong>200%+ increase in SEO and digital acquisition</strong>; rebuilt web properties, launched multi-platform mobile applications, and embedded integrated analytics across operations.",
+        "Advanced through progressive leadership roles: Front-End Technologist / DBA / SQL Architect, IT Manager, VP of IT, and first CTO in the organization's 45+ year history."
+      ]
+    },
+    {
+      "company": "DMLCo",
+      "period": "Jan 1996 - Jan 2012",
+      "role": "Founder & President",
+      "location": "Houston, TX",
+      "bullets": [
+        "Founded and scaled a web development and IT consulting firm over 17 years -- full P&amp;L ownership; delivered <strong>custom digital solutions</strong> for dozens of clients including commercial-grade CMS platforms.",
+        "Architected a proprietary content management platform that supported dozens of content-driven client websites, frequently serving as clients' first digital presence.",
+        "Built multiple independent revenue streams including custom web application development, hosting services, and digital optimization -- each delivering consistent year-over-year growth."
+      ]
+    }
+  ],
+  "education": [
+    {"title": "PhD, Religious Studies", "org": "Rice University", "location": "Houston, TX"},
+    {"title": "BA, English", "org": "Columbia University", "location": "New York, NY"}
+  ],
+  "skills": [
+    {"category": "AI & Architecture", "items": "Generative AI, Agentic AI, AI Architecture, LLM Platforms, AI Platform Evaluation"},
+    {"category": "Cloud & DevOps", "items": "Microsoft Azure, Azure DevOps, GitHub, CI/CD, Cloud Migration"},
+    {"category": "Data & Analytics", "items": "DataRobot, Power BI, Tableau, SQL, T-SQL, MySQL, PostgreSQL, Data Warehousing"},
+    {"category": "Development", "items": "Python, JavaScript, Angular, React, HTML/CSS, Full SDLC, Agile/SAFe"},
+    {"category": "Security & Compliance", "items": "PCI-DSS, HIPAA, GRC, Multi-State Regulatory Compliance"},
+    {"category": "Enterprise Systems", "items": "ServiceNow, JIRA, Microsoft 365, Sitecore, Custom ERP/CRM Platforms"}
+  ]
+}

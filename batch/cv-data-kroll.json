@@ -1,0 +1,81 @@
+{
+  "subtitle": "AI Transformation Advisor -- Workflow Design | Generative AI | Enterprise Advisory",
+  "lang": "en",
+  "format": "letter",
+  "summary_text": "Technology executive and AI transformation practitioner with 14-year enterprise CTO tenure and active consulting practice focused on generative and agentic AI adoption. Built and deployed a structured AI architecture evaluation framework for a national CX consulting firm -- scoring rubric, evaluation flow, and capability taxonomy mapping AI features against platform requirements -- adopted by the firm to streamline vendor recommendations. At Money Management International, directed enterprise contact center AI transformation including intelligent routing, AI-assisted coaching and monitoring, and integrated knowledge systems, with zero service disruption on go-live. Hands-on with Claude, GitHub Copilot, and AI-assisted development workflows. Published thinking on AI/automation distinctions, workflow governance, and reflexive AI use at linkedin.com/in/daniel-m-levine.",
+  "competencies": [
+    "AI Transformation Advisory",
+    "Workflow Analysis & Automation",
+    "Generative AI Applications",
+    "Structured Problem-Solving",
+    "Prototype & Framework Development",
+    "Stakeholder Workshop Facilitation",
+    "Executive Presentations & Recommendations",
+    "LLM Platform Evaluation",
+    "Process Improvement & ROI Quantification",
+    "Change Management & Adoption",
+    "Standard Operating Procedures",
+    "AI Architecture Assessment"
+  ],
+  "experience": [
+    {
+      "company": "Independent Consultant",
+      "period": "Nov 2024 - Present",
+      "role": "Technology Consultant -- AI Advisory",
+      "location": "Houston, TX",
+      "bullets": [
+        "Built a structured AI architecture evaluation framework for a national CX consulting firm: scoring rubric, evaluation flow, and capability taxonomy mapping generative AI platform strengths against enterprise contact center workflow requirements; adopted by the firm to streamline vendor recommendation processes.",
+        "Designed repeatable methodology for comparing generative and agentic AI architectures across enterprise CC platforms and AI-focused startups, with primary emphasis on enterprise suitability, integration patterns, and capability-to-workflow fit.",
+        "Provide solution architecture guidance and pre-sales technical expertise on AI platform evaluation, vendor selection, and execution decisions for contact center and customer communications environments."
+      ]
+    },
+    {
+      "company": "Money Management International",
+      "period": "Nov 2010 - Oct 2024",
+      "role": "Chief Technology Officer",
+      "location": "Houston, TX",
+      "bullets": [
+        "Directed enterprise-wide contact center AI transformation: designed hybrid architecture integrating enterprise CC platform with specialized AI vendors for intelligent routing, AI-assisted coaching and monitoring, and integrated knowledge bots -- <strong>zero service disruption on go-live</strong>.",
+        "Led structured workflow analysis across digital, voice, and back-office channels to identify automation opportunities, quantify impact, and develop executive-ready recommendations; drove <strong>200%+ increase in SEO and digital acquisition performance</strong> through target-state redesign.",
+        "Facilitated stakeholder workshops aligning 12+ executive and operations stakeholders on transformation priorities, using a multi-factor ROI x satisfaction x efficiency x equity prioritization model to govern sprint-over-sprint workstream decisions.",
+        "Developed executive presentations, board-ready narratives, and governance playbooks for major transformation workstreams spanning cloud migration, SDLC modernization, platform rebuild, and AI enablement.",
+        "Doubled development throughput and reduced concept-to-deployment timelines by up to <strong>20% year-over-year</strong> through SDLC modernization; stood up ePMO achieving 25% improvement in project budget and time adherence."
+      ]
+    },
+    {
+      "company": "DMLCo",
+      "period": "Jan 1996 - Jan 2012",
+      "role": "Founder & President",
+      "location": "Houston, TX",
+      "bullets": [
+        "Founded and scaled a technology consulting firm over 17 years delivering web development, CMS architecture, and IT advisory services with full P&L ownership.",
+        "Architected and launched a proprietary commercial-grade CMS serving dozens of content-driven client websites; built and scaled multiple independent revenue streams."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "AI Architecture Evaluation Framework",
+      "badge": "Consulting",
+      "desc": "Scoring rubric, evaluation flow, and AI capability taxonomy for a national CX consulting firm. Covers enterprise CC platforms through AI-focused startups; streamlines vendor recommendation for AI-enabled workflow transformation.",
+      "tech": "Generative AI, Agentic AI, LLM Evaluation, Contact Center Platforms"
+    },
+    {
+      "title": "Enterprise Contact Center AI Transformation",
+      "badge": "MMI",
+      "desc": "Led full enterprise CC platform replacement with hybrid AI architecture. Intelligent routing, AI-assisted coaching, knowledge bot integration across service delivery workflows. Zero-downtime go-live.",
+      "tech": "Enterprise CC Platforms, AI Routing, Knowledge Systems, Workflow Automation"
+    }
+  ],
+  "education": [
+    {"title": "PhD, Religious Studies", "org": "Rice University", "location": "Houston, TX"},
+    {"title": "BA, English", "org": "Columbia University", "location": "New York, NY"}
+  ],
+  "skills": [
+    {"category": "AI & Automation", "items": "Generative AI, Agentic AI, LLM Platforms, AI Architecture Evaluation, Workflow Automation, Proof-of-Concept Development"},
+    {"category": "Advisory & Consulting", "items": "Structured Problem-Solving, Stakeholder Facilitation, Executive Presentations, ROI Analysis, Process Improvement"},
+    {"category": "Platforms & Tools", "items": "Azure Enterprise Platform, DataRobot, PowerBI, ServiceNow, GitHub, Claude, GitHub Copilot"},
+    {"category": "Data & Analytics", "items": "SQL / T-SQL, Python, PowerBI, Tableau, MSSQL, PostgreSQL"},
+    {"category": "Compliance & Governance", "items": "PCI-DSS, HIPAA, CARD Act, GRC Programs"}
+  ]
+}

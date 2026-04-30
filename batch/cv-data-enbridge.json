@@ -1,0 +1,71 @@
+{
+  "subtitle": "Enterprise Architecture Leader -- GenAI Governance | API Governance | Regulated Industry Depth",
+  "lang": "en",
+  "format": "letter",
+  "summary_text": "Senior technology leader who owned enterprise architecture decisions for a 35+ person IT organization across 14 years as the first CTO at Money Management International -- a national 501(c)(3) financial services nonprofit operating under continuous regulatory scrutiny (50 states plus federal regulators including the CFPB, with HIPAA, PCI-DSS, and CARD Act overlays). Led cloud-first transformation, contact center modernization, and the production ML deployment that brought the organization into AI-ready data architecture. Currently consulting on AI architecture, automation, and implementation -- including a structured evaluation methodology adopted by a national CX consulting firm. Architecture-as-function discipline (governance, integration patterns, standards-setting) is the through-line.",
+  "competencies": [
+    "Enterprise Architecture Governance",
+    "GenAI Governance & AI/ML Guardrails",
+    "API Governance & Integration Patterns",
+    "Cloud Architecture & Migration",
+    "Multi-Platform Integration",
+    "Observability & Operational Intelligence",
+    "Regulatory Compliance & Risk",
+    "AI Architecture Evaluation",
+    "Production Machine Learning Governance",
+    "Cross-Functional Stakeholder Influence",
+    "Technology Standards & Roadmap",
+    "Mission-Driven Technology Leadership"
+  ],
+  "experience": [
+    {
+      "company": "Independent Consultant",
+      "period": "Nov 2024 - Present",
+      "role": "Technology Consultant",
+      "location": "Houston, TX",
+      "bullets": [
+        "Designed an algorithmic <strong>AI architecture evaluation framework</strong> -- scoring rubric, capability taxonomy, evaluation flow -- adopted by a national CX consulting firm to compare enterprise AI platforms with explicit governance, compliance, and capability-fit dimensions.",
+        "Provide client-facing advisory on generative and agentic AI architectures, automation, and implementation; translate executive priorities into architectural trade-offs and concrete platform decisions for enterprise environments.",
+        "Hands-on AI-assisted engineering daily with Claude and GitHub Copilot; published thinking on AI adoption realities, the automation-vs-AI distinction, and reflexive AI governance practice on LinkedIn."
+      ]
+    },
+    {
+      "company": "Money Management International",
+      "period": "Nov 2010 - Oct 2024",
+      "role": "Chief Technology Officer",
+      "location": "Houston, TX",
+      "bullets": [
+        "Directed enterprise technology for a <strong>national 501(c)(3) nonprofit</strong> providing financial counseling, debt management, and consumer financial education -- under continuous regulatory scrutiny across all 50 states plus federal regulators including the CFPB, with HIPAA, PCI-DSS, and CARD Act overlays.",
+        "Owned <strong>enterprise architecture decisions</strong> across cloud migration, ERP/CRM platform evolution, contact center modernization, data platform maturation, and security posture for 14 years -- architecture-as-function rather than architect-as-title.",
+        "Spearheaded multi-year transition to a <strong>digital-first, cloud-first, security-first model</strong>; migrated all enterprise workloads to Azure; sustained <strong>100% PCI-DSS certification</strong> across multiple audit cycles alongside HIPAA and CARD Act compliance with zero compliance findings attributable to migration.",
+        "Led full <strong>contact center / communications platform transformation</strong> -- multi-channel integration, AI-assisted routing and coaching, integrated knowledge bots -- with <strong>zero service disruption on day-one go-live</strong>.",
+        "Directed BI and analytics maturation including <strong>production ML deployment via DataRobot</strong> for credit and servicing decisions -- first production AI in the organization's history under regulatory governance.",
+        "Owned <strong>multi-year roadmap</strong> for MMI's homegrown ERP/CRM platform for 8 years, directing a 45-50 person delivery organization across 12+ executive and operations stakeholders; multi-factor prioritization model (ROI x user satisfaction x efficiency x cross-departmental equity) governed sprint-over-sprint decisions.",
+        "Built <strong>Enterprise PMO</strong> from scratch; consolidated cross-functional project governance and delivered <strong>25% improvement in project budget and time adherence</strong> across a $30-50M annual portfolio.",
+        "Built and led a 35+ direct (75+ extended) technology team across IT, software development, infrastructure, and global vendor partners; sustained highest retention and satisfaction in the enterprise across 14 years."
+      ]
+    },
+    {
+      "company": "DMLCo",
+      "period": "Jan 1996 - Jan 2012",
+      "role": "Founder & President",
+      "location": "Houston, TX",
+      "bullets": [
+        "Founded and ran a web development and IT consulting firm for 17 years -- full P&amp;L ownership; delivered custom digital solutions for dozens of clients across content-driven and transactional verticals.",
+        "Architected and operated a proprietary commercial-grade content management platform supporting dozens of production sites; direct client engagement across discovery, scope, architecture, build, deployment, and ongoing support."
+      ]
+    }
+  ],
+  "education": [
+    {"title": "PhD, Religious Studies", "org": "Rice University", "location": "Houston, TX"},
+    {"title": "BA, English", "org": "Columbia University", "location": "New York, NY"}
+  ],
+  "skills": [
+    {"category": "EA & Governance", "items": "Enterprise Architecture Governance, API Governance, Standards & Patterns, Multi-Platform Integration, AI/ML Guardrails"},
+    {"category": "AI & ML", "items": "Generative AI, Agentic AI, AI Architecture Evaluation, LLM Platforms, DataRobot (Production ML), Claude API"},
+    {"category": "Cloud & DevOps", "items": "Microsoft Azure, Azure DevOps, GitHub, CI/CD, Cloud Migration"},
+    {"category": "Data & Analytics", "items": "Data Warehousing, Power BI, Tableau, SQL/T-SQL, Data Governance"},
+    {"category": "Compliance & Risk", "items": "PCI-DSS, HIPAA, CARD Act, Multi-State Regulatory, GRC Programs"},
+    {"category": "Methodology", "items": "Agile/SAFe, SDLC Modernization, ePMO Governance, Multi-Stakeholder Roadmap"}
+  ]
+}

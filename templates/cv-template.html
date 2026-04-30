@@ -347,13 +347,26 @@
   }
 
   /* === PAGE BREAK CONTROL === */
+  /* LOCAL PATCH (2026-04-28): .job removed from always-avoid list so long
+     experience blocks can flow across pages between bullets. Individual
+     bullets, project / edu / cert blocks still group together; company-role
+     headers are kept attached to at least one bullet. See
+     patches/README.md entry #4 for rationale and re-apply guidance. */
   .avoid-break,
-  .job,
   .project,
   .edu-item,
   .cert-item {
     break-inside: avoid;
     page-break-inside: avoid;
+  }
+  .job li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .job-header,
+  .job-role {
+    break-after: avoid;
+    page-break-after: avoid;
   }
 </style>
 </head>

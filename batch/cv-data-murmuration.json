@@ -1,0 +1,75 @@
+{
+  "subtitle": "Senior Technology Leader -- LLM/Agent Workflows | Data Foundations | Mission-Aligned Practice",
+  "lang": "en",
+  "format": "letter",
+  "summary_text": "Senior technology leader with a data origin (DBA / SQL Architect) and 14 years owning the data function end-to-end at Money Management International -- a national 501(c)(3) nonprofit providing financial counseling, debt management, and consumer financial education. Production ML deployment, enterprise data warehouse maturation, and cross-functional data-definitions discipline across credit and servicing workflows. Currently consulting on AI architecture, automation, and implementation; running an LLM-assisted pipeline daily as working code. Mission pull toward progressive civic-data work; values diverse-team performance and evidence-based practice as performance levers, not posture. Comfortable across the data-quality / API-ingestion / LLM-workflow stack at architectural depth, with hands-on AI-assisted engineering practice.",
+  "competencies": [
+    "LLM & Agentic AI Workflows",
+    "Data Quality & Governance",
+    "Data Foundations & Architecture",
+    "SQL & Data Validation",
+    "Production Machine Learning",
+    "API & Data Ingestion",
+    "Civic Data & Mission-Aligned Practice",
+    "Independent Execution",
+    "Cross-Functional Stakeholder Engagement",
+    "Data Strategy & Roadmap"
+  ],
+  "experience": [
+    {
+      "company": "Independent Consultant",
+      "period": "Nov 2024 - Present",
+      "role": "Technology Consultant",
+      "location": "Houston, TX",
+      "bullets": [
+        "Designed an algorithmic AI evaluation framework -- scoring rubric, capability taxonomy, evaluation flow -- adopted by a national CX consulting firm to compare enterprise contact-center AI platforms.",
+        "Hands-on AI-assisted engineering daily with Claude and GitHub Copilot; published thinking on AI adoption realities, the automation-vs-AI distinction, and practitioner workflow on LinkedIn.",
+        "Provide client-facing advisory on generative and agentic AI architectures, automation, and implementation; translate executive priorities into architectural trade-offs and concrete platform decisions."
+      ]
+    },
+    {
+      "company": "Money Management International",
+      "period": "Nov 2010 - Oct 2024",
+      "role": "Chief Technology Officer",
+      "location": "Houston, TX",
+      "bullets": [
+        "Directed enterprise technology for a <strong>national 501(c)(3) nonprofit</strong> providing financial counseling, debt management, and consumer financial education -- auditable across all 50 states plus federal regulators including the CFPB, with HIPAA, PCI-DSS, and CARD Act overlays.",
+        "Owned the <strong>data function end-to-end</strong> for 14 years -- DBA / SQL Architect origin, enterprise data-warehouse maturation (reactive reporting -> proper DW -> self-service trajectory), and <strong>production ML deployment via DataRobot</strong> for credit and servicing use cases at scale.",
+        "Led <strong>cross-functional data-definitions discipline</strong> across 12+ executive and operations stakeholders -- agreement on metric calculations, definitions, and the cross-team incentive conflicts that surface around them.",
+        "Owned <strong>data governance and quality frameworks</strong> under continuous regulatory scrutiny; sustained <strong>100% PCI-DSS certification</strong> across multiple audit cycles alongside HIPAA and 50-state compliance.",
+        "Directed BI / analytics rollout on Power BI, Tableau, and SQL-based data warehousing; transitioned the organization from reactive reporting to predictive ML in production for credit-decision and servicing workflows.",
+        "Spearheaded multi-year transition to a digital-first, cloud-first, security-first model; migrated all enterprise workloads to Azure across the data and platform stack.",
+        "Advanced through progressive roles: <strong>DBA / SQL Architect -> IT Manager -> VP IT -> first CTO</strong> in the organization's 45+ year history; built and led a 35+ direct (75+ extended) technology team; sustained highest retention and satisfaction in the enterprise."
+      ]
+    },
+    {
+      "company": "DMLCo",
+      "period": "Jan 1996 - Jan 2012",
+      "role": "Founder & President",
+      "location": "Houston, TX",
+      "bullets": [
+        "Founded and ran a web development and IT consulting firm for 17 years -- full-stack delivery for dozens of clients; built and operated a proprietary commercial-grade CMS supporting dozens of production sites.",
+        "Independent execution end-to-end: discovery, scope, architecture, build, deployment, ongoing support -- across small teams and direct client engagement."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "github.com/mknnmknn/about-mknn",
+      "badge": "GitHub",
+      "desc": "Overview of public projects, with access to private repositories on request. Featured project: career-ops-dml -- a private fork of santifer/career-ops, customized into the LLM-assisted pipeline used daily in my job search. Working code extended alongside Claude Code (Node.js, Claude API, Playwright, Go). Also of interest: i9s -- a what-if statistical projection of Negro Leagues players into MLB-era contexts; equal parts data modeling and historical research (PHP, JavaScript, WordPress + Pods, SQLite)."
+    }
+  ],
+  "education": [
+    {"title": "PhD, Religious Studies", "org": "Rice University", "location": "Houston, TX"},
+    {"title": "BA, English", "org": "Columbia University", "location": "New York, NY"}
+  ],
+  "skills": [
+    {"category": "AI & LLM Workflows", "items": "Claude API, Generative AI, Agentic AI, LLM Platforms, AI-Assisted Engineering (Claude, GitHub Copilot)"},
+    {"category": "Data & Analytics", "items": "DataRobot (Production ML), Data Warehousing, Data Governance, Power BI, Tableau"},
+    {"category": "Databases", "items": "SQL / T-SQL, MSSQL, MySQL, PostgreSQL, SQLite -- DBA / SQL Architect origin"},
+    {"category": "Programming & Tools", "items": "Python, JavaScript, Node.js, Git / GitHub, Playwright, Markdown / YAML"},
+    {"category": "Cloud & DevOps", "items": "Microsoft Azure, Azure DevOps, GitHub, CI/CD"},
+    {"category": "Compliance & Governance", "items": "PCI-DSS, HIPAA, Multi-State Regulatory, GRC Programs"}
+  ]
+}

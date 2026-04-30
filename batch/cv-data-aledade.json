@@ -1,0 +1,78 @@
+{
+  "subtitle": "Senior Data & Infrastructure Leader -- 75+ Org Scope | Production ML | Mission-Driven Practice",
+  "lang": "en",
+  "format": "letter",
+  "summary_text": "Senior data and infrastructure leader with 14 years owning the full technology function at Money Management International -- a national 501(c)(3) nonprofit providing financial counseling, debt management, and consumer financial education. Built and led a 35+ direct (75+ extended) technology team across data, infrastructure, software engineering, and global vendor partners. Owned the data function end-to-end -- DBA / SQL Architect origin, enterprise data warehouse maturation, and production ML deployment via DataRobot for credit and servicing decisions in a regulated environment where model failures have real consequences for real people's financial lives. Currently consulting on AI architecture, automation, and implementation. Comfortable across the build-buy-partner spectrum at scale, with executive-level fluency in data quality, governance, and ML operations.",
+  "competencies": [
+    "Data Function End-to-End Ownership",
+    "Production Machine Learning Operations",
+    "Data Infrastructure Leadership",
+    "Build-Buy-Partner Strategy",
+    "Multi-Year Roadmap Governance",
+    "Regulatory-Grade Data Governance",
+    "Engineering Org Scaling (75+ Extended)",
+    "Cross-Functional Stakeholder Engagement",
+    "Mission-Driven Technology Leadership",
+    "AI Architecture Evaluation",
+    "Cloud Data Platform Leadership",
+    "Bottom-Up Data Stack Practitioner-to-Leader"
+  ],
+  "experience": [
+    {
+      "company": "Independent Consultant",
+      "period": "Nov 2024 - Present",
+      "role": "Technology Consultant",
+      "location": "Houston, TX",
+      "bullets": [
+        "Built an end-to-end <strong>AI architecture evaluation framework</strong> for generative and agentic AI platforms -- scoring rubric, capability taxonomy, build-buy-partner decision model -- adopted by a national CX consulting firm.",
+        "Provide client-facing advisory on generative and agentic AI architectures, automation, and implementation; translate executive priorities into architectural trade-offs and concrete platform decisions.",
+        "Hands-on AI-assisted engineering daily with Claude and GitHub Copilot; published thinking on AI adoption realities, the automation-vs-AI distinction, and reflexive AI governance practice on LinkedIn."
+      ]
+    },
+    {
+      "company": "Money Management International",
+      "period": "Nov 2010 - Oct 2024",
+      "role": "Chief Technology Officer",
+      "location": "Houston, TX",
+      "bullets": [
+        "Directed enterprise technology for a <strong>national 501(c)(3) nonprofit</strong> providing financial counseling, debt management, and consumer financial education -- under continuous regulatory scrutiny across all 50 states plus federal regulators including the CFPB, with HIPAA, PCI-DSS, and CARD Act overlays.",
+        "Built and led a <strong>35+ direct / 75+ extended technology organization</strong> -- including dedicated data, infrastructure, software engineering, and global vendor partner teams; team-of-teams structure including Head of Data, Head of Infrastructure, ePMO leader, and two software development leads.",
+        "Owned the <strong>data function end-to-end</strong> for 14 years -- DBA / SQL Architect origin, enterprise data warehouse maturation (reactive reporting -> proper DW -> self-service trajectory), and <strong>production ML deployment via DataRobot</strong> for credit and servicing use cases in a regulated environment where model failures have real consequences.",
+        "Owned <strong>infrastructure as a real function</strong>: multi-generation end-user compute transitions, physical datacenter to cloud/hybrid migration, evolution of the security landscape, server and desktop patching, security scanning and response. Not hands-on -- led, prioritized, and understood the function with depth.",
+        "Led <strong>build-buy-partner</strong> strategy across the enterprise: contact center platform transformation (intelligent routing, AI-assisted coaching, integrated knowledge bots, zero service disruption on day-one go-live); multi-year vendor relationships across infrastructure managed services, offshore development partners, and specialized consultancies.",
+        "Owned <strong>multi-year platform roadmap</strong> for MMI's homegrown ERP/CRM for 8 years across 12+ executive and operations stakeholders; multi-factor prioritization model (ROI x user satisfaction x efficiency x cross-departmental equity) governed sprint-over-sprint decisions across a 45-50 person delivery organization.",
+        "Sustained <strong>100% PCI-DSS certification</strong> across multiple audit cycles alongside HIPAA and CARD Act compliance; sustained highest retention and satisfaction in the enterprise across 14 years.",
+        "Advanced through progressive roles: <strong>DBA / SQL Architect -> IT Manager -> VP IT -> first CTO</strong> in the organization's 45+ year history."
+      ]
+    },
+    {
+      "company": "DMLCo",
+      "period": "Jan 1996 - Jan 2012",
+      "role": "Founder & President",
+      "location": "Houston, TX",
+      "bullets": [
+        "Founded and ran a web development and IT consulting firm for 17 years -- full P&amp;L ownership; delivered custom digital solutions for dozens of clients across content-driven and transactional verticals.",
+        "Architected and operated a proprietary commercial-grade CMS supporting dozens of production sites; direct client engagement across discovery, scope, architecture, build, and ongoing support."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "github.com/mknnmknn/about-mknn",
+      "badge": "GitHub",
+      "desc": "Overview of public projects, with access to private repositories on request. Featured project: career-ops-dml -- a private fork of santifer/career-ops, customized into the LLM-assisted pipeline used daily in my job search. Working code extended alongside Claude Code (Node.js, Claude API, Playwright, Go)."
+    }
+  ],
+  "education": [
+    {"title": "PhD, Religious Studies", "org": "Rice University", "location": "Houston, TX"},
+    {"title": "BA, English", "org": "Columbia University", "location": "New York, NY"}
+  ],
+  "skills": [
+    {"category": "Data & ML", "items": "DataRobot (Production ML), Data Warehousing, Data Pipelines, Data Governance, Power BI, Tableau, Cross-Functional Data Definitions"},
+    {"category": "Databases", "items": "SQL / T-SQL, MSSQL, MySQL, PostgreSQL -- DBA / SQL Architect origin"},
+    {"category": "Infrastructure & Cloud", "items": "Microsoft Azure, Cloud Migration, Multi-Generation End-User Compute, Datacenter-to-Cloud Migration, Network/Endpoint Security, Server Patching"},
+    {"category": "AI & LLM", "items": "Generative AI, Agentic AI, AI Architecture Evaluation, LLM Platforms, AI Governance"},
+    {"category": "Compliance & Risk", "items": "PCI-DSS, HIPAA, CARD Act, CFPB, Multi-State Regulatory, GRC Programs"},
+    {"category": "Methodology", "items": "Agile/SAFe, SDLC Modernization, ePMO Governance, Multi-Stakeholder Roadmap, Build-Buy-Partner"}
+  ]
+}

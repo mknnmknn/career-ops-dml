@@ -1,0 +1,77 @@
+{
+  "subtitle": "Senior Product & Platform Leader -- Data Platform | Multi-Stakeholder Migration | AI-Native Practice",
+  "lang": "en",
+  "format": "letter",
+  "summary_text": "Senior product and platform leader with 8 years of multi-year platform roadmap ownership and 14 years owning the data function end-to-end at Money Management International -- a national 501(c)(3) nonprofit in the consumer credit space. Architected MMI's homegrown ERP/CRM evolution from single-product tool to variable multi-product platform, directing a 45-50 person delivery organization across 12+ executive and operations stakeholders. Owned the data function from DBA / SQL Architect origin through enterprise data warehouse maturation through production ML deployment via DataRobot in regulated credit services. Led full contact center platform transformation -- a complex multi-stakeholder migration affecting live customers -- with zero service disruption on day-one go-live. Currently consulting on AI architecture, automation, and implementation.",
+  "competencies": [
+    "Data Platform Product Strategy",
+    "Multi-Factor Roadmap Prioritization",
+    "Multi-Stakeholder Migration Programs",
+    "Production Machine Learning",
+    "Data Pipeline & Architecture",
+    "Enterprise Data Platform",
+    "AI-Native Product Practice",
+    "Cross-Functional Stakeholder Governance",
+    "Platform Extensibility Architecture",
+    "Onsite / Offshore Team Leadership",
+    "Mission-Driven Technology Leadership",
+    "API Architecture Review"
+  ],
+  "experience": [
+    {
+      "company": "Independent Consultant",
+      "period": "Nov 2024 - Present",
+      "role": "Technology Consultant",
+      "location": "Houston, TX",
+      "bullets": [
+        "Designed an algorithmic <strong>AI architecture evaluation framework</strong> -- scoring rubric, capability taxonomy, evaluation flow -- adopted by a national CX consulting firm to compare enterprise AI platforms with explicit governance, integration-fit, and capability dimensions.",
+        "Provide client-facing advisory on generative and agentic AI architectures, automation, and implementation; translate executive priorities into architectural trade-offs and concrete platform decisions.",
+        "Hands-on AI-assisted engineering daily with Claude and GitHub Copilot; published thinking on AI adoption realities, the automation-vs-AI distinction, and practitioner workflow on LinkedIn."
+      ]
+    },
+    {
+      "company": "Money Management International",
+      "period": "Nov 2010 - Oct 2024",
+      "role": "Chief Technology Officer",
+      "location": "Houston, TX",
+      "bullets": [
+        "Directed enterprise technology for a <strong>national 501(c)(3) nonprofit</strong> in the consumer credit space, under continuous regulatory scrutiny across all 50 states plus federal regulators including the CFPB, with HIPAA, PCI-DSS, and CARD Act overlays.",
+        "Owned <strong>multi-year platform roadmap</strong> for MMI's homegrown ERP/CRM for 8 years, directing a 45-50 person delivery organization (BA, QA, software development) across 12+ executive and operations stakeholders; multi-factor prioritization model (ROI x user satisfaction x efficiency x cross-departmental equity) governed sprint-over-sprint decisions.",
+        "Architected platform extensibility from <strong>single-product tool to variable multi-product platform</strong> -- each product carrying its own matrix of requirements, fees, and support; platform-product thinking applied to a regulated nonprofit context.",
+        "Owned the <strong>data function end-to-end</strong> for 14 years -- DBA / SQL Architect origin, enterprise data-warehouse maturation (reactive reporting -> proper DW -> self-service trajectory), and <strong>production ML deployment via DataRobot</strong> for credit and servicing use cases at scale.",
+        "Led full <strong>contact center platform transformation</strong> -- a complex multi-stakeholder migration program affecting live customers -- with intelligent routing, AI-assisted coaching and monitoring, integrated knowledge bots, and <strong>zero service disruption on day-one go-live</strong>.",
+        "Led cross-functional <strong>data-definitions discipline</strong> across 12+ executive and operations stakeholders -- agreement on metric calculations, definitions, and the cross-team incentive conflicts that surface around them.",
+        "Modernized SDLC through Agile transformation (SAFe 10-week to 2-week sprints); <strong>doubled development throughput</strong>; built and led a 35+ direct (75+ extended) technology team across onsite, offshore, and global vendor partners; sustained highest retention and satisfaction in the enterprise across 14 years."
+      ]
+    },
+    {
+      "company": "DMLCo",
+      "period": "Jan 1996 - Jan 2012",
+      "role": "Founder & President",
+      "location": "Houston, TX",
+      "bullets": [
+        "Founded and ran a web development and IT consulting firm for 17 years -- full P&amp;L ownership; delivered custom digital solutions for dozens of clients across content-driven and transactional verticals.",
+        "Architected and operated a proprietary commercial-grade CMS supporting dozens of production sites; direct client engagement across discovery, scope, architecture, build, and ongoing support."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "github.com/mknnmknn/about-mknn",
+      "badge": "GitHub",
+      "desc": "Overview of public projects, with access to private repositories on request. Featured project: career-ops-dml -- a private fork of santifer/career-ops, customized into the LLM-assisted pipeline used daily in my job search. Working code extended alongside Claude Code (Node.js, Claude API, Playwright, Go)."
+    }
+  ],
+  "education": [
+    {"title": "PhD, Religious Studies", "org": "Rice University", "location": "Houston, TX"},
+    {"title": "BA, English", "org": "Columbia University", "location": "New York, NY"}
+  ],
+  "skills": [
+    {"category": "Product & Platform", "items": "Platform Roadmap Strategy, Multi-Factor Prioritization, Platform Extensibility, Multi-Stakeholder Governance, Capability Envisioning"},
+    {"category": "Data & ML", "items": "DataRobot (Production ML), Data Warehousing, Data Pipelines, Data Governance, Power BI, Tableau"},
+    {"category": "Databases", "items": "SQL / T-SQL, MSSQL, MySQL, PostgreSQL -- DBA / SQL Architect origin"},
+    {"category": "AI & LLM", "items": "Claude API, Generative AI, Agentic AI, AI Architecture Evaluation, LLM Platforms"},
+    {"category": "Cloud & DevOps", "items": "Microsoft Azure, Azure DevOps, GitHub, CI/CD, Cloud Migration"},
+    {"category": "Compliance & Methodology", "items": "PCI-DSS, HIPAA, CARD Act, Multi-State Regulatory, Agile/SAFe, SDLC Modernization, ePMO Governance"}
+  ]
+}

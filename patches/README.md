@@ -123,6 +123,43 @@ PR upstream to canonicalize a report-header schema across all modes (oferta.md c
 
 ---
 
+### 4. CV page-break behavior — `.job` blocks flow across pages
+
+- **Applied:** 2026-04-28
+- **Files:** `templates/cv-template.html` (CSS) + `fill-template.mjs` (HTML output)
+- **Sections:** `/* === PAGE BREAK CONTROL === */` block in template (around line 349); `buildExperience()` function in `fill-template.mjs` (around line 88)
+
+**What was changed:**
+
+**`templates/cv-template.html`** — upstream's CSS lists `.job` alongside `.avoid-break, .project, .edu-item, .cert-item` under `break-inside: avoid` / `page-break-inside: avoid`. We removed `.job` from that list and replaced it with finer-grained rules:
+
+- `.job li { break-inside: avoid }` — individual bullets stay whole; bullets never split mid-sentence.
+- `.job-header, .job-role { break-after: avoid }` — company / period / role headers don't strand at the bottom of a page without at least one bullet attached.
+- `.job` itself is now free to flow across pages between bullets.
+
+The patched section is marked in `cv-template.html` with an HTML comment (`/* LOCAL PATCH (2026-04-28): ... */`) for visibility.
+
+**`fill-template.mjs`** — `buildExperience()` was emitting `<div class="job avoid-break">` for each job. The `avoid-break` class kept matching even after the CSS change, so the fix had no effect until this dual-class was simplified to just `<div class="job">`. (The header `<div class="header avoid-break">` and section divs still carry `avoid-break` — that's intentional; only the per-job divs were changed.)
+
+**Why:**
+With `.job` in the always-avoid list, any experience block too tall to fit in the remaining space on a page got pushed wholesale to the next page — wasting up to 1/4 of a page in whitespace. For Daniel's CV the MMI block is the long one (8-9 substantive bullets covering 14 years as CTO of a 501(c)(3) nonprofit). A long-format CV with several substantive bullets per role hits this constantly. Letting bullets flow across the boundary while keeping individual bullets and the company-header line whole gives back the lost whitespace without the awkward "company name with no bullets under it at page bottom" failure mode.
+
+This was discovered building Daniel's Great Minds CV (3-page output where 2 was achievable with proper page utilization).
+
+**Re-apply after upstream update:**
+1. Open the incoming `templates/cv-template.html` and locate the page-break-control CSS block.
+2. If upstream still has `.job` in the always-avoid list:
+   - Remove `.job` from the comma-separated selector list under `break-inside: avoid`.
+   - Add the three rules above (`.job li`, `.job-header, .job-role`).
+   - Restore the `LOCAL PATCH` comment for visibility.
+3. Open the incoming `fill-template.mjs` and locate `buildExperience()`. If upstream still emits `<div class="job avoid-break">`, change it to `<div class="job">` (the CSS change alone has no effect while `avoid-break` is still applied).
+4. If upstream has changed the page-break approach altogether (e.g., switched to a different CSS strategy or made `.job` configurable): evaluate whether their approach achieves the same goal (long blocks flow, headers stay attached, bullets stay whole). If yes, retire this patch.
+
+**Upstream action worth considering:**
+PR upstream to relax `.job` from always-avoid by default and add the bullet/header rules. The "experience block must stay whole on one page" assumption breaks down for any CV with substantive bullets per role — this affects most senior CVs, not just Daniel's.
+
+---
+
 ## Retired patches
 
 *(none yet)*

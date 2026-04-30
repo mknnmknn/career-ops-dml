@@ -38,10 +38,11 @@ Reads `data/scan-history.tsv` and `portals.yml`. Reports overall status mix, per
 
 ### `batch/manual-scan-status.mjs` — weekly manual checklist
 
-Reads `portals.yml` for companies with `scan_method: manual`, maintains `data/manual-scan-log.md` with a rolling weekly section keyed by ISO week. Auto-appends the current week if missing. Prints completion status.
+Reads `portals.yml` for companies with `scan_method: manual`, generates one file per ISO week in `data/manual-scans/` (filename `{YYMMDD}-week{##}-manual.md`, where YYMMDD is the Monday of that week). Auto-creates the current week's file if missing. Prints completion status.
 
 - **Run**: `node batch/manual-scan-status.mjs`
-- **Flags**: `--new-week` (force new section), `--prune=N` (keep only most recent N weeks).
+- **Flags**: `--new-week` (force-recreate this week's file; existing one backed up to `.bak`), `--prune=N` (keep only most recent N week files).
+- **Predecessor**: `data/manual-scan-log.md` (rolling-log format, retained as historical archive — no longer written to).
 
 ### `batch/add-report-number.mjs` — report header migration (one-off, applied)
 
@@ -85,7 +86,7 @@ Full details in `modes/scan_en.md`. Short version with real-world precision data
 | **L3 WebSearch** | `site:ats-host.com "Director"` etc. | Small per query | ~53% | Actual historical volume leader; ~10% of results are stale/expired |
 | **MCP scraper** | Indeed / Dice via MCP servers | Small | ~94% | Niche but precise |
 
-Our 18 L2-reachable companies as of 2026-04-22: Twilio, Glean, Celonis, Airtable, NerdWallet, Deel, NTT DATA, Five9, RingCentral, Genesys, FIS Global, Evolent Health, Shell, Ryan LLC, Norton Rose Fulbright, Harris Central Appraisal District, Colliers International Houston, BakerTilly.
+Our 19 L2-reachable companies as of 2026-04-27: Twilio, Glean, Celonis, Airtable, NerdWallet, Deel, NTT DATA, Five9, RingCentral, Genesys, FIS Global, Evolent Health, Shell, Ryan LLC, Norton Rose Fulbright, Harris Central Appraisal District, Colliers International Houston, BakerTilly, Netsmart Technologies *(promoted 2026-04-27)*.
 
 Dropped from tracking 2026-04-22 (dead URLs, low priority): CB&A Realtors, Fairway Home Mortgage, Central Bank (Houston), Preferred Technologies.
 
@@ -101,6 +102,7 @@ See `patches/README.md` for the authoritative record. Summary as of 2026-04-22:
 2. **`modes/_shared.md` + `batch/batch-prompt.md`** — Report header canonicalized with `**#:**` tracker number as the first field after H1.
 3. **`dashboard/internal/ui/screens/pipeline.go`** — JobID rendered as leftmost column of pipeline rows.
 4. **`batch/scan-api-portals.mjs`** — new local tool (not upstream); adds Workday adapter + dedup + pagination fix.
+5. **`templates/cv-template.html` + `fill-template.mjs`** — `.job` removed from always-avoid page-break list (CSS) and `avoid-break` class no longer applied to per-job divs (fill-template); bullets flow across pages while individual bullets / company headers stay grouped. Recovers wasted whitespace on long-bulleted experience blocks.
 
 All other scripts in `batch/` (recon-portals, analyze-scan-history, manual-scan-status, add-report-number) are local-only; they don't exist upstream.
 

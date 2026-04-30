@@ -1,0 +1,70 @@
+{
+  "subtitle": "Senior Technology Leader -- Contact Center AI | Multi-Platform CC Operator | Pre-Sales AI Advisory",
+  "lang": "en",
+  "format": "letter",
+  "summary_text": "Senior technology leader with 14 years operating a national contact center at scale -- Money Management International is a 501(c)(3) nonprofit whose core operation is multi-site CC delivery. As first CTO I owned the three enterprise platforms underneath: a homegrown CRM / everything-tracker, the contact center platform, and the productivity suite that supported agents and supervisors. Led full CC platform transformation -- intelligent routing, AI-assisted coaching and monitoring, integrated knowledge bots -- with zero service disruption on day-one go-live. Currently consulting on AI architecture, automation, and implementation across enterprise CC platforms, including an evaluation methodology adopted by a national CX consulting firm.",
+  "competencies": [
+    "Contact Center AI & Automation",
+    "CCaaS Platform Operations",
+    "Multi-Channel Engagement Strategy",
+    "AI-Assisted Engagement Optimization",
+    "AI Architecture Evaluation",
+    "Roadmap Prioritization",
+    "Pre-Sales Technical Advisory",
+    "Regulatory Compliance & Risk",
+    "Cross-Functional Stakeholder Influence",
+    "Vendor & Platform Evaluation",
+    "Multi-Site Customer Operations",
+    "Field Enablement Adjacent"
+  ],
+  "experience": [
+    {
+      "company": "Independent Consultant",
+      "period": "Nov 2024 - Present",
+      "role": "Technology Consultant",
+      "location": "Houston, TX",
+      "bullets": [
+        "Designed an <strong>algorithmic AI evaluation framework</strong> -- scoring rubric, capability taxonomy, evaluation flow -- adopted by a national CX consulting firm to compare enterprise contact-center AI platforms across NICE / Genesys-tier solutions and AI-focused startups.",
+        "Provide <strong>pre-sales technical advisory</strong> on generative and agentic AI architectures, automation, and implementation; translate executive priorities into architectural trade-offs and concrete CC platform decisions.",
+        "Hands-on AI-assisted engineering daily with Claude and GitHub Copilot; published thinking on AI adoption realities, the automation-vs-AI distinction, and practitioner workflow on LinkedIn."
+      ]
+    },
+    {
+      "company": "Money Management International",
+      "period": "Nov 2010 - Oct 2024",
+      "role": "Chief Technology Officer",
+      "location": "Houston, TX",
+      "bullets": [
+        "Directed enterprise technology for a national 501(c)(3) nonprofit operating as a multi-site contact center -- financial counseling, debt management, and consumer financial education delivered through a <strong>dedicated 300-person call-center workforce</strong> -- multiple regional centers plus roughly 100 individual remote agents -- under continuous regulatory scrutiny across all 50 states and federal regulators (HIPAA, PCI-DSS, CARD Act).",
+        "Owned the <strong>homegrown CRM</strong> that sat at the core of the organization, supporting all consumer contact (inbound and outbound), program mechanics, reporting, and client financial transactions. The platform predicted, staged, arranged, and produced <strong>nearly $1M in daily payments</strong> to thousands of creditors on clients' behalf at <strong>100% accuracy year over year</strong>; additionally every customer contact across every channel was recorded and facilitated here.",
+        "Owned the <strong>call center platform</strong> -- telephony, routing, outbound dialer campaigns, and integrations into creditor systems, payment processors, regulatory reporting, self-service, training/coaching, and knowledge management. Led the <strong>2024 transformation</strong> that introduced intelligent call routing, AI-assisted coaching and monitoring, and integrated knowledge bots -- with <strong>zero service disruption on day-one go-live</strong>.",
+        "Owned <strong>core enterprise IT services</strong> -- Office software, email, file storage, endpoint and network security, identity.",
+        "Owned <strong>8-year roadmap</strong> for the homegrown CRM platform; multi-factor prioritization model (ROI x user satisfaction x efficiency x cross-departmental equity) across 12+ executive and operations stakeholders; multi-product platform extensibility architected from single-product origin.",
+        "Modernized SDLC through Agile transformation (SAFe 10-week to 2-week sprints); <strong>doubled development throughput</strong> and reduced concept-to-deployment timelines by up to 20% YoY.",
+        "Advanced through progressive roles: <strong>DBA / SQL Architect -> IT Manager -> VP IT -> first CTO</strong> in the organization's 45+ year history; built and led a 35+ direct (75+ extended) technology team."
+      ]
+    },
+    {
+      "company": "DMLCo",
+      "period": "Jan 1996 - Jan 2012",
+      "role": "Founder & President",
+      "location": "Houston, TX",
+      "bullets": [
+        "Founded and ran a web development and IT consulting firm for 17 years -- full P&amp;L ownership; delivered custom digital solutions for dozens of clients across content-driven and transactional verticals.",
+        "Architected and operated a proprietary commercial-grade CMS supporting dozens of production sites; direct client engagement across discovery, scope, architecture, build, and ongoing support."
+      ]
+    }
+  ],
+  "education": [
+    {"title": "PhD, Religious Studies", "org": "Rice University", "location": "Houston, TX"},
+    {"title": "BA, English", "org": "Columbia University", "location": "New York, NY"}
+  ],
+  "skills": [
+    {"category": "Contact Center & CCaaS", "items": "Multi-Site CC Operations, Multi-Channel Routing, AI Coaching/Monitoring, Knowledge Bots, CRM Platform Architecture, Productivity Suite Ownership, Telephony / WFM"},
+    {"category": "AI & ML", "items": "Claude API, Generative AI, Agentic AI, AI Architecture Evaluation, LLM Platforms, DataRobot (Production ML)"},
+    {"category": "Data & Analytics", "items": "Data Warehousing, Power BI, Tableau, SQL/T-SQL, Data Governance"},
+    {"category": "Compliance & Risk", "items": "PCI-DSS, HIPAA, CARD Act, Multi-State Regulatory, GRC Programs"},
+    {"category": "Cloud & DevOps", "items": "Microsoft Azure, Azure DevOps, GitHub, Cloud Migration"},
+    {"category": "Methodology", "items": "Agile/SAFe, SDLC Modernization, Multi-Stakeholder Roadmap, ePMO Governance"}
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "subtitle": "Senior Technology & Transformation Leader -- Portfolio Governance | Cross-Functional PMO | Executive Stakeholder Engagement",
+  "lang": "en",
+  "format": "letter",
+  "summary_text": "Senior technology and transformation leader with 14 years building and running an enterprise transformation portfolio at Money Management International -- a national 501(c)(3) financial services nonprofit operating under continuous regulatory scrutiny across all 50 states plus federal regulators (HIPAA, PCI-DSS, CARD Act, CFPB). Built MMI's Enterprise PMO from scratch and operated the multi-factor prioritization model (ROI x user satisfaction x efficiency x cross-departmental equity) governing sprint-over-sprint decisions across 12+ executive and operations stakeholders and a 45-50 person delivery organization. Currently consulting on AI architecture, automation, and implementation -- including a structured evaluation methodology adopted by a national CX consulting firm. Comfortable owning a transformation portfolio through influence rather than line authority -- consensus, earned-veto, and explicit governance frameworks have been the operating model throughout.",
+  "competencies": [
+    "Transformation Portfolio Governance",
+    "Enterprise PMO Leadership",
+    "Multi-Factor Roadmap Prioritization",
+    "Cross-Functional Stakeholder Engagement",
+    "Executive Communication & Storytelling",
+    "AI Adoption Strategy",
+    "Operating Model Design",
+    "KPI Architecture & Reporting",
+    "Regulated Financial Services Operating Depth",
+    "Process Re-Engineering & SDLC Modernization",
+    "Vendor Selection & Build-Buy-Partner Strategy",
+    "Influence Through Consensus & Earned-Veto"
+  ],
+  "experience": [
+    {
+      "company": "Independent Consultant",
+      "period": "Nov 2024 - Present",
+      "role": "Technology Consultant",
+      "location": "Houston, TX",
+      "bullets": [
+        "Designed an algorithmic <strong>AI architecture evaluation framework</strong> -- scoring rubric, capability taxonomy, evaluation flow -- adopted by a national CX consulting firm to inform investment and vendor-selection decisions across enterprise AI platforms.",
+        "Provide client-facing <strong>transformation methodology advisory</strong> on generative and agentic AI architectures, automation, and implementation; translate executive priorities into architectural trade-offs and concrete platform decisions.",
+        "Hands-on AI-assisted engineering daily with Claude and GitHub Copilot; published thinking on AI adoption realities, the automation-vs-AI distinction, and reflexive AI governance practice on LinkedIn."
+      ]
+    },
+    {
+      "company": "Money Management International",
+      "period": "Nov 2010 - Oct 2024",
+      "role": "Chief Technology Officer",
+      "location": "Houston, TX",
+      "bullets": [
+        "Directed enterprise technology for a <strong>national 501(c)(3) regulated financial services nonprofit</strong> -- under continuous audit across all 50 states plus federal regulators including the CFPB, with HIPAA, PCI-DSS, and CARD Act overlays. Comparable regulatory surface to wealth management and broker-dealer firms.",
+        "Built <strong>Enterprise PMO</strong> from scratch; consolidated cross-functional project governance across IT and non-IT functions; delivered <strong>25% improvement in project budget and time adherence</strong> across a $30-50M annual portfolio.",
+        "Owned <strong>multi-year transformation portfolio</strong> for MMI's homegrown ERP/CRM platform for 8 years; multi-factor prioritization model (ROI x user satisfaction x efficiency x cross-departmental equity) governed sprint-over-sprint decisions across 12+ executive and operations stakeholders and a 45-50 person delivery organization.",
+        "Led <strong>4-5 board engagements per year</strong> over 8-year CTO tenure -- presenting major transformation initiatives, financial forecasting, and risk posture to non-technical executive audiences.",
+        "Led full enterprise <strong>contact center AI transformation</strong> -- intelligent routing, AI-assisted coaching and monitoring, integrated knowledge bots -- with zero service disruption on day-one go-live; build-buy-partner architecture across enterprise CC + specialized AI vendors.",
+        "Modernized SDLC through Agile transformation (SAFe 10-week to 2-week sprints); <strong>doubled development throughput</strong> and reduced concept-to-deployment timelines by up to 20% YoY.",
+        "Spearheaded multi-year cloud-first transformation; migrated all enterprise workloads to Azure; sustained <strong>100% PCI-DSS certification</strong> across multiple audit cycles alongside HIPAA and CARD Act compliance.",
+        "Built and led a 35+ direct (75+ extended) technology team; sustained highest retention and satisfaction in the enterprise across 14 years."
+      ]
+    },
+    {
+      "company": "DMLCo",
+      "period": "Jan 1996 - Jan 2012",
+      "role": "Founder & President",
+      "location": "Houston, TX",
+      "bullets": [
+        "Founded and ran a web development and IT consulting firm for 17 years -- full P&amp;L ownership; delivered custom digital solutions for dozens of clients across content-driven and transactional verticals.",
+        "Architected and operated a proprietary commercial-grade CMS supporting dozens of production sites; direct client engagement across discovery, scope, architecture, build, and ongoing support."
+      ]
+    }
+  ],
+  "education": [
+    {"title": "PhD, Religious Studies", "org": "Rice University", "location": "Houston, TX"},
+    {"title": "BA, English", "org": "Columbia University", "location": "New York, NY"}
+  ],
+  "skills": [
+    {"category": "Transformation & Portfolio", "items": "Enterprise PMO Governance, Multi-Year Roadmap, Multi-Factor Prioritization, Operating Model Design, KPI Architecture, Process Re-Engineering"},
+    {"category": "Stakeholder & Communication", "items": "Board-Level Communication, 12+ Executive Stakeholder Governance, Cross-Functional Influence, Consensus / Earned-Veto Operating Model"},
+    {"category": "AI & Technology Strategy", "items": "Generative AI, Agentic AI, AI Architecture Evaluation, LLM Platforms, Build-Buy-Partner Strategy"},
+    {"category": "Cloud & Delivery", "items": "Microsoft Azure, Azure DevOps, GitHub, Cloud Migration, Agile/SAFe, SDLC Modernization"},
+    {"category": "Compliance & Risk", "items": "PCI-DSS, HIPAA, CARD Act, CFPB, Multi-State Regulatory, GRC Programs"},
+    {"category": "Data & Analytics", "items": "DataRobot (Production ML), Power BI, Tableau, SQL/T-SQL, Data Governance"}
+  ]
+}

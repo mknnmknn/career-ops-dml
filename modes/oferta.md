@@ -85,60 +85,64 @@ Incluir también:
 - 1 case study recomendado (cuál de sus proyectos presentar y cómo)
 - Preguntas red-flag y cómo responderlas (ej: "¿por qué vendiste tu empresa?", "¿tienes equipo de reports?")
 
-## Bloque G — Posting Legitimacy
+## Bloque G — Posting Legitimacy (simplified 2026-04-27)
 
-Analyze the job posting for signals that indicate whether this is a real, active opening. This helps the user prioritize their effort on opportunities most likely to result in a hiring process.
+**Scope:** Block G evaluates **posting freshness and legitimacy signals only** — NOT AI-theater detection, strategic-substance assessment, or culture-fit analysis. Theater/substance/culture analysis lives in `interview-prep` mode where it actually informs decisions; in pre-application scoring it consumes tokens without changing outcomes.
 
-**Ethical framing:** Present observations, not accusations. Every signal has legitimate explanations. The user decides how to weigh them.
+**Ethical framing:** Observations, not accusations. Every signal has legitimate explanations. The user decides how to weigh them.
 
 ### Signals to analyze (in order):
 
-**1. Posting Freshness** (from Playwright snapshot, already captured in Paso 0):
-- Date posted or "X days ago" -- extract from page
+**1. Posting Freshness:**
+- Date posted or "X days ago" — extract from page
 - Apply button state (active / closed / missing / redirects to generic page)
 - If URL redirected to generic careers page, note it
+- HTTP 404, 410, "no longer accepting" → **DEAD URL** — see short-circuit rule below
 
-**2. Description Quality** (from JD text):
+**2. Description Quality:**
 - Does it name specific technologies, frameworks, tools?
 - Does it mention team size, reporting structure, or org context?
 - Are requirements realistic? (years of experience vs technology age)
-- Is there a clear scope for the first 6-12 months?
-- Is salary/compensation mentioned?
-- What ratio of the JD is role-specific vs generic boilerplate?
+- Is salary/compensation mentioned? (if yes, that comp is AUTHORITATIVE — see batch-prompt.md JD Source-of-Truth Rule)
 - Any internal contradictions? (entry-level title + staff requirements, etc.)
 
-**3. Company Hiring Signals** (2-3 WebSearch queries, combine with Block D research):
-- Search: `"{company}" layoffs {year}` -- note date, scale, departments
-- Search: `"{company}" hiring freeze {year}` -- note any announcements
-- If layoffs found: are they in the same department as this role?
-
-**4. Reposting Detection** (from scan-history.tsv):
+**3. Reposting Detection** (from scan-history.tsv):
 - Check if company + similar role title appeared before with a different URL
 - Note how many times and over what period
 
-**5. Role Market Context** (qualitative, no additional queries):
-- Is this a common role that typically fills in 4-6 weeks?
-- Does the role make sense for this company's business?
-- Is the seniority level one that legitimately takes longer to fill?
+**4. Confirmed company-stability signals** (NOT score deductions — go in Verify-Before-Applying flag):
+- Layoffs, exec churn, sale rumors, hiring freezes — collect, do not weight against the role's score
+- See `_profile.md` "Company-Stability Concerns → Verify-Before-Applying Flag"
 
 ### Output format:
 
 **Assessment:** One of three tiers:
-- **High Confidence** -- Multiple signals suggest a real, active opening
-- **Proceed with Caution** -- Mixed signals worth noting
-- **Suspicious** -- Multiple ghost job indicators, investigate before investing time
+- **High Confidence** — Multiple signals suggest a real, active opening
+- **Proceed with Caution** — Mixed signals worth noting
+- **Suspicious** — Multiple ghost-job indicators, investigate before investing time
 
-**Signals table:** Each signal observed with its finding and weight (Positive / Neutral / Concerning).
+**Verify Before Applying:** Bulleted list of items the user should confirm before clicking apply (layoff history, exec changes, posting age, salary undisclosed, etc.). May be "None" for clean postings.
 
-**Context Notes:** Any caveats (niche role, government job, evergreen position, etc.) that explain potentially concerning signals.
+**DO NOT include in Block G:**
+- AI-theater / strategic-substance analysis (move to interview-prep mode)
+- Culture-fit speculation (move to interview-prep)
+- Score deductions for company stability concerns (use Verify flag instead)
+
+### Dead-URL Short-Circuit (HARD RULE):
+
+If posting is confirmed dead (HTTP 404/410, "no longer accepting applications", removed from careers site) AND no separately accessible JD exists (no `jds/{NUM}.txt`, no archive copy), STOP scoring after Block A. Output:
+- Score: **0/5**
+- Status: **Discarded**
+- Note: "Posting confirmed closed (HTTP {code}); discarded without archetype scoring."
+
+DO NOT spend tokens on Blocks B-F for confirmed-dead URLs. The user's time is better spent on live postings.
 
 ### Edge case handling:
-- **Government/academic postings:** Longer timelines are standard. Adjust thresholds (60-90 days is normal).
-- **Evergreen/continuous hire postings:** If the JD explicitly says "ongoing" or "rolling," note it as context -- this is not a ghost job, it is a pipeline role.
-- **Niche/executive roles:** Staff+, VP, Director, or highly specialized roles legitimately stay open for months. Adjust age thresholds accordingly.
-- **Startup / pre-revenue:** Early-stage companies may have vague JDs because the role is genuinely undefined. Weight description vagueness less heavily.
-- **No date available:** If posting age cannot be determined and no other signals are concerning, default to "Proceed with Caution" with a note that limited data was available. NEVER default to "Suspicious" without evidence.
-- **Recruiter-sourced (no public posting):** Freshness signals unavailable. Note that active recruiter contact is itself a positive legitimacy signal.
+- **Government/academic postings:** Longer timelines are standard (60-90 days normal).
+- **Evergreen/continuous hire postings:** If JD explicitly says "ongoing" or "rolling," note as context — pipeline role, not ghost.
+- **Niche/executive roles:** Staff+, VP, Director, specialized roles legitimately stay open for months.
+- **No date available:** Default to "Proceed with Caution" with note about limited data. Never "Suspicious" without evidence.
+- **Recruiter-sourced (no public posting):** Active recruiter contact is itself a positive legitimacy signal.
 
 ---
 

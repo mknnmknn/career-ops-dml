@@ -1,0 +1,80 @@
+{
+  "subtitle": "Senior Product & Platform Leader -- Roadmap Ownership | CMS Architecture | Mission-Driven Tech",
+  "lang": "en",
+  "format": "letter",
+  "summary_text": "Senior product and platform leader with 8 years of platform roadmap ownership and 14 years at a national 501(c)(3) nonprofit. At Money Management International I owned the multi-year roadmap for the homegrown ERP/CRM, directing a 45-50 person delivery organization (BA, QA, software development) and operating an explicit multi-factor prioritization model (ROI x user satisfaction x efficiency x cross-departmental equity) across 12+ executive and operations stakeholders. CMS background runs from architecting a proprietary commercial-grade content management platform at DMLCo -- supporting dozens of production sites for 17 years -- through technical sponsorship for several iterations of expanding Sitecore functionality at MMI. Currently consulting on AI architecture, automation, and implementation. Comfortable owning a roadmap through influence rather than line authority -- consensus, earned-veto, and explicit prioritization frameworks have been the operating model throughout.",
+  "competencies": [
+    "Platform Roadmap Ownership",
+    "Multi-Factor Prioritization Frameworks",
+    "Content Management Systems (CMS)",
+    "Content Authoring & Delivery",
+    "Structured Content & Data Models",
+    "Cross-Functional Stakeholder Governance",
+    "Influence Without Authority",
+    "Systems Thinking & Architecture",
+    "Mission-Driven Technology Leadership",
+    "Capability Envisioning",
+    "Agile / SDLC Modernization",
+    "Technical Debt as Roadmap Input"
+  ],
+  "experience": [
+    {
+      "company": "Independent Consultant",
+      "period": "Nov 2024 - Present",
+      "role": "Technology Consultant",
+      "location": "Houston, TX",
+      "bullets": [
+        "Designed an algorithmic AI evaluation framework -- scoring rubric, capability taxonomy, evaluation flow -- adopted by a national CX consulting firm to compare enterprise AI platforms.",
+        "Provide client-facing advisory on generative and agentic AI architectures, automation, and implementation; translate executive priorities into architectural trade-offs and concrete platform decisions.",
+        "Hands-on AI-assisted engineering daily with Claude and GitHub Copilot; published thinking on AI adoption realities, automation-vs-AI distinction, and practitioner workflow on LinkedIn."
+      ]
+    },
+    {
+      "company": "Money Management International",
+      "period": "Nov 2010 - Oct 2024",
+      "role": "Chief Technology Officer",
+      "location": "Houston, TX",
+      "bullets": [
+        "Directed enterprise technology for a <strong>national 501(c)(3) nonprofit</strong> providing financial counseling, debt management, and consumer financial education -- auditable across all 50 states plus federal regulators including the CFPB, with HIPAA, PCI-DSS, and CARD Act overlays.",
+        "Owned the <strong>multi-year platform roadmap</strong> for MMI's homegrown ERP/CRM for 8 years, directing a <strong>45-50 person delivery organization</strong> (BA, QA, software development) across 12+ executive and operations stakeholders; capability envisioning, technical-debt-as-roadmap-input, and platform-product extensibility were first-class roadmap inputs.",
+        "Built and operated a <strong>multi-factor prioritization model</strong> (ROI x user satisfaction x efficiency x cross-departmental equity) governing sprint-over-sprint decisions; the equity mechanism was the contested-but-load-bearing piece that prevented any single function from dominating or being ignored.",
+        "Architected platform extensibility from <strong>single-product tool to variable multi-product financial platform</strong> -- each product carrying its own matrix of requirements, fees, and support; platform-product thinking applied to a regulated nonprofit context.",
+        "Technology sponsor through <strong>several iterations of expanding Sitecore functionality</strong> at MMI scale -- content authoring workflows, structured content models, multi-site deployment, integration with the homegrown platform.",
+        "Led cross-functional <strong>data-definitions discipline</strong> across 12+ executive and operations stakeholders -- agreement on metric calculations, definitions, and the cross-team incentive conflicts that surface around them.",
+        "Modernized SDLC through Agile transformation (SAFe 10-week to 2-week sprints); <strong>doubled development throughput</strong> and reduced concept-to-deployment timelines by up to 20% year-over-year.",
+        "Operational reliability outcome of the platform's core function: <strong>daily movement of client funds at 100% accuracy</strong> year over year across the post-platform-recovery period.",
+        "Built and led a 35+ direct (75+ extended) technology team; sustained highest retention and satisfaction in the organization across 14 years."
+      ]
+    },
+    {
+      "company": "DMLCo",
+      "period": "Jan 1996 - Jan 2012",
+      "role": "Founder & President",
+      "location": "Houston, TX",
+      "bullets": [
+        "Founded and ran a web development and IT consulting firm for 17 years -- full P&amp;L ownership; delivered custom digital solutions for dozens of clients across content-driven and transactional verticals.",
+        "Architected and operated a <strong>proprietary commercial-grade content management platform</strong> in ColdFusion -- supporting dozens of content-driven client sites at production scale, frequently serving as clients' first digital presence.",
+        "Direct client engagement, scope definition, and full delivery lifecycle -- discovery, content modeling, architecture, build, launch, ongoing support."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "github.com/mknnmknn/about-mknn",
+      "badge": "GitHub",
+      "desc": "Overview of public projects, with access to private repositories on request. Featured project: career-ops-dml -- a private fork of santifer/career-ops, customized into the LLM-assisted pipeline used daily in my job search. Working code extended alongside Claude Code (Node.js, Claude API, Playwright, Go)."
+    }
+  ],
+  "education": [
+    {"title": "PhD, Religious Studies", "org": "Rice University", "location": "Houston, TX"},
+    {"title": "BA, English", "org": "Columbia University", "location": "New York, NY"}
+  ],
+  "skills": [
+    {"category": "Product & Platform", "items": "Platform Roadmap, Multi-Factor Prioritization, Capability Envisioning, Multi-Stakeholder Governance, Platform Extensibility"},
+    {"category": "Content Systems & CMS", "items": "Sitecore (Technical Sponsor), Custom CMS Architecture (ColdFusion), Content Authoring Workflows, Structured Content Models, Multi-Site Deployment"},
+    {"category": "Data & Analytics", "items": "Cross-Functional Data Definitions, Power BI, Tableau, SQL / T-SQL, Data Warehousing, DataRobot (Production ML)"},
+    {"category": "Methodology", "items": "Agile / SAFe, SDLC Modernization, ePMO Governance, Scope/Schedule/Budget Management"},
+    {"category": "Programming & Tools", "items": "ColdFusion (CMS origin), JavaScript, Python, Node.js, Git / GitHub, Playwright"},
+    {"category": "Compliance & Governance", "items": "PCI-DSS, HIPAA, CARD Act, Multi-State Regulatory, GRC Programs"}
+  ]
+}

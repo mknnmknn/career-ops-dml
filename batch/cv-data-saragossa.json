@@ -1,0 +1,71 @@
+{
+  "subtitle": "Chief Information Officer -- Enterprise Technology Portfolio | Executive Partnership | Multi-Stakeholder Governance",
+  "lang": "en",
+  "format": "letter",
+  "summary_text": "Senior technology executive with 14 years of full-function CTO/CIO leadership at Money Management International -- a national 501(c)(3) financial services nonprofit operating under continuous regulatory scrutiny across all 50 states plus federal regulators (HIPAA, PCI-DSS, CARD Act, CFPB). Owned a $15M+ IT operating budget within $30-50M total IT spend; led 35+ direct and 75+ extended staff; governed technology investment across infrastructure, software development, data and analytics, security, and contact center operations. Built and ran the Enterprise PMO from scratch -- 25% improvement in project budget and time adherence across a $30-50M annual portfolio. Sustained 100% PCI-DSS certification across multiple audit cycles alongside HIPAA and CARD Act compliance; delivered multiple zero-disruption go-lives on major platform transformations. Currently consulting independently on AI architecture, automation, and implementation while targeting the next executive technology leadership seat.",
+  "competencies": [
+    "CIO/CTO Full-Function Leadership",
+    "Enterprise Technology Portfolio Governance",
+    "IT Financial Management ($15M+ Operating)",
+    "Executive & Board Stakeholder Engagement",
+    "Cross-Functional Investment Prioritization",
+    "Vendor Selection & Build-Buy-Partner",
+    "Cloud Migration & Infrastructure Strategy",
+    "Cybersecurity & Regulatory Compliance",
+    "Data Function End-to-End Ownership",
+    "Transformation Program Leadership",
+    "Mission-Driven Technology Leadership",
+    "AI Architecture Evaluation"
+  ],
+  "experience": [
+    {
+      "company": "Independent Consultant",
+      "period": "Nov 2024 - Present",
+      "role": "Technology Consultant",
+      "location": "Houston, TX",
+      "bullets": [
+        "Designed an algorithmic <strong>AI architecture evaluation framework</strong> -- scoring rubric, capability taxonomy, evaluation flow -- adopted by a national CX consulting firm to compare enterprise AI platforms with explicit governance, integration-fit, and capability dimensions.",
+        "Provide client-facing advisory on generative and agentic AI architectures, automation, and implementation; translate executive priorities into architectural trade-offs and concrete platform decisions for enterprise environments.",
+        "Hands-on AI-assisted engineering daily with Claude and GitHub Copilot; published thinking on AI adoption realities, the automation-vs-AI distinction, and reflexive AI governance practice on LinkedIn."
+      ]
+    },
+    {
+      "company": "Money Management International",
+      "period": "Nov 2010 - Oct 2024",
+      "role": "Chief Technology Officer",
+      "location": "Houston, TX",
+      "bullets": [
+        "Directed enterprise technology for a <strong>national 501(c)(3) nonprofit</strong> -- under continuous regulatory scrutiny across all 50 states plus federal regulators including the CFPB, with HIPAA, PCI-DSS, and CARD Act overlays.",
+        "Appointed as the <strong>first CTO in the organization's 45+ year history</strong>; built and led a 35+ direct (75+ extended) technology team across IT operations, infrastructure, software engineering, data, security, and contact center operations; sustained highest retention and satisfaction in the enterprise across 14 years; team-of-teams structure including Head of Data, Head of Infrastructure, ePMO leader, and two software development leads.",
+        "Owned <strong>$15M+ IT operating budget</strong> within $30-50M total IT spend; led 4-5 board engagements per year; <strong>maintained year-over-year budget adherence and accurate financial forecasting through major pandemic disruption and recovery</strong>.",
+        "Built <strong>Enterprise PMO</strong> from scratch; multi-factor prioritization model (ROI x user satisfaction x efficiency x cross-departmental equity) across 12+ executive and operations stakeholders; <strong>25% improvement in project budget and time adherence</strong> across $30-50M annual portfolio.",
+        "Spearheaded multi-year transition to a <strong>digital-first, cloud-first, security-first model</strong>; migrated all enterprise workloads to Azure; sustained <strong>100% PCI-DSS certification</strong> across multiple audit cycles alongside HIPAA and CARD Act compliance.",
+        "Owned <strong>data function end-to-end</strong> -- DBA / SQL Architect origin, enterprise data warehouse maturation, and production ML deployment via DataRobot for credit and servicing decisions under regulatory governance.",
+        "Led full enterprise <strong>contact center / communications platform transformation</strong> with zero service disruption on day-one go-live; modernized SDLC through Agile transformation -- doubled development throughput; led digital transformation driving <strong>200%+ growth in SEO and digital acquisition</strong>.",
+        "Advanced through progressive roles: <strong>DBA / SQL Architect -> IT Manager -> VP IT -> first CTO</strong>."
+      ]
+    },
+    {
+      "company": "DMLCo",
+      "period": "Jan 1996 - Jan 2012",
+      "role": "Founder & President",
+      "location": "Houston, TX",
+      "bullets": [
+        "Founded and ran a web development and IT consulting firm for 17 years -- full P&amp;L ownership; delivered custom digital solutions for dozens of clients across content-driven and transactional verticals.",
+        "Architected and operated a proprietary commercial-grade CMS supporting dozens of production sites; direct client engagement across discovery, scope, architecture, build, and ongoing support."
+      ]
+    }
+  ],
+  "education": [
+    {"title": "PhD, Religious Studies", "org": "Rice University", "location": "Houston, TX"},
+    {"title": "BA, English", "org": "Columbia University", "location": "New York, NY"}
+  ],
+  "skills": [
+    {"category": "Executive Leadership", "items": "CIO/CTO Full-Function, Board Engagement, Executive Stakeholder Alignment, Multi-Stakeholder Governance, Consensus / Earned-Veto Operating Model"},
+    {"category": "IT Financial Management", "items": "$15M+ IT Operating Budget, $30-50M Total IT Spend, Financial Forecasting, Variance Analysis, Vendor Budget Governance"},
+    {"category": "Cloud & Infrastructure", "items": "Microsoft Azure, Azure DevOps, Cloud Migration, Multi-Generation End-User Compute, Network/Endpoint Security, Identity"},
+    {"category": "Data & AI", "items": "DataRobot (Production ML), Data Warehousing, Power BI, Tableau, Generative AI, Agentic AI, AI Architecture Evaluation"},
+    {"category": "Methodology & PMO", "items": "Enterprise PMO Governance, Agile/SAFe, SDLC Modernization, Multi-Factor Prioritization, Build-Buy-Partner"},
+    {"category": "Compliance & Risk", "items": "PCI-DSS, HIPAA, CARD Act, CFPB, Multi-State Regulatory, GRC Programs"}
+  ]
+}

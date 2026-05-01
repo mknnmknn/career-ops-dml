@@ -180,3 +180,46 @@ Restructured fork-specific user-layer files for clearer provenance. **Principle:
 **Not updated (deliberate):** `modes/_profile.template.md`, `CLAUDE.md`, `README.md`, `DATA_CONTRACT.md`, `AGENTS.md`, `docs/*.md`, and the de/fr/ja `_shared.md` files. These are upstream-shipped or unmaintained-in-this-fork; their references to `article-digest.md` remain correct (the file still exists with its narrower scope), and adding `dml-experience.md` references in them would create unnecessary upstream-merge churn.
 
 **Historical APPLIED docs left intact:** `patches/generic-cv-pass-1-notes-APPLIED.md`, `patches/generic-cv-pass-2-notes-APPLIED.md`, and `patches/reconciliation-2026-04-30-APPLIED.md` reference `cv-generic.md` and the pre-split `article-digest.md` content. These are immutable records of what was applied at their respective dates; updating them would falsify the history.
+
+### 2026-05-01 — v1.3.0 → v1.6.0 upstream upgrade (surgical-merge methodology established)
+
+First major upstream upgrade since fork divergence. Skipped two intermediate releases (v1.4.0, v1.5.0). Captured upstream improvements without losing fork customizations, **and used the upgrade as the moment to discover and document undocumented patches.** Full verdicts in `patches/README.md` "Upgrade History" section.
+
+**Process invented (now codified):** Surgical-merge methodology in three steps:
+
+1. **Run `update-system.mjs apply` and let it overwrite system-layer files.** Backup branch + rollback are the safety net.
+2. **Per-file diff to separate signal from noise:**
+   - `git diff v{old}..upstream/main -- <file>` = real upstream churn (signal)
+   - `git diff backup-pre-update-{old}..HEAD -- <file>` = total upgrade churn (signal + noise)
+   - The gap = how much our patches were silently overwritten
+3. **Three categories emerge:**
+   - **Pure customization revert** (upstream churn = 0, total churn > 0) → `git checkout backup -- <file>`. Mechanical. Single bulk commit.
+   - **Pure upstream improvement** (no fork customization) → leave it. Free upgrade.
+   - **Mixed** (both upstream and fork changed it) → surgical merge per file, one commit each.
+
+**Critical correction discovered mid-upgrade:** `update-system.mjs apply` fetches `upstream/main` HEAD, NOT the latest tagged release. `upstream/main` was 4 commits ahead of `v1.6.0` tag, including a writing-samples folder feature (`9ae201d`). My initial analysis using `v1.3.0..v1.6.0` understated upstream's changes and would have caused me to clobber real upstream content. Always diff against `upstream/main`. (Now codified in patches/README.md re-apply workflow.)
+
+**Verdict summary (Patches #1-5):**
+- #1 Archetype taxonomy → Re-applied
+- #2 Dashboard JobID column → **Retired** (upstream's `renderAppLine` now ships tracker IDs natively as bold-blue `#NNN`, superior to ours)
+- #3 `**#:**` report header → Re-applied + drift fix (`**JobID:**` in batch-prompt template was inconsistent with reports on disk; renamed to `**#:**`)
+- #4 CV `.job` page-break → Re-applied (zero upstream churn in cv-template.html or fill-template.mjs)
+- #5 dml-* files + USER_PATHS → Re-applied
+
+**Six new patches discovered and documented (#6-#11):** `batch/batch-prompt.md` English translation (silently translated in commit `47cde27` "Large commit of various customizations" with no patch entry); `modes/oferta.md` and `modes/pipeline.md` customizations; `cv-sync-check.mjs` `dml-experience.md` integration; `merge-tracker.mjs` + `dedup-tracker.mjs` corporate-suffix-aware normalization + Needs JD state + report-num-as-tracker-row logic; `.github/workflows/*.yml` fork-specific CI tweaks.
+
+**Key files touched (committed in sequence):**
+1. `dd87802` Category A bulk restore (10 files: batch-prompt.md, oferta.md, pipeline.md, cv-template.html, cv-sync-check.mjs, 5 workflows + JobID→#: drift fix)
+2. `af8e32f` `modes/_shared.md` surgical merge (Patches #1, #3, #5 layered on upstream's writing-samples + Writing Style Calibration)
+3. `d791394` `update-system.mjs` USER_PATHS additions (Patch #5)
+4. `74614c9` `merge-tracker.mjs` surgical merge
+5. `b001586` `dedup-tracker.mjs` COMPANY_SUFFIXES merge
+6. `337c595` Dashboard binary rebuild
+7. `2f6b0c9` `patches/README.md` major update (Upgrade History + Patches #6-#11 + Patch #2 retirement)
+8. (this commit) PLAYBOOK calibration entry
+
+**Smoke tests passed:** `verify-pipeline.mjs` (0 errors / 0 warnings, 284 entries), `cv-sync-check.mjs` (all checks passed), `merge-tracker.mjs --dry-run` (existing 284 entries detected, max #386).
+
+**Meta-finding (most important):** `patches/README.md` was incomplete pre-upgrade. At least 6 system-layer files had fork divergences not tracked there, so the upgrade silently clobbered them. **Going forward: any time we modify a system-layer file, add an entry to `patches/README.md` immediately.** `update-system.mjs apply` has no other safety net — uncommitted changes in a SYSTEM_PATH file are silently lost on `git checkout FETCH_HEAD --`. The backup branch only protects committed history, not undocumented divergences.
+
+**Practice insight:** The upgrade itself was bounded (90 minutes elapsed, ~10 commits). The bulk of the work was *understanding* what changed and why, not mechanical patching. Treating each upstream upgrade as a calibration opportunity (re-discovering and documenting undocumented patches) is the right cadence; the documentation cost amortizes across all future upgrades.

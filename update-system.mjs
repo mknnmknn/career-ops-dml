@@ -94,6 +94,8 @@ const USER_PATHS = [
   'modes/_profile.md',
   'portals.yml',
   'article-digest.md',
+  'dml-experience.md',
+  'dml-cv-generic.md',
   'interview-prep/story-bank.md',
   'data/',
   'reports/',

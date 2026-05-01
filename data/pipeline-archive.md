@@ -266,3 +266,104 @@ Entries from earlier workflow where new finds went into a free-form `## Inbox` s
 - [x] https://to.indeed.com/aafzf8qlnwzr | brightfin | Vice President - Engineering | found via scan 2026-04-14
 - [x] https://to.indeed.com/aaych2wnlqgs | DOXA Insurance | VP & Head of IT Business Applications | found via scan 2026-04-14
 - [x] https://to.indeed.com/aajqdjjdjvt4 | DLA LLC | Chief Technology Officer | found via scan 2026-04-14
+
+## Cleanup pass 2026-05-01
+
+<!-- Processed 2026-04-27 — Slalom JS-portal (inaccessible, SKIP) -->
+- [x] #352 | https://jobs.slalom.com//#/post/a0hPh000005Sx3tIAC | Slalom | [!] JD inaccessible — JS-rendered Salesforce portal | 0.0/5 SKIP | PDF ❌
+
+<!-- Processed 2026-04-27 — main Inbox batch -->
+- [x] #236 | https://jobs.ashbyhq.com/riveron/94810ed6-ec35-4453-aff2-84e28b0c750c/application | Riveron | Technology & Innovation - Solution Architect (OneStream) | 2.0/5 | PDF ❌
+- [x] #238 | https://hdr.taleo.net/careersection/ex/jobdetail.ftl?job=192589&lang=en | HDR | Cross Sector Technology Director | 3.0/5 | PDF ✅
+- [x] #239 | https://www.appfolio.com/open-roles?p=job%2Fo0cTzfwo | AppFolio | SVP, Engineering | 2.8/5 | PDF ✅
+- [x] #244 | https://careers.servicenow.com/jobs/744000120001367/partner-technology-strategist/ | ServiceNow | Partner Technology Strategist | 2.0/5 | PDF ❌
+- [x] #246 | https://lplfinancial.wd1.myworkdayjobs.com/External/job/Fort-MillCharlotte/VP--Technology---Product-Transformation_R-049927-1 | LPL Financial | VP, Technology & Product Transformation | 3.1/5 | PDF ✅
+- [x] #249 | https://jobs.bmc.com/Careers/JobDetail/Pipeline-AI-Digital-Transformation-Manager/46617 | BMC | AI/Digital Transformation Manager | 2.5/5 | PDF ✅
+- [x] #250 | https://careers.situsamc.com/job-detail/vice-president-lead-ai-innovation-remote-us-jr02699-1 | SitusAMC | VP, Lead AI Innovation | 2.1/5 | PDF ✅
+- [x] #251 | https://crescentenergyco.wd108.myworkdayjobs.com/crescent_energy_careers/job/Houston/Director-of-Data---Analytics_R264 | Crescent | Director of Data & Analytics | 3.0/5 | PDF ✅
+- [x] #253 | https://job-boards.greenhouse.io/arcadiacareers/jobs/8513743002 | Arcadia | Head of Product, Data Platform | 3.0/5 | PDF ✅
+- [x] #254 | https://careers.ey.com/ey/job/Atlanta-Senior-Manager-AI-Architecture-Knowledge-AI-GA-30308/1276813001/ | EY | Senior Manager, AI Architecture (Knowledge AI) | ~2.5/5 | PDF ❌
+- [x] #257 | https://careers.slb.com/jobdescription.aspx?id=EF16121-en_US+1 | SLB | Digital Twin Architect | 1.5/5 | PDF ❌
+- [x] #259 | https://careers.hcltech.com/job/Transition-Practice-Head/92271-en_US/ | HCL Tech | Transition Practice Head | 2.4/5 | PDF ✅
+- [x] #260 | https://careers.crowe.com/job/CROCROUSR50742EXTERNALENUS/Technology-Advisory-Manager | Crowe | Technology Advisory Manager | 2.7/5 | PDF ❌
+- [x] #261 | https://apply.careers.microsoft.com/careers/job/1970393556827540 | Microsoft | Principal PM - Human Data | 2.5/5 | PDF ✅
+- [x] #322 | https://www.3ds.com/careers/jobs/vp-professional-services-data-experience-546647 | Dassault / Medidata | VP Professional Services, Data Experience | 3.0/5 | PDF ✅
+- [x] #364 | https://job-boards.greenhouse.io/affirm/jobs/7705604003 | Affirm | Director, Software Engineering (Loans Lifecycle) | 2.4/5 | PDF ❌
+- [x] #264 | https://jobs.lever.co/aledade/21787819-6373-4736-8766-d49cc84fd3af/apply | Aledade | SVP Data & Infrastructure | 3.2/5 | PDF ✅
+- [x] #269 | https://careers.duolingo.com/jobs/8385137002 | Duolingo | Engineering Director, Long-Form Learning | 2.0/5 | PDF ✅
+- [x] #268 | https://asana.com/jobs/apply/7718738 | Asana | Head of Engineering, Core Product & CWM | 2.0/5 | PDF ✅
+- [x] #275 | https://guidewire.wd5.myworkdayjobs.com/external/job/United-States---Remote/Solution-Architect---Industry-Innovation---Co-Development-Group--InnoCoDev-_JR_14284 | Guidewire | Solution Architect - InnoCoDev | 2.0/5 | PDF ✅
+- [x] #277 | https://applicants.bairesdev.com/job/84/284799/apply | BairesDev | Regional CTO | 2.8/5 | PDF ❌
+- [x] #280 | https://careers.kroll.com/en/job/new-york/manager-ai-transformation-advisory/21013805 | Kroll | Manager, AI Transformation Advisory | 2.2/5 | PDF ✅
+- [x] #282 | https://careers.jacobs.com/en_US/careers/JobDetail/Digital-Transformation-Consultant/37437 | Jacobs | Digital Transformation Consultant | 1.5/5 | PDF ❌
+- [x] #287 | https://www.virtusa.com/careers/us/piscataway/others/ai-solutions-architect/job-255417 | Virtusa | AI Solutions Architect | 2.5/5 | PDF ✅
+- [x] #288 | https://recruiting2.ultipro.com/CRO1010CCUSA/JobBoard/74c30440-80fa-4099-8981-2e10b7193d27/OpportunityDetail?opportunityId=eff0d6b5-d89a-4cd2-9381-f3a2e6e1880f | Crown Castle | Director, IT Portfolio Management | 3.6/5 | PDF ✅
+- [x] #290 | https://staffjobsus.kirkland.com/jobs/17185532-associate-director-of-innovation-applications | Kirkland & Ellis | Associate Director, Innovation Applications | 3.7/5 | PDF ✅
+- [x] #296 | https://enbridge.wd3.myworkdayjobs.com/enbridge_careers/job/Houston-TX-USA/Technical-Manager-TIS-EA-Architect_71157-1 | Enbridge | Technical Manager, Enterprise Architecture | 2.6/5 | PDF ✅
+- [x] #297 | https://jobs.arcadis.com/careers/job/563671529951537 | Arcadis | Sr Custom Digital Solutions Team Lead | 2.0/5 | PDF ✅
+- [x] #301 | https://www.dialpad.com/careers/open-opportunities/apply/?id=8336377002 | DialPad | Manager, Corporate IT | 2.0/5 | PDF ✅
+- [x] #327 | https://jobs.slalom.com//#/post/a0hPh000005AxYbIAK | Slalom | Client Partner & Location Leader (Energy & Resources) | 3.0/5 | PDF ❌
+- [x] #332 | https://apply.workable.com/murmuration/j/5A06347E34/ | Murmuration | Senior Technical Analyst | 1.8/5 | PDF ❌
+- [x] #358 | https://www.dsgco.com/search/23096-techsoup-global-chief-ai-data-officer/ | TechSoup | Chief AI & Data Officer (CAIDO) | 4.1/5 | PDF ✅
+- [x] #359 | https://www.techjobsforgood.com/jobs/32433/ | Great Minds | Principal Product Manager | 2.2/5 | PDF ❌
+- [x] #360 | https://thousandbrains.org/company/careers/staff-software-engineer-2/ | ThousandBrains | Developer Advocate | 1.5/5 | PDF ❌
+
+<!-- Processed 2026-04-27 — L2 scan (appended 2026-04-27) -->
+- [x] #336 | https://genesys.wd1.myworkdayjobs.com/job/North-Carolina-USA/Sr-Services-Engagement-Director_JR110841-1 | Genesys | Sr. Services Engagement Director | ~2.8/5 | PDF ❌
+- [x] #361 | https://genesys.wd1.myworkdayjobs.com/job/North-Carolina-USA/Senior-Director--Experience-Acceleration_JR110362 | Genesys | Senior Director, Experience Acceleration | 2.8/5 | PDF ❌
+- [x] #338 | https://genesys.wd1.myworkdayjobs.com/job/Washington-DC-USA/Sr-Services-Engagement-Director_JR109766-1 | Genesys | Sr. Services Engagement Director, Public Sector | ~2.8/5 | PDF ❌
+- [x] #373 | https://www.five9.com/about/careers/job-detail?gh_jid=5811077004 | Five9 | Director, Product Management — Outbound Contact Center | 2.6/5 | PDF ❌
+- [x] #374 | https://www.five9.com/about/careers/job-detail?gh_jid=5896849004 | Five9 | Senior Director, IT Business Applications (Delivery) | 2.9/5 | PDF ❌
+- [x] #362 | https://ringcentral.wd1.myworkdayjobs.com/job/Belmont-California/AI-Product-Marketing-Director_R077416 | RingCentral | Director, AI Product Marketing | 1.8/5 | PDF ❌
+- [x] #363 | https://ringcentral.wd1.myworkdayjobs.com/job/Belmont-California/Director--IT-Infrastructure--Full-Time--Multiple-Openings-_R077792 | RingCentral | Director, IT Infrastructure | 2.2/5 | PDF ❌
+- [x] #343 | https://job-boards.greenhouse.io/celonis/jobs/7711291003 | Celonis | Principal Enterprise Architect (public sector) | ~3.0/5 | PDF ❌
+- [x] #344 | https://fis.wd5.myworkdayjobs.com/job/US-NY-NYC-OVA-FLR62/Sr-Director--Strategy---Planning---Client-Office_JR0306429 | FIS Global | Sr. Director, Strategy & Planning - Client Office (NYC) | 3.2/5 | PDF ❌
+- [x] #345 | https://fis.wd5.myworkdayjobs.com/job/US-WI-MKE-4900/Sr-Director--Commercial-Product-Management_JR0306358 | FIS Global | Sr. Director, Commercial Product Management | 2.0/5 | PDF ❌
+- [x] #365 | https://fis.wd5.myworkdayjobs.com/job/US-FL-JAX-347/Directors--Business-Process_JR0305733 | FIS Global | Directors, Business Process | 2.2/5 | PDF ❌
+- [x] #366 | https://jobs.ashbyhq.com/nerdwallet/e31fd10a-5535-44dd-988f-154c3741f52b | NerdWallet | Head of Operations (Wealth) | 2.6/5 | PDF ❌
+- [x] #367 | https://ryan.wd1.myworkdayjobs.com/job/Dallas/Director--Product-Management-_R0018817-1 | Ryan LLC | Director, Product Management | 3.2/5 | PDF ❌
+- [x] #349 | https://bakertilly.wd5.myworkdayjobs.com/job/USA-NY-New-York-City-66-Hudson-Blvd-E/Director--Digital-Transformation_JR106214 | BakerTilly | Director, Digital Transformation (NYC) | 3.7/5 | PDF ❌
+- [x] #350 | https://bakertilly.wd5.myworkdayjobs.com/job/USA-NY-New-York-City-66-Hudson-Blvd-E/Risk-Advisory-Services-Managing-Director_JR105259 | BakerTilly | Risk Advisory Services MD (NYC) | 2.4/5 | PDF ❌
+- [x] #369 | https://bakertilly.wd5.myworkdayjobs.com/job/USA-TX-Houston-500-Dallas-St/Risk-Advisory-Services-Managing-Director_JR105260 | BakerTilly | Risk Advisory Services MD (Houston) | 3.2/5 | PDF ❌
+
+<!-- Processed 2026-04-27 — BDO manual scan -->
+- [x] #370 | https://ebqb.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/BDOExperiencedCareers/jobs/preview/10830/ | BDO | AI Market Leader (SF) | 2.4/5 | PDF ❌
+- [x] #371 | https://ebqb.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/BDOExperiencedCareers/jobs/preview/12202/ | BDO | Automation & Infrastructure Lead, Digital Transformation | 2.6/5 | PDF ❌
+- [x] #372 | https://ebqb.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/BDOExperiencedCareers/jobs/preview/11872/ | BDO | Managing Director, Management Consulting | 2.5/5 | PDF ❌
+
+<!-- Processed 2026-04-27 — L3 WebSearch sweep -->
+- [x] #266 | https://jobs.careers.microsoft.com/global/en/job/1628757/ | Microsoft | Director, AI & Ecosystem Readiness | ~2.5/5 | PDF ❌
+- [x] #302 | https://jobs.careers.microsoft.com/us/en/job/1634679/ | Microsoft | Director, Responsible AI Policy & Practice | 2.5/5 | PDF ✅
+- [x] #267 | https://careers.microsoft.com/us/en/job/1182153/ | Microsoft | Senior Director, C+AI Strategy (Redmond) | ~2.5/5 | PDF ❌
+- [x] #265 | https://careers.salesforce.com/en/jobs/jr336484/ | Salesforce | Senior Director, Shared Services Operations & Agentic Transformation | ~3.0/5 | PDF ❌
+- [x] #271 | https://careers.salesforce.com/en/jobs/jr329905/ | Salesforce | Director, Workforce Innovation | ~3.0/5 | PDF ❌
+- [x] #273 | https://careers.salesforce.com/en/jobs/jr325700/ | Salesforce | Senior Director, CSG Strategy & Analytics | ~3.0/5 | PDF ❌
+- [x] #303 | https://jobs.memorialhermann.org/job/houston/director-data-science/5358/19181808 | Memorial Hermann | Director, Data Science (Houston) | 3.0/5 | PDF ✅
+
+<!-- Previously blocked [!] entries — resolved via jds/ files 2026-04-27 -->
+- [x] #242 | https://jobs.burtchworks.com/s/?jobId=a09Vv000006nNJNIA2&title=Head+of+AI+Enablement+%26+Software+Engineering | Burtch Works (PE client) | Head of AI Enablement & Software Engineering | 4.1/5 | PDF ✅
+- [x] #314 | https://www.linkedin.com/jobs/view/4404452886/ | EPMA | Senior Director of Information Technology | 3.7/5 | PDF ❌
+- [x] #315 | https://www.linkedin.com/jobs/view/4403254406 | Saragossa | Head of Technology / CIO (PE Portfolio) | 3.6/5 | PDF ✅
+- [x] #316 | https://www.linkedin.com/jobs/view/4405637922 | AllCloud | Head of AI & Business Transformations | 3.6/5 | PDF ❌
+- [x] #317 | https://www.linkedin.com/jobs/view/4404106407 | SR Staffing (Luxury Travel Co) | Chief Technology Officer | 3.2/5 | PDF ✅
+- [x] #318 | https://www.linkedin.com/jobs/view/4405802598 | Symplr | VP IT (unnamed, recruiting platform) | ~2.8/5 | PDF ❌
+- [x] #319 | https://www.linkedin.com/jobs/view/4399908557 | Evidence Action | Global AI Strategy Lead | 2.8/5 | PDF ❌
+- [x] #320 | https://www.linkedin.com/jobs/view/4398096834 | West Monroe | Senior Partner, Data & Analytics | 3.2/5 | PDF ❌
+- [x] #321 | https://hbbq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/4043 | ABS | Director, Solutions Architecture | 3.2/5 | PDF ❌
+
+<!-- Previously pending [  ] entries from L2 scan 2026-04-22 — all processed -->
+- [x] #304 | https://ringcentral.wd1.myworkdayjobs.com/job/Remote-USA/Director--AI---Process-Automation_R077853 | RingCentral | Director, AI & Process Automation | 2.6/5 | PDF ✅
+- [x] #305 | https://ringcentral.wd1.myworkdayjobs.com/job/Remote-USA/Director-of-AI--Professional-Services_R077576 | RingCentral | Director of AI, Professional Services | 2.3/5 | PDF ✅
+- [x] #284 | https://fis.wd5.myworkdayjobs.com/job/US-GA-ATL-201-STE-900/VP-of-Engineering--API---Event-Management-Platform_JR0303600 | FIS Global | VP of Engineering, API & Event Management Platform | ~2.5/5 | PDF ✅
+- [x] #307 | https://fis.wd5.myworkdayjobs.com/job/US-FL-JAX-347/Senior-Director-of-Commercialization---Go-To-Market-Strategy---Payments-Networks_JR0302417 | FIS Global | Senior Director, Commercialization & GTM — Payments Networks | 1.5/5 | PDF ✅
+- [x] #308 | https://colliers.wd3.myworkdayjobs.com/job/WFH-Florida/Director-Digital-Technology_JR17295-1 | Colliers | Director, Digital Technology | 2.8/5 | PDF ✅
+- [x] #234 | https://bakertilly.wd5.myworkdayjobs.com/job/USA-NY-New-York-City-66-Hudson-Blvd-E/Principal--Digital-Transformation_JR104875 | BakerTilly | Principal, Digital Transformation (NYC) | 3.7/5 | PDF ✅
+- [x] #309 | https://bakertilly.wd5.myworkdayjobs.com/job/USA-NY-New-York-City-66-Hudson-Blvd-E/Managing-Director--AI-Platform--Solutions-and-Governance_JR106089 | BakerTilly | Managing Director, AI Platform, Solutions & Governance (NYC) | 3.3/5 | PDF ✅
+- [x] #298 | https://bakertilly.wd5.myworkdayjobs.com/job/USA-NY-New-York-City-66-Hudson-Blvd-E/Managing-Director--Digital-Transformation_JR105639 | BakerTilly | Managing Director, Digital Transformation (NYC) | ~3.5/5 | PDF ✅
+- [x] #310 | https://bakertilly.wd5.myworkdayjobs.com/job/USA-DC-Washington-DC/GovCon-Technology-Director--with-Deltek-Costpoint-Experience_JR105893 | BakerTilly | GovCon Technology Director (Deltek Costpoint) (Wash DC) | 2.0/5 | PDF ❌
+- [x] #348 | https://genesys.wd1.myworkdayjobs.com/job/Indiana-USA/Director-Product-Management--Genesys-Cloud-Media-Solutions_JR110843-1 | Genesys | Director, Product Management (Cloud Media) | 2.8/5 | PDF ❌
+- [x] #306 | https://fis.wd5.myworkdayjobs.com/job/US-FL-JAX-347/Sr-Director--Product-Management_JR0303113 | FIS Global | Sr. Director, Product Management | 2.5/5 | PDF ✅
+- [x] #306 | https://fis.wd5.myworkdayjobs.com/job/US-GA-ATL-201-STE-900/Senior-Director-of-Engineering--Quality-Platform_JR0303602 | FIS Global | Senior Director of Engineering, Quality Platform | 2.5/5 | PDF ✅
+- [x] #358 | https://bakertilly.wd5.myworkdayjobs.com/job/USA-WI-Milwaukee/Managing-Director--Enterprise-Packaged-Solutions_JR103029 | BakerTilly | Managing Director, Enterprise Packaged Solutions | ~2.0/5 | PDF ❌
+- [x] #355 | https://bakertilly.wd5.myworkdayjobs.com/job/USA-MA-Tewksbury/Managing-Director---Managed-Services-for-Growth-SaaS-and-Life-Sciences_JR104018 | BakerTilly | Managing Director, Managed Services — Growth SaaS & Life Sciences | 2.0/5 | PDF ❌
+- [x] #357 | https://bakertilly.wd5.myworkdayjobs.com/job/USA-TX-Frisco/Healthcare-Managed-Services-Engagement-Director_JR105987-1 | BakerTilly | Healthcare Managed Services Engagement Director | 2.3/5 | PDF ❌

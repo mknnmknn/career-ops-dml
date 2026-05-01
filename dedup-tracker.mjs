@@ -49,12 +49,34 @@ const STATUS_RANK = {
   'oferta': 6,
 };
 
+// Common corporate suffixes that should not affect dedup
+// (e.g., "Crowe LLP" should match "Crowe", "Acme Corp" should match "Acme")
+const COMPANY_SUFFIXES = [
+  'llp', 'llc', 'inc', 'incorporated', 'ltd', 'limited', 'corp', 'corporation',
+  'co', 'company', 'gmbh', 'ag', 'sa', 'spa', 'srl', 'plc', 'pty', 'bv',
+  'holdings', 'group', 'global', 'international', 'intl', 'us', 'usa',
+];
+
 function normalizeCompany(name) {
-  return name.toLowerCase()
+  let normalized = name.toLowerCase()
     .replace(/[()]/g, '')
     .replace(/\s+/g, ' ')
     .replace(/[^a-z0-9 ]/g, '')
     .trim();
+
+  // Strip trailing corporate suffixes (one pass; handles "Acme Corp Inc" → "acme")
+  let changed = true;
+  while (changed) {
+    changed = false;
+    for (const suffix of COMPANY_SUFFIXES) {
+      const re = new RegExp(`\\s+${suffix}$`);
+      if (re.test(normalized)) {
+        normalized = normalized.replace(re, '').trim();
+        changed = true;
+      }
+    }
+  }
+  return normalized;
 }
 
 function normalizeRole(role) {

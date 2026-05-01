@@ -80,14 +80,8 @@
     font-weight: 700;
     color: #1a1a2e;
     letter-spacing: -0.02em;
-    margin-bottom: 4px;
-    line-height: 1.1;
-  }
-
-  .header-subtitle {
-    font-size: 12px;
-    color: #555;
     margin-bottom: 6px;
+    line-height: 1.1;
   }
 
   .header-gradient {
@@ -314,24 +308,22 @@
     white-space: nowrap;
   }
 
-  /* === SKILLS (table layout — canonical) === */
-  .skills-table {
-    width: 100%;
-    border-collapse: collapse;
+  /* === SKILLS === */
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
   }
 
-  .skills-table td {
+  .skill-item {
     font-size: 10.5px;
     color: #444;
-    padding: 2px 8px 2px 0;
-    vertical-align: top;
   }
 
-  .skills-table td:first-child {
+  .skill-category {
     font-weight: 600;
     color: #333;
-    white-space: nowrap;
-    width: 30%;
+    font-size: 10.5px;
   }
 
   /* === PRINT === */
@@ -347,26 +339,13 @@
   }
 
   /* === PAGE BREAK CONTROL === */
-  /* LOCAL PATCH (2026-04-28): .job removed from always-avoid list so long
-     experience blocks can flow across pages between bullets. Individual
-     bullets, project / edu / cert blocks still group together; company-role
-     headers are kept attached to at least one bullet. See
-     patches/README.md entry #4 for rationale and re-apply guidance. */
   .avoid-break,
+  .job,
   .project,
   .edu-item,
   .cert-item {
     break-inside: avoid;
     page-break-inside: avoid;
-  }
-  .job li {
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-  .job-header,
-  .job-role {
-    break-after: avoid;
-    page-break-after: avoid;
   }
 </style>
 </head>
@@ -376,14 +355,15 @@
   <!-- HEADER -->
   <div class="header avoid-break">
     <h1>{{NAME}}</h1>
-    <div class="header-subtitle">{{SUBTITLE}}</div>
     <div class="header-gradient"></div>
     <div class="contact-row">
+      <span>{{PHONE}}</span>
+      <span class="separator">|</span>
       <span>{{EMAIL}}</span>
       <span class="separator">|</span>
       <a href="{{LINKEDIN_URL}}">{{LINKEDIN_DISPLAY}}</a>
       <span class="separator">|</span>
-      <span>{{PHONE}}</span>
+      <a href="{{PORTFOLIO_URL}}">{{PORTFOLIO_DISPLAY}}</a>
       <span class="separator">|</span>
       <span>{{LOCATION}}</span>
     </div>
@@ -430,9 +410,7 @@
   <!-- SKILLS -->
   <div class="section avoid-break">
     <div class="section-title">{{SECTION_SKILLS}}</div>
-    <table class="skills-table">
-      {{SKILLS}}
-    </table>
+    {{SKILLS}}
   </div>
 
 </div>

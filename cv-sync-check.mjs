@@ -7,7 +7,7 @@
  * 1. cv.md exists
  * 2. config/profile.yml exists and has required fields
  * 3. No hardcoded metrics in _shared.md or batch/batch-prompt.md
- * 4. article-digest.md and dml-experience.md freshness (if exist)
+ * 4. article-digest.md freshness (if exists)
  */
 
 import { readFileSync, existsSync, statSync } from 'fs';
@@ -66,21 +66,18 @@ for (const { path, name } of filesToCheck) {
     if (line.includes('NEVER hardcode') || line.includes('NUNCA hardcode') || line.startsWith('#') || line.startsWith('<!--')) continue;
     const matches = line.match(metricPattern);
     if (matches) {
-      warnings.push(`${name}:${i + 1} — Possible hardcoded metric: "${matches[0]}". Should this be read from cv.md/article-digest.md/dml-experience.md?`);
+      warnings.push(`${name}:${i + 1} — Possible hardcoded metric: "${matches[0]}". Should this be read from cv.md/article-digest.md?`);
     }
   }
 }
 
-// 4. Check article-digest.md and dml-experience.md freshness
-const proofPointFiles = ['article-digest.md', 'dml-experience.md'];
-for (const fileName of proofPointFiles) {
-  const filePath = join(projectRoot, fileName);
-  if (existsSync(filePath)) {
-    const stats = statSync(filePath);
-    const daysSinceModified = (Date.now() - stats.mtimeMs) / (1000 * 60 * 60 * 24);
-    if (daysSinceModified > 30) {
-      warnings.push(`${fileName} is ${Math.round(daysSinceModified)} days old. Consider updating if your projects have new metrics.`);
-    }
+// 4. Check article-digest.md freshness
+const digestPath = join(projectRoot, 'article-digest.md');
+if (existsSync(digestPath)) {
+  const stats = statSync(digestPath);
+  const daysSinceModified = (Date.now() - stats.mtimeMs) / (1000 * 60 * 60 * 24);
+  if (daysSinceModified > 30) {
+    warnings.push(`article-digest.md is ${Math.round(daysSinceModified)} days old. Consider updating if your projects have new metrics.`);
   }
 }
 

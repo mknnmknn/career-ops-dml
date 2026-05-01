@@ -54,9 +54,3 @@ states:
     aliases: [no_aplicar, no aplicar, skip, monitor]
     description: Doesn't fit, don't apply
     dashboard_group: skip
-
-  - id: needs_jd
-    label: Needs JD
-    aliases: [needs jd, pending jd, jd unfetchable, unfetchable]
-    description: Could not retrieve JD text; awaiting manual fetch by user
-    dashboard_group: needs_jd

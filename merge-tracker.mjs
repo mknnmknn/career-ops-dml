@@ -34,7 +34,7 @@ mkdirSync(join(CAREER_OPS, 'data'), { recursive: true });
 mkdirSync(ADDITIONS_DIR, { recursive: true });
 
 // Canonical states and aliases
-const CANONICAL_STATES = ['Evaluated', 'Applied', 'Responded', 'Interview', 'Offer', 'Rejected', 'Discarded', 'SKIP', 'Needs JD'];
+const CANONICAL_STATES = ['Evaluated', 'Applied', 'Responded', 'Interview', 'Offer', 'Rejected', 'Discarded', 'SKIP'];
 
 function validateStatus(status) {
   const clean = status.replace(/\*\*/g, '').replace(/\s+\d{4}-\d{2}-\d{2}.*$/, '').trim();
@@ -56,7 +56,6 @@ function validateStatus(status) {
     'descartado': 'Discarded', 'descartada': 'Discarded', 'cerrada': 'Discarded', 'cancelada': 'Discarded',
     'no aplicar': 'SKIP', 'no_aplicar': 'SKIP', 'skip': 'SKIP', 'monitor': 'SKIP',
     'geo blocker': 'SKIP',
-    'needs jd': 'Needs JD', 'pending jd': 'Needs JD', 'jd unfetchable': 'Needs JD', 'unfetchable': 'Needs JD',
   };
 
   if (aliases[lower]) return aliases[lower];
@@ -68,34 +67,57 @@ function validateStatus(status) {
   return 'Evaluated';
 }
 
-// Common corporate suffixes (mirrors dedup-tracker.mjs); strip before matching.
-const COMPANY_SUFFIXES = [
-  'llp', 'llc', 'inc', 'incorporated', 'ltd', 'limited', 'corp', 'corporation',
-  'co', 'company', 'gmbh', 'ag', 'sa', 'spa', 'srl', 'plc', 'pty', 'bv',
-  'holdings', 'group', 'global', 'international', 'intl', 'us', 'usa',
-];
-
 function normalizeCompany(name) {
-  let normalized = name.toLowerCase().replace(/[^a-z0-9 ]/g, '').trim();
-  let changed = true;
-  while (changed) {
-    changed = false;
-    for (const suffix of COMPANY_SUFFIXES) {
-      const re = new RegExp(`\\s+${suffix}$`);
-      if (re.test(normalized)) {
-        normalized = normalized.replace(re, '').trim();
-        changed = true;
-      }
-    }
-  }
-  return normalized.replace(/\s+/g, '');
+  return name.toLowerCase().replace(/[^a-z0-9]/g, '');
+}
+
+// Tokens that almost every role shares — must NOT count as signal.
+// Includes seniority, work-mode, contract, and common locations.
+const ROLE_STOPWORDS = new Set([
+  // seniority / level
+  'junior', 'mid', 'middle', 'senior', 'staff', 'principal', 'lead', 'head',
+  'chief', 'associate', 'intern', 'entry', 'level',
+  // contract / mode
+  'remote', 'hybrid', 'onsite', 'contract', 'contractor', 'freelance',
+  'fulltime', 'parttime', 'permanent', 'temporary', 'intern', 'internship',
+  // generic job words
+  'role', 'position', 'opportunity', 'team', 'based',
+  // very common locations (extend in portals.yml later if needed)
+  'bangalore', 'bengaluru', 'mumbai', 'delhi', 'hyderabad', 'pune', 'chennai',
+  'london', 'berlin', 'paris', 'madrid', 'barcelona', 'amsterdam', 'dublin',
+  'york', 'francisco', 'seattle', 'boston', 'austin', 'chicago', 'toronto',
+  'tokyo', 'singapore', 'sydney', 'melbourne', 'lisbon', 'warsaw',
+  // regions / countries
+  'europe', 'emea', 'apac', 'latam', 'americas', 'india', 'spain', 'germany',
+  'france', 'italy', 'canada', 'brazil', 'mexico', 'japan',
+  // prepositions leaking through length filter
+  'with', 'from', 'into', 'over', 'this', 'that',
+]);
+
+function roleTokens(s) {
+  return s
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .split(/\s+/)
+    .filter(w => w.length > 3 && !ROLE_STOPWORDS.has(w));
 }
 
 function roleFuzzyMatch(a, b) {
-  const wordsA = a.toLowerCase().split(/\s+/).filter(w => w.length > 3);
-  const wordsB = b.toLowerCase().split(/\s+/).filter(w => w.length > 3);
-  const overlap = wordsA.filter(w => wordsB.some(wb => wb.includes(w) || w.includes(wb)));
-  return overlap.length >= 2;
+  const wordsA = roleTokens(a);
+  const wordsB = roleTokens(b);
+  if (wordsA.length === 0 || wordsB.length === 0) return false;
+
+  const setB = new Set(wordsB);
+  const overlap = wordsA.filter(w => setB.has(w)).length;
+  if (overlap === 0) return false;
+
+  // Jaccard-style ratio on content tokens. Two roles are "the same" only
+  // when the overlap dominates the smaller side — not when they just share
+  // a location + "engineer".
+  const minLen = Math.min(wordsA.length, wordsB.length);
+  const ratio = overlap / minLen;
+
+  return overlap >= 2 && ratio >= 0.6;
 }
 
 function extractReportNum(reportStr) {
@@ -303,13 +325,9 @@ for (const file of tsvFiles) {
       skipped++;
     }
   } else {
-    // New entry — ALWAYS use the report number from the TSV as the tracker row number.
-    // This collapses the dual-numbering system (tracker row # ↔ report #) into one,
-    // eliminating the JobID-vs-row-number confusion. Tracker rows may not be strictly
-    // monotonic in time, but they WILL match the report file they link to.
-    const reportNumFromLink = extractReportNum(addition.report);
-    const entryNum = reportNumFromLink || addition.num;
-    if (entryNum > maxNum) maxNum = entryNum;
+    // New entry — use the number from the TSV
+    const entryNum = addition.num > maxNum ? addition.num : ++maxNum;
+    if (addition.num > maxNum) maxNum = addition.num;
 
     const newLine = `| ${entryNum} | ${addition.date} | ${addition.company} | ${addition.role} | ${addition.score} | ${addition.status} | ${addition.pdf} | ${addition.report} | ${addition.notes} |`;
     newLines.push(newLine);

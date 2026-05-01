@@ -13,14 +13,13 @@
 | File | Path | When |
 |------|------|------|
 | cv.md | `cv.md` (project root) | ALWAYS |
-| article-digest.md | `article-digest.md` (if exists) | ALWAYS (LinkedIn writing, published case studies) |
-| dml-experience.md | `dml-experience.md` (if exists) | ALWAYS (first-hand experience proof points: MMI CC, MMI Enterprise Platform, DMLCo) |
+| article-digest.md | `article-digest.md` (if exists) | ALWAYS (detailed proof points) |
 | profile.yml | `config/profile.yml` | ALWAYS (candidate identity and targets) |
 | _profile.md | `modes/_profile.md` | ALWAYS (user archetypes, narrative, negotiation) |
+| writing-samples/ | `writing-samples/` | When generating candidate-facing text — check `_profile.md` for cached `## Writing Style` first; only scan files if absent |
 
-**RULE: NEVER hardcode metrics from proof points.** Read them from cv.md + article-digest.md + dml-experience.md at evaluation time.
+**RULE: NEVER hardcode metrics from proof points.** Read them from cv.md + article-digest.md at evaluation time.
 **RULE: For article/project metrics, article-digest.md takes precedence over cv.md.**
-**RULE: For first-hand experience metrics (MMI Enterprise Platform $1M/day & 4 9s, DMLCo headcount/revenue, MMI CC AI components), dml-experience.md takes precedence over cv.md.**
 **RULE: Read _profile.md AFTER this file. User customizations in _profile.md override defaults here.**
 
 ---
@@ -74,30 +73,18 @@ Block G assesses whether a posting is likely a real, active opening. It does NOT
 
 ## Archetype Detection
 
-<!-- LOCAL PATCH (2026-04-22): replaces the default 6-archetype AI-engineering
-     taxonomy with Daniel's 8-archetype executive taxonomy. See patches/README.md
-     for divergence rationale and re-apply instructions after upstream updates. -->
+Classify every offer into one of these types (or hybrid of 2):
 
-Classify every offer into one of these archetypes (or hybrid of 2). Flat taxonomy — no ranked order.
+| Archetype | Key signals in JD |
+|-----------|-------------------|
+| AI Platform / LLMOps | "observability", "evals", "pipelines", "monitoring", "reliability" |
+| Agentic / Automation | "agent", "HITL", "orchestration", "workflow", "multi-agent" |
+| Technical AI PM | "PRD", "roadmap", "discovery", "stakeholder", "product manager" |
+| AI Solutions Architect | "architecture", "enterprise", "integration", "design", "systems" |
+| AI Forward Deployed | "client-facing", "deploy", "prototype", "fast delivery", "field" |
+| AI Transformation | "change management", "adoption", "enablement", "transformation" |
 
-| Archetype | Context / Shape | Key JD signals | What they're buying |
-|-----------|-----------------|----------------|---------------------|
-| **Chief Technology Officer** | Full-function head, reports to CEO, regulated or mission-driven midsize org | "CTO", "Chief Technology Officer", "reports to CEO", "enterprise-wide technology", "transformation mandate" | Proven enterprise CTO arc; cross-functional operator; has built the seat from nothing |
-| **Chief Information Officer / Head of IT** | IT org head where scope includes infrastructure, security, end-user, applications — not just engineering | "CIO", "Chief Information Officer", "Head of IT", "enterprise IT", "IT leadership" | Whole-IT operator with transformation discipline, not just engineering management |
-| **Head of Data / Chief Data Officer / VP Data** | Data function leader with cross-functional reach | "Chief Data Officer", "CDO", "Head of Data", "VP Data", "data strategy", "data governance", "AI-ready foundations" | Data operator who earned it bottom-up: DBA → architect → CTO, full lifecycle including production ML |
-| **Chief Transformation Officer / Digital Transformation** | Cross-functional transformation mandate spanning more than IT | "Chief Transformation Officer", "Digital Transformation", "enterprise modernization", "transformation leader" | Multi-year modernization operator against live regulated operations without disruption |
-| **AI Transformation Lead** *(substance-check required)* | AI-specific transformation with real mandate | "AI transformation", "enterprise AI adoption", "agentic AI strategy" — plus substance signals: named problem, disclosed budget, existing data/infrastructure, named sponsor | Executive who can evaluate, govern, and adopt AI with discipline rather than theater |
-| **Enterprise Technology Strategy** *(VP/Director)* | Architecture-led strategy role, often sub-CTO scope | "enterprise architecture", "technology strategy", "VP technology strategy", "Director of technology strategy" | Strategic thinker with architecture instinct, multi-year planning, vendor + modernization discipline |
-| **Chief of Staff to CEO / Technology Chief of Staff** | Exec operator, translator between business and tech, influence-only | "Chief of Staff", "Technology Chief of Staff", "strategic advisor to CEO" | Senior operator running programs through influence; complexity-compressor; consensus-facilitator |
-| **Fractional / Advisory CTO** | Advisory seat, no line authority | "Fractional CTO", "advisory CTO", "interim CTO", "technology advisor" | Senior CTO experience on advisory cadence |
-
-**AI Transformation Lead — substance check:** When classifying a role as AI Transformation Lead, explicitly assess substance in the evaluation output.
-- **Signals of substance:** named business problem with metrics, disclosed budget or headcount for AI work, existing data or infrastructure referenced, named executive sponsor, concrete deliverables.
-- **Signals of theater:** "explore AI opportunities", "lead AI adoption" without specifics, "AI maturity journey" without targets, no budget named, buzzword-heavy ("cutting-edge", "bleeding-edge"), no existing data or process named.
-
-Substance-light roles don't auto-disqualify but the flag should surface in the evaluation for screening consideration.
-
-After detecting archetype, read `modes/_profile.md` for adaptive framing, proof-point mapping, role-shape rules, and anti-patterns.
+After detecting archetype, read `modes/_profile.md` for the user's specific framing and proof points for that archetype.
 
 ## Global Rules
 
@@ -115,7 +102,7 @@ After detecting archetype, read `modes/_profile.md` for adaptive framing, proof-
 ### ALWAYS
 
 0. **Cover letter:** If the form allows it, ALWAYS include one. Same visual design as CV. JD quotes mapped to proof points. 1 page max.
-1. Read cv.md, _profile.md, article-digest.md (if exists), and dml-experience.md (if exists) before evaluating
+1. Read cv.md, _profile.md, and article-digest.md (if exists) before evaluating
 1b. **First evaluation of each session:** Run `node cv-sync-check.mjs`. If warnings, notify user.
 2. Detect the role archetype and adapt framing per _profile.md
 3. Cite exact lines from CV when matching
@@ -126,17 +113,7 @@ After detecting archetype, read `modes/_profile.md` for adaptive framing, proof-
 8. Native tech English for generated text. Short sentences, action verbs, no passive voice.
 8b. Case study URLs in PDF Professional Summary (recruiter may only read this).
 9. **Tracker additions as TSV** -- NEVER edit applications.md directly. Write TSV in `batch/tracker-additions/`.
-10. **Report header canonical format.** Every report begins with an H1 title, then these fields in order (first three are always required):
-    - `**#:** {tracker_number}` — integer, matches the report filename's leading number
-    - `**Company:** {name}` — short company name
-    - `**Role:** {title}` — role title
-    - `**Score:** {X.X/5}` — global score
-    - `**URL:** {url}` — original JD URL (mandatory)
-    - `**Legitimacy:** {tier}` — High Confidence / Proceed with Caution / Suspicious
-    - `**PDF:** {path-or-❌}` — path to generated PDF, or ❌ if none
-    - `**Verification:** {status}` — e.g., "confirmed (Playwright)" or "unconfirmed (batch mode)"
-    - `**Date:** {YYYY-MM-DD}`
-    - Additional mode-specific fields (e.g., `**Archetype:**`, `**Batch ID:**`) may follow.
+10. **Include `**URL:**` in every report header.**
 
 ### Tools
 
@@ -145,16 +122,93 @@ After detecting archetype, read `modes/_profile.md` for adaptive framing, proof-
 | WebSearch | Comp research, trends, company culture, LinkedIn contacts, fallback for JDs |
 | WebFetch | Fallback for extracting JDs from static pages |
 | Playwright | Verify offers (browser_navigate + browser_snapshot). **NEVER 2+ agents with Playwright in parallel.** |
-| Read | cv.md, _profile.md, article-digest.md, dml-experience.md, cv-template.html |
+| Read | cv.md, _profile.md, article-digest.md, cv-template.html |
 | Write | Temporary HTML for PDF, applications.md, reports .md |
 | Edit | Update tracker |
-| Canva MCP | Optional visual CV generation. Duplicate base design, edit text, export PDF. Requires `canva_resume_design_id` in profile.yml. |
+| Canva MCP | Optional visual CV generation. Duplicate base design, edit text, export PDF. Requires `cv.canva_resume_design_id` in profile.yml. |
 | Bash | `node generate-pdf.mjs` |
 
 ### Time-to-offer priority
 - Working demo + metrics > perfection
 - Apply sooner > learn more
 - 80/20 approach, timebox everything
+
+---
+
+## Writing Style Calibration
+
+**Check `_profile.md` first.** If a `## Writing Style` section exists there, use it directly — do not re-scan the writing-samples files. Re-scanning is only needed when new samples are added or the user explicitly asks to recalibrate.
+
+**When to apply:** Before generating any text the user will send or publish — cover letters, LinkedIn outreach, application form answers, follow-up emails, executive summaries, profile blurbs. Does NOT apply to internal evaluation reports (A–F blocks, scores, analysis).
+
+**If no cached style in `_profile.md`:** Read all files in `writing-samples/`, **skipping any file named `README.md`**. If no user-provided samples are found, skip style calibration and gently note — once, without pressure — that adding a writing sample (e.g. a past cover letter, a LinkedIn About section, any professional writing) would help tailor outputs to their voice. If samples exist, extract the markers below and write the result to `_profile.md` under `## Writing Style` so future sessions skip this step.
+
+### What to extract
+
+**Tone & register**
+- Formal vs. conversational
+- Confident vs. hedging (watch for qualifiers like "I think", "perhaps", "somewhat")
+- Warm vs. transactional
+- Degree of self-promotion — does the user undersell, match, or lead with achievements?
+
+**Sentence structure**
+- Average sentence length — short and punchy or long and layered?
+- Use of fragments for emphasis
+- Clause nesting and complexity
+- How sentences open — subject-first, action-first, context-first?
+
+**Punctuation habits**
+- Em dashes, en dashes, or parentheses for asides?
+- Oxford comma or not?
+- Ellipses — used or avoided?
+- Exclamation marks — never, sparingly, or freely?
+- Semicolons vs. full stops to join related ideas
+
+**Vocabulary**
+- Technical density — how much jargon per paragraph?
+- Preferred synonyms (e.g. "built" vs. "developed" vs. "engineered")
+- Words or phrases the user reaches for repeatedly — keep them
+- Words that never appear — don't introduce them
+
+**Paragraph and structure patterns**
+- Paragraph length — one-liners or developed blocks?
+- Bullet-heavy or prose-heavy?
+- How ideas are sequenced — problem → solution, result-first, chronological?
+- Use of headers within longer pieces
+
+**Voice signatures**
+- First-person patterns — "I led", "we built", "our team"?
+- Active vs. passive ratio
+- Habitual openers and closers
+- Rhetorical moves — does the user ask questions, use contrast, tell micro-stories?
+
+### Rules
+
+- **Only extract what is demonstrably present.** Do not infer style from a single data point.
+- **Idiosyncratic choices are intentional.** Unconventional punctuation or phrasing is the user's voice — preserve it, do not correct it.
+- **If samples conflict**, weight the most recent or most similar-context file.
+- **If samples are sparse**, apply what can be reliably extracted and fall back to defaults for the rest.
+- **Style calibration applies to tone and structure only.** Do not import content, claims, or metrics from samples into CVs, reports, or evaluations.
+- **No verbatim copying or personal identifiers.** Store only abstract style descriptors (tone, structure, vocabulary preferences). Do not quote user sentences verbatim and do not retain personal identifiers (names, emails, phone numbers) from writing samples. "Preserve idiosyncratic choices" applies to stylistic traits only.
+
+### Persisting the extracted style
+
+After scanning (excluding any `README.md` files), write to `modes/_profile.md` only if at least one user-provided sample was found: find the existing `## Writing Style` section and replace the entire block up to the next `##` heading (or EOF) with the new content. If no `## Writing Style` section exists, append it. This ensures there is always exactly one canonical section. If no samples were found after filtering, do not write or modify the section.
+
+```markdown
+## Writing Style
+
+_Extracted from writing-samples/ on {date}. Re-run if new samples are added._
+
+**Tone:** {e.g. conversational, confident, no hedging qualifiers}
+**Sentence length:** {e.g. short and punchy, avg 12 words}
+**Openings:** {e.g. action-first, subject-first}
+**Punctuation:** {e.g. em dashes for asides, Oxford comma, no ellipses}
+**Vocabulary:** {e.g. prefers "built"/"ran"/"cut" over "developed"/"led"/"reduced"}
+**Structure:** {e.g. prose-heavy, result-first sequencing}
+**Voice:** {e.g. "I led", active voice dominant, no rhetorical questions}
+**Avoid:** {words or patterns absent from samples}
+```
 
 ---
 

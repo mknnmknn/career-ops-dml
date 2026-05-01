@@ -23,8 +23,8 @@ Currently consulting on enterprise technology architecture and platform decision
 | Enterprise Technology Strategy | Enterprise Architecture | Digital Transformation Leadership |
 | IT Operations & Infrastructure | Software Engineering & SDLC | Information Security & Cybersecurity |
 | Cloud Migration & Modernization | Legacy Platform Modernization | Business Continuity & DR |
-| Data, Analytics & BI Leadership | Contact Center & CX Operations | AI Architecture & Vendor Evaluation |
-| IT Financial Management (Budget, P&L, Capex) | Enterprise PMO & Portfolio Governance | Vendor & Strategic Sourcing |
+| Data, Analytics & BI Leadership | Contact Center & CX Operations | AI Architecture |
+| IT Financial Management | Enterprise PMO & Portfolio Governance | Vendor & Strategic Sourcing |
 | Technology Operating Model & Org Design | M&A Technology Integration | Regulatory Compliance & Audit Posture |
 
 ---
@@ -32,7 +32,7 @@ Currently consulting on enterprise technology architecture and platform decision
 ## Professional Experience
 
 ### Technology Advisor
-**Independent Consultant** | Houston, TX | November 2024 – Present
+**Independent Consultant** | Houston, TX | January 2025 – Present
 
 Advisory work on enterprise technology architecture and AI-platform decisions, with current concentration on AI architecture for customer communication platforms.
 

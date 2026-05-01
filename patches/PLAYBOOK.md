@@ -48,6 +48,14 @@ Reads `portals.yml` for companies with `scan_method: manual`, generates one file
 - **Flags**: `--new-week` (force-recreate this week's file; existing one backed up to `.bak`), `--prune=N` (keep only most recent N week files).
 - **Predecessor**: `data/manual-scan-log.md` (rolling-log format, retained as historical archive — no longer written to).
 
+### `batch/archive-pipeline.mjs` — move processed entries to the archive
+
+Drains `## Procesadas` from `data/pipeline.md` into `data/pipeline-archive.md` under a new `## Cleanup pass YYYY-MM-DD` section. Heading + italic empty-state preamble in pipeline.md are retained; HTML comment dividers and `- [x]` entries underneath are moved. Inbox, Pendientes, and Needs Manual JD Fetch sections are never touched. URL-level dedup keeps working because `scan-api-portals.mjs` and `build-input.mjs` read both files.
+
+- **Run:** `node batch/archive-pipeline.mjs` (live) or `node batch/archive-pipeline.mjs --dry-run` (preview).
+- **Idempotent:** a second run on the same day exits with "Nothing to archive" because Procesadas is empty.
+- **When to run:** monthly hygiene, or whenever `pipeline.md` gets visually noisy. Replaces the manual cut-and-paste pattern used on 2026-04-26.
+
 ### `batch/add-report-number.mjs` — report header migration (one-off, applied)
 
 Idempotent script that inserts `**#:** N` into each `reports/*.md` file, parsing N from the filename. Already applied to all existing reports on 2026-04-22. Safe to re-run any time (skips files that already have the field).
@@ -72,6 +80,7 @@ A rough cadence. Not all of these need to run every week — pick based on what'
 
 5. **`node batch/analyze-scan-history.mjs`** — performance snapshot, check for stale or silent-failure companies.
 6. **`node batch/recon-portals.mjs --pretty`** — ATS drift check, propose any new `portals.yml` patches.
+7. **`node batch/archive-pipeline.mjs --dry-run`** then `node batch/archive-pipeline.mjs` — move processed entries from `pipeline.md` Procesadas into `pipeline-archive.md` to keep the active queue scannable.
 
 ### Whenever `portals.yml` is touched
 
@@ -108,7 +117,7 @@ See `patches/README.md` for the authoritative record. Summary as of 2026-04-22:
 4. **`batch/scan-api-portals.mjs`** — new local tool (not upstream); adds Workday adapter + dedup + pagination fix.
 5. **`templates/cv-template.html` + `fill-template.mjs`** — `.job` removed from always-avoid page-break list (CSS) and `avoid-break` class no longer applied to per-job divs (fill-template); bullets flow across pages while individual bullets / company headers stay grouped. Recovers wasted whitespace on long-bulleted experience blocks.
 
-All other scripts in `batch/` (recon-portals, analyze-scan-history, manual-scan-status, add-report-number) are local-only; they don't exist upstream.
+All other scripts in `batch/` (recon-portals, analyze-scan-history, manual-scan-status, add-report-number, archive-pipeline) are local-only; they don't exist upstream.
 
 ---
 

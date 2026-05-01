@@ -26,6 +26,28 @@ After running `node update-system.mjs apply`:
    - **Retire**: upstream fixed the issue our patch was addressing; drop the patch.
 4. Update this file to reflect the decision and date.
 
+**Critical analysis tip:** `update-system.mjs apply` fetches `upstream/main` HEAD, which can be ahead of the latest tagged release. When measuring "what upstream actually changed," diff `v{old}..upstream/main`, NOT `v{old}..v{new}`. The latter understates upstream's changes by missing post-tag commits. (Discovered during the v1.6.0 upgrade — `upstream/main` was 4 commits past v1.6.0, including a writing-samples folder feature.)
+
+---
+
+## Upgrade History
+
+### 2026-05-01 — v1.3.0 → v1.6.0 (actually upstream/main HEAD past v1.6.0)
+
+**Process:** Surgical patch (Option C) rather than full restore. Per-file diff of `v1.3.0..upstream/main` separated upstream churn from fork customization-revert noise, then layered fork customizations onto post-upgrade upstream where genuine improvements existed.
+
+| Patch | Verdict | Notes |
+|-------|---------|-------|
+| #1 Archetype taxonomy | **Re-applied** | Upstream's 6-archetype AI taxonomy still in place; no override mechanism shipped. |
+| #2 Dashboard JobID column | **Retired** | Upstream's `renderAppLine` now ships tracker IDs natively as first column with bold-blue `#NNN` styling — superior to our patch in every dimension. See "Retired patches" section below. |
+| #3 `**#:**` report header | **Re-applied** | No upstream equivalent. Inline drift fix: `**JobID:**` in batch-prompt template was renamed to `**#:**` for consistency with `add-report-number.mjs` and reports on disk. |
+| #4 CV `.job` page-break | **Re-applied** | `templates/cv-template.html` had no upstream changes; `fill-template.mjs` was untouched. Patch survived intact via Category A bulk restore. |
+| #5 dml-* file rename + article-digest split | **Re-applied** | USER_PATHS additions re-added to update-system.mjs (upstream rewrote that file with 80+/20- improvements but didn't include fork-only files). |
+
+**New patches discovered during this upgrade** (previously undocumented divergences): see entries #6-#11 below.
+
+**Discovery worth flagging:** `patches/README.md` was incomplete pre-upgrade. At least 6 system-layer files had fork divergences that weren't tracked here, so the v1.6.0 upgrade silently clobbered them. They have all been documented now and re-applied. **Going forward: any time we modify a system-layer file, add an entry to this README *immediately*.** The `update-system.mjs apply` flow has no other safety net.
+
 ---
 
 ## Active patches
@@ -64,37 +86,6 @@ The patched section is marked in `_shared.md` with an HTML comment (`<!-- LOCAL 
 
 **Upstream action worth considering:**
 PR upstream to add a taxonomy-override mechanism in `_shared.md` so this kind of customization doesn't require file patching. Most career-ops users will want their own archetype set.
-
----
-
-### 2. `dashboard/internal/ui/screens/pipeline.go` — JobID shown as first column
-
-- **Applied:** before 2026-04-22 (documenting an existing local divergence)
-- **File:** `dashboard/internal/ui/screens/pipeline.go`
-- **Function:** `renderAppLine`
-
-**What was changed:**
-An "ID" column showing `app.Number` (the tracker application number) was added as the leftmost column of each pipeline row. Column widths: `idW := 4`, rendered with `idStyle.Render(fmt.Sprintf("%d", app.Number))`, styled in muted Subtext color.
-
-Current column order in `renderAppLine`:
-```
-ID | Score | Company | Role | Status | Comp
-```
-
-**Why:**
-Daniel uses the tracker number as the primary handle when referencing applications in-session and across tooling (e.g., "evaluate Celonis #188", "fix the Akumin CV, #138"). Upstream's layout without a JobID column forced visual correlation of Company+Role to find the tracker entry for a row, which is slower and more error-prone at scale.
-
-**Re-apply after upstream update:**
-1. Open the incoming `dashboard/internal/ui/screens/pipeline.go` and locate `renderAppLine`.
-2. Confirm whether upstream has adopted a JobID column. If not:
-   - Restore the `idW := 4` column width declaration
-   - Restore the `idText := idStyle.Render(fmt.Sprintf("%d", app.Number))` rendering
-   - Restore the leading `%s` in the row format string so `idText` is the first positional arg
-   - Adjust the `roleW` remainder calculation to subtract `idW` (see current file for exact math)
-3. Rebuild `dashboard/career-ops-dashboard.exe` via `go build` in the `dashboard/` directory.
-
-**Upstream action worth considering:**
-PR upstream to add the JobID column as a default. Most career-ops users will want tracker numbers visible in the pipeline view.
 
 ---
 
@@ -201,6 +192,157 @@ Two PRs:
 
 ---
 
+### 6. `batch/batch-prompt.md` — English translation + Sources of Truth additions
+
+- **Applied:** 2026-04-22 (originally applied during commit `47cde27` "Large commit of various customizations"; re-discovered and documented during the v1.6.0 upgrade on 2026-05-01)
+- **File:** `batch/batch-prompt.md`
+
+**What was changed:**
+1. **Translated end-to-end from Spanish to English.** Upstream ships this file in Spanish; the fork uses English throughout (headings, instructions, rules, table headers, prose).
+2. Sources of Truth table extended with `dml-experience.md` and `article-digest.md` (with description "LinkedIn writing, published case studies"), plus precedence rules for first-hand experience metrics.
+3. Report template's first field renamed to `**#:** {{REPORT_NUM}}` (previously `**JobID:** {{REPORT_NUM}}`, fixed during the v1.6.0 upgrade to align with `add-report-number.mjs` and reports on disk).
+4. Companion explanatory note canonicalizing `**#:**` as the tracker-number reference, with Batch ID called out as internal-orchestration-only.
+
+**Why:**
+The English translation predates documented patches. It was applied silently during heavy customization work and never tracked here, so the v1.6.0 upgrade silently overwrote it back to Spanish. The Sources of Truth additions plumb the fork-only `dml-experience.md` file (split out from `article-digest.md` on 2026-04-30) into the batch-mode workflow.
+
+**Re-apply after upstream update:**
+1. Diff `v{old}..upstream/main` for `batch/batch-prompt.md`. If upstream churn is zero (was the case for v1.3.0 → v1.6.0): bulk-restore from the pre-upgrade backup branch.
+2. If upstream churn exists: take the new upstream version, translate to English, then re-add fork-specific content (Sources of Truth rows, precedence rules, `**#:**` report template, dml-experience.md references).
+3. Verify no `**JobID:**` references remain (replaced with `**#:**`).
+
+**Upstream action worth considering:**
+PR upstream to add an English version of `batch/batch-prompt.md`, and document a process for forks to opt into translated batch prompts.
+
+---
+
+### 7. `modes/oferta.md` — fork customizations
+
+- **Applied:** various (fork divergences accumulated; documented during the v1.6.0 upgrade on 2026-05-01)
+- **File:** `modes/oferta.md`
+
+**What was changed:**
+~30 lines of fork customizations on top of v1.3.0 baseline. Specifics not enumerated here — the canonical record is `git diff v{old}..backup-pre-update-{old}` for the file, which will reproduce the fork-only delta.
+
+**Why:**
+Daniel-specific framing for evaluation Block A-G output, integration of fork-only proof-point files (`dml-experience.md`), and minor language tightening.
+
+**Re-apply after upstream update:**
+1. Diff `v{old}..upstream/main` for `modes/oferta.md` to determine real upstream churn.
+2. If zero: bulk-restore from backup.
+3. If non-zero: surgical merge — take upstream, layer fork delta from `git diff v{old}..backup-pre-update-{old}`.
+
+---
+
+### 8. `modes/pipeline.md` — fork customizations
+
+- **Applied:** various (fork divergences accumulated; documented during the v1.6.0 upgrade on 2026-05-01)
+- **File:** `modes/pipeline.md`
+
+**What was changed:**
+~16 lines of fork customizations on top of v1.3.0 baseline. Includes the inaccessible-JD handling spec (commit `5d3de66` "Inaccessible-JD handling spec") that tightened the `[!]` flow so an inaccessible URL reserves a sequential REPORT_NUM, writes a `- [!]` line to pipeline.md, and explicitly forbids generating a score/report/PDF/tracker entry until `jds/NNN.txt` is provided.
+
+**Why:**
+The `[!]` workflow handles JDs whose URLs are dead, geo-blocked, or behind a wall — the system reserves the slot but doesn't pretend to evaluate without the JD text.
+
+**Re-apply after upstream update:**
+1. Diff `v{old}..upstream/main` for `modes/pipeline.md`.
+2. If upstream changed the inaccessible-JD section: surgically merge.
+3. Otherwise: bulk-restore from backup.
+
+---
+
+### 9. `cv-sync-check.mjs` — fork customizations
+
+- **Applied:** various (documented during the v1.6.0 upgrade on 2026-05-01)
+- **File:** `cv-sync-check.mjs`
+
+**What was changed:**
+~9 lines of fork customizations. Most importantly: freshness check (>30 days) extended to iterate `['article-digest.md', 'dml-experience.md']` instead of only `article-digest.md`.
+
+**Why:**
+The 2026-04-30 user-layer file split moved first-hand experience proof points out of `article-digest.md` into `dml-experience.md`. The freshness check needed to cover both.
+
+**Re-apply after upstream update:**
+1. Confirm freshness-check array still iterates both files.
+2. If upstream rewrote the check: re-thread `dml-experience.md` into the file array.
+
+---
+
+### 10. `merge-tracker.mjs` and `dedup-tracker.mjs` — corporate-suffix-aware company normalization + Needs JD state
+
+- **Applied:** various (documented during the v1.6.0 upgrade on 2026-05-01)
+- **Files:** `merge-tracker.mjs`, `dedup-tracker.mjs`
+
+**What was changed:**
+
+`merge-tracker.mjs`:
+1. `'Needs JD'` added to `CANONICAL_STATES` — supports the inaccessible-JD workflow from Patch #8.
+2. Status aliases: `'needs jd'`, `'pending jd'`, `'jd unfetchable'`, `'unfetchable'` → `Needs JD`.
+3. `COMPANY_SUFFIXES` constant + rewritten `normalizeCompany` to strip trailing corporate suffixes (`LLP`, `LLC`, `Inc`, `Ltd`, `Corp`, `GmbH`, etc.) recursively before matching.
+4. `extractReportNum` used for new-entry tracker row number — collapses the dual-numbering system (tracker row # ↔ report #) so they always match.
+
+`dedup-tracker.mjs`:
+1. Same `COMPANY_SUFFIXES` constant + rewritten `normalizeCompany` (mirrors merge-tracker for cross-script consistency).
+2. (`ROLE_STOPWORDS` and `LOCATION_STOPWORDS` were ALSO independently added by upstream in 1.5.0 / 1.6.0 — see changelog #248. Both versions are functionally equivalent. No fork action required.)
+
+**Why:**
+"Acme LLP" and "Acme Corp" should dedupe to the same company key. Upstream's version doesn't strip suffixes, so the fork sees them as distinct. The `Needs JD` state supports Patch #8's `[!]` workflow.
+
+**Re-apply after upstream update:**
+1. Diff `v{old}..upstream/main` for both files. Layer fork additions onto upstream's improvements.
+2. If upstream introduces its own corporate-suffix-aware normalization: retire the COMPANY_SUFFIXES portion.
+3. If upstream introduces `Needs JD` (or equivalent) as a canonical state: retire that portion.
+
+**Upstream action worth considering:**
+PR upstream to add a `Needs JD` state for the inaccessible-JD workflow, and corporate-suffix-aware company dedup. Both are universally useful.
+
+---
+
+### 11. `.github/workflows/*.yml` — fork-specific CI tweaks
+
+- **Applied:** various (documented during the v1.6.0 upgrade on 2026-05-01)
+- **Files:** `.github/workflows/codeql.yml`, `labeler.yml`, `release.yml`, `test.yml`, `welcome.yml`
+
+**What was changed:**
+Small fork-specific tweaks to each (e.g., repository references, action versions, labels). Specifics intentionally not enumerated — the canonical record is `git diff v{old}..backup-pre-update-{old} -- .github/workflows/*.yml`.
+
+**Why:**
+The fork hosts its own GitHub Actions setup (`mknnmknn/career-ops-dml`) with workflow tweaks tailored to the fork's needs — labels, branch names, action pinning policy, etc. Upstream's workflows assume `santifer/career-ops` provenance and labels.
+
+**Re-apply after upstream update:**
+1. Diff `v{old}..upstream/main` for each workflow.
+2. If upstream changed any: surgically merge with fork's repository references / action versions.
+3. If upstream churn is zero: bulk-restore from backup.
+
+---
+
 ## Retired patches
 
-*(none yet)*
+### 2. `dashboard/internal/ui/screens/pipeline.go` — JobID shown as first column
+
+- **Originally applied:** before 2026-04-22
+- **Retired:** 2026-05-01 (during v1.6.0 → upstream/main upgrade)
+- **File:** `dashboard/internal/ui/screens/pipeline.go`
+- **Function:** `renderAppLine`
+
+**What our patch did:**
+Added an "ID" column showing `app.Number` as the leftmost column of each pipeline row. Column widths: `idW := 4`, rendered with `idStyle.Render(fmt.Sprintf("%d", app.Number))`, styled in muted Subtext color. Format: bare digits (e.g., `123`).
+
+**Why retired:**
+Upstream's v1.6.0+ `renderAppLine` now ships tracker IDs natively as the leftmost column with **superior styling**:
+
+| Aspect | Our patch | Upstream |
+|--------|-----------|----------|
+| Column width | 4 | 5 (handles 3-digit numbers cleanly) |
+| Format | `123` | `#123` (hash prefix for visual clarity) |
+| Style | Subtext (muted gray) | Bold Blue (eye-catching) |
+| Empty case | Uninitialized | `#—` placeholder |
+
+Upstream's implementation is better on every dimension. No remaining gap to patch.
+
+**Discoverability:**
+Upstream tracker-IDs feature shipped in 1.6.0 changelog as "show tracker IDs in pipeline list" (also "show dates in pipeline list" in 1.5.0).
+
+**If a future divergence emerges:**
+Confirm the column ordering, styling, and empty-case behavior still meet our needs. If upstream removes or significantly changes the column, reconsider patching.

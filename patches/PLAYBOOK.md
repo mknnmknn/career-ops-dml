@@ -8,8 +8,9 @@ Related files:
 - `modes/scan_en.md` — English translation of `modes/scan.md` with practice-vs-spec annotations
 - `DATA_CONTRACT.md` — which files are system-layer vs. user-layer (maintained upstream)
 - `cv.md` — canonical role-targeted CV (source of truth for tailored runs)
-- `cv-generic.md` — generic-positioning resume for blind recruiter outreach and LinkedIn refresh; distinct from `cv.md` (role-targeted). See "Generic Positioning Principles" in `modes/_profile.md` for framing guardrails.
-- `article-digest.md` — proof points and intellectual positioning, including MMI Enterprise Platform, MMI Contact Center, and DMLCo Operating Profile sections drawn on for evaluations and CV tailoring.
+- `dml-cv-generic.md` — generic-positioning resume for blind recruiter outreach and LinkedIn refresh; distinct from `cv.md` (role-targeted). See "Generic Positioning Principles" in `modes/_profile.md` for framing guardrails. Renamed from `cv-generic.md` on 2026-04-30 (fork-only file; `dml-` prefix marks fork-divergence from upstream).
+- `article-digest.md` — LinkedIn writing summaries and the Consulting Project published case study. Used for intellectual-positioning proof points.
+- `dml-experience.md` — first-hand experience proof points (MMI Contact Center, MMI Enterprise Platform, DMLCo Operating Profile). Split out from `article-digest.md` on 2026-04-30 because the two corpora have different update cadences and serve different framing needs.
 
 ---
 
@@ -147,3 +148,26 @@ Consolidation pass following two cv-generic.md drafting sessions on 2026-04-29. 
 - `feedback_voice_anti_ai_smell.md`: appended resume-voice calibrations (canonical phrases that earned their place; patterns to avoid; structural defaults; linguistic-momentum failure mode).
 - `user_mmi_cc_facts.md`: corrected counselor scale (300+ → 400-500 with 2/3-in-centers framing); refined vendor-naming rule (OK in Skills row, not in transition narrative).
 - "Homegrown" → "proprietary" globally for the MMI enterprise platform.
+
+### 2026-04-30 — User-layer file rename + article-digest split
+
+Restructured fork-specific user-layer files for clearer provenance. **Principle:** the `dml-` prefix marks files that are fork-specific (not shipped by upstream). Files that exist upstream with canonical names (`cv.md`, `portals.yml`, `article-digest.md`, `config/profile.yml`, `modes/_profile.md`) keep those names to minimize upstream-merge friction.
+
+**Changes:**
+- `cv-generic.md` → `dml-cv-generic.md` (renamed via `git mv`; fork-only file).
+- `article-digest.md` split into two files by purpose:
+  - `article-digest.md` (kept): now contains only LinkedIn writing summaries and the Consulting Project published case study. This is closer to the file's original upstream-intended purpose (portfolio proof points from published material).
+  - `dml-experience.md` (new): MMI Contact Center, MMI Enterprise Platform, and DMLCo Operating Profile — first-hand experience proof points that were previously bundled in `article-digest.md`.
+
+**Rationale for the split:** the two corpora have genuinely different update cadences (LinkedIn writing changes when Daniel publishes; experience proof points change when calibration finds gaps) and serve different framing needs (intellectual positioning vs. domain-match credentials). Bundling them obscured both purposes. The split preserves `article-digest.md`'s upstream-canonical role while giving experience material a clearly fork-specific home.
+
+**Reference updates applied:**
+- `modes/_shared.md` — added `dml-experience.md` to the Sources of Truth table, the "ALWAYS read before evaluating" rule, the Read tools list; added a precedence rule for first-hand experience metrics.
+- `batch/batch-prompt.md` — added `dml-experience.md` to the Sources of Truth table and the Domain Surfacing Pre-Check column header; added the precedence rule.
+- `cv-sync-check.mjs` — extended the freshness check (>30 days) to cover both `article-digest.md` and `dml-experience.md`.
+- `update-system.mjs` — added `dml-experience.md` and `dml-cv-generic.md` to `USER_PATHS` so future updates never overwrite them.
+- `patches/README.md` — Patch #5 documents the rename + split for upstream-merge re-application.
+
+**Not updated (deliberate):** `modes/_profile.template.md`, `CLAUDE.md`, `README.md`, `DATA_CONTRACT.md`, `AGENTS.md`, `docs/*.md`, and the de/fr/ja `_shared.md` files. These are upstream-shipped or unmaintained-in-this-fork; their references to `article-digest.md` remain correct (the file still exists with its narrower scope), and adding `dml-experience.md` references in them would create unnecessary upstream-merge churn.
+
+**Historical APPLIED docs left intact:** `patches/generic-cv-pass-1-notes-APPLIED.md`, `patches/generic-cv-pass-2-notes-APPLIED.md`, and `patches/reconciliation-2026-04-30-APPLIED.md` reference `cv-generic.md` and the pre-split `article-digest.md` content. These are immutable records of what was applied at their respective dates; updating them would falsify the history.

@@ -13,12 +13,14 @@
 | File | Path | When |
 |------|------|------|
 | cv.md | `cv.md` (project root) | ALWAYS |
-| article-digest.md | `article-digest.md` (if exists) | ALWAYS (detailed proof points) |
+| article-digest.md | `article-digest.md` (if exists) | ALWAYS (LinkedIn writing, published case studies) |
+| dml-experience.md | `dml-experience.md` (if exists) | ALWAYS (first-hand experience proof points: MMI CC, MMI Enterprise Platform, DMLCo) |
 | profile.yml | `config/profile.yml` | ALWAYS (candidate identity and targets) |
 | _profile.md | `modes/_profile.md` | ALWAYS (user archetypes, narrative, negotiation) |
 
-**RULE: NEVER hardcode metrics from proof points.** Read them from cv.md + article-digest.md at evaluation time.
+**RULE: NEVER hardcode metrics from proof points.** Read them from cv.md + article-digest.md + dml-experience.md at evaluation time.
 **RULE: For article/project metrics, article-digest.md takes precedence over cv.md.**
+**RULE: For first-hand experience metrics (MMI Enterprise Platform $1M/day & 4 9s, DMLCo headcount/revenue, MMI CC AI components), dml-experience.md takes precedence over cv.md.**
 **RULE: Read _profile.md AFTER this file. User customizations in _profile.md override defaults here.**
 
 ---
@@ -113,7 +115,7 @@ After detecting archetype, read `modes/_profile.md` for adaptive framing, proof-
 ### ALWAYS
 
 0. **Cover letter:** If the form allows it, ALWAYS include one. Same visual design as CV. JD quotes mapped to proof points. 1 page max.
-1. Read cv.md, _profile.md, and article-digest.md (if exists) before evaluating
+1. Read cv.md, _profile.md, article-digest.md (if exists), and dml-experience.md (if exists) before evaluating
 1b. **First evaluation of each session:** Run `node cv-sync-check.mjs`. If warnings, notify user.
 2. Detect the role archetype and adapt framing per _profile.md
 3. Cite exact lines from CV when matching
@@ -143,7 +145,7 @@ After detecting archetype, read `modes/_profile.md` for adaptive framing, proof-
 | WebSearch | Comp research, trends, company culture, LinkedIn contacts, fallback for JDs |
 | WebFetch | Fallback for extracting JDs from static pages |
 | Playwright | Verify offers (browser_navigate + browser_snapshot). **NEVER 2+ agents with Playwright in parallel.** |
-| Read | cv.md, _profile.md, article-digest.md, cv-template.html |
+| Read | cv.md, _profile.md, article-digest.md, dml-experience.md, cv-template.html |
 | Write | Temporary HTML for PDF, applications.md, reports .md |
 | Edit | Update tracker |
 | Canva MCP | Optional visual CV generation. Duplicate base design, edit text, export PDF. Requires `canva_resume_design_id` in profile.yml. |

@@ -160,6 +160,47 @@ PR upstream to relax `.job` from always-avoid by default and add the bullet/head
 
 ---
 
+### 5. User-layer file rename + article-digest split
+
+- **Applied:** 2026-04-30
+- **Files:** `cv-generic.md` → `dml-cv-generic.md` (rename); `article-digest.md` (trimmed) + new `dml-experience.md` (split); `modes/_shared.md`, `batch/batch-prompt.md`, `cv-sync-check.mjs`, `update-system.mjs` (reference updates).
+
+**What was changed:**
+
+1. **Renamed** `cv-generic.md` → `dml-cv-generic.md` via `git mv` (preserves blame).
+2. **Split** `article-digest.md`:
+   - `article-digest.md` (kept, trimmed): LinkedIn writing summaries + Consulting Project published case study.
+   - `dml-experience.md` (new): MMI Contact Center, MMI Enterprise Platform, DMLCo Operating Profile — first-hand experience proof points.
+3. **System-file reference updates:**
+   - `modes/_shared.md`: added `dml-experience.md` row to Sources of Truth table; added precedence rule for first-hand experience metrics; extended the "ALWAYS read before evaluating" rule and the Read tools list.
+   - `batch/batch-prompt.md`: same — Sources of Truth row, precedence rule, Domain Surfacing Pre-Check column header.
+   - `cv-sync-check.mjs`: freshness check (>30 days) now iterates `['article-digest.md', 'dml-experience.md']`.
+   - `update-system.mjs`: added both `dml-experience.md` and `dml-cv-generic.md` to `USER_PATHS`.
+
+**Why:**
+
+The fork accumulated several user-layer files with mixed provenance — some upstream-shipped (`cv.md`, `article-digest.md`, `portals.yml`), some fork-created (`cv-generic.md`, the experience proof-point sections that had been appended to `article-digest.md` on 2026-04-30 reconciliation). Visual inspection of the project root couldn't distinguish them, and `article-digest.md` had drifted from its original purpose (portfolio writing proof points) to become a hybrid file mixing published writing with first-hand experience material.
+
+The principle adopted: **the `dml-` prefix marks fork-divergence from upstream.** Files that ship upstream with canonical names keep those names — minimizing the merge tax across files that change frequently in upstream. Fork-created files get the `dml-` prefix, signaling provenance and grouping them visually in the root listing.
+
+This left `cv-generic.md` (fork-only) for renaming, and the experience material (fork-only addition to `article-digest.md`) for extraction into a new fork-named file. The post-split `article-digest.md` is closer to its upstream-intended scope than the bundled hybrid was.
+
+**Re-apply after upstream update:**
+
+1. Confirm `cv.md`, `article-digest.md`, `config/profile.yml`, `modes/_profile.md`, and `portals.yml` still exist with canonical names in the incoming update. If any have been renamed upstream, evaluate whether to follow.
+2. Re-verify `dml-experience.md` and `dml-cv-generic.md` are still present in `USER_PATHS` of the incoming `update-system.mjs`. The updater should never have written to them, but check the diff.
+3. In `modes/_shared.md` and `batch/batch-prompt.md`: if the incoming version has restructured the Sources of Truth table or the ALWAYS rules, re-add `dml-experience.md` rows / references.
+4. Confirm `cv-sync-check.mjs` freshness check still iterates both files. Upstream may have rewritten the check entirely; if so, re-thread the array.
+5. If upstream has introduced its own concept of a separate experience-proof-points file, evaluate whether to migrate `dml-experience.md` content there and retire this patch.
+
+**Upstream action worth considering:**
+
+Two PRs:
+- Add a clearer user-layer convention that distinguishes "files everyone is expected to have" (cv.md, profile.yml, portals.yml) from "fork-/user-extension files" (separate proof-point banks per career stage, role family, or evidence type). Most senior users will accumulate multiple proof-point corpora.
+- Add a `--check-user-paths` flag to `update-system.mjs` that lists everything currently treated as user-layer, so forks can confirm their custom files are protected without reading the source.
+
+---
+
 ## Retired patches
 
 *(none yet)*

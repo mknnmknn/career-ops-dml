@@ -13,13 +13,15 @@
 | File | Path | When |
 |------|------|------|
 | cv.md | `cv.md` (project root) | ALWAYS |
-| article-digest.md | `article-digest.md` (if exists) | ALWAYS (detailed proof points) |
+| article-digest.md | `article-digest.md` (if exists) | ALWAYS (LinkedIn writing, published case studies) |
+| dml-experience.md | `dml-experience.md` (if exists) | ALWAYS (first-hand experience proof points: MMI CC, MMI Enterprise Platform, DMLCo) |
 | profile.yml | `config/profile.yml` | ALWAYS (candidate identity and targets) |
 | _profile.md | `modes/_profile.md` | ALWAYS (user archetypes, narrative, negotiation) |
 | writing-samples/ | `writing-samples/` | When generating candidate-facing text — check `_profile.md` for cached `## Writing Style` first; only scan files if absent |
 
-**RULE: NEVER hardcode metrics from proof points.** Read them from cv.md + article-digest.md at evaluation time.
+**RULE: NEVER hardcode metrics from proof points.** Read them from cv.md + article-digest.md + dml-experience.md at evaluation time.
 **RULE: For article/project metrics, article-digest.md takes precedence over cv.md.**
+**RULE: For first-hand experience metrics (MMI Enterprise Platform $1M/day & 4 9s, DMLCo headcount/revenue, MMI CC AI components), dml-experience.md takes precedence over cv.md.**
 **RULE: Read _profile.md AFTER this file. User customizations in _profile.md override defaults here.**
 
 ---
@@ -73,18 +75,30 @@ Block G assesses whether a posting is likely a real, active opening. It does NOT
 
 ## Archetype Detection
 
-Classify every offer into one of these types (or hybrid of 2):
+<!-- LOCAL PATCH (2026-04-22): replaces the default 6-archetype AI-engineering
+     taxonomy with Daniel's 8-archetype executive taxonomy. See patches/README.md
+     for divergence rationale and re-apply instructions after upstream updates. -->
 
-| Archetype | Key signals in JD |
-|-----------|-------------------|
-| AI Platform / LLMOps | "observability", "evals", "pipelines", "monitoring", "reliability" |
-| Agentic / Automation | "agent", "HITL", "orchestration", "workflow", "multi-agent" |
-| Technical AI PM | "PRD", "roadmap", "discovery", "stakeholder", "product manager" |
-| AI Solutions Architect | "architecture", "enterprise", "integration", "design", "systems" |
-| AI Forward Deployed | "client-facing", "deploy", "prototype", "fast delivery", "field" |
-| AI Transformation | "change management", "adoption", "enablement", "transformation" |
+Classify every offer into one of these archetypes (or hybrid of 2). Flat taxonomy — no ranked order.
 
-After detecting archetype, read `modes/_profile.md` for the user's specific framing and proof points for that archetype.
+| Archetype | Context / Shape | Key JD signals | What they're buying |
+|-----------|-----------------|----------------|---------------------|
+| **Chief Technology Officer** | Full-function head, reports to CEO, regulated or mission-driven midsize org | "CTO", "Chief Technology Officer", "reports to CEO", "enterprise-wide technology", "transformation mandate" | Proven enterprise CTO arc; cross-functional operator; has built the seat from nothing |
+| **Chief Information Officer / Head of IT** | IT org head where scope includes infrastructure, security, end-user, applications — not just engineering | "CIO", "Chief Information Officer", "Head of IT", "enterprise IT", "IT leadership" | Whole-IT operator with transformation discipline, not just engineering management |
+| **Head of Data / Chief Data Officer / VP Data** | Data function leader with cross-functional reach | "Chief Data Officer", "CDO", "Head of Data", "VP Data", "data strategy", "data governance", "AI-ready foundations" | Data operator who earned it bottom-up: DBA → architect → CTO, full lifecycle including production ML |
+| **Chief Transformation Officer / Digital Transformation** | Cross-functional transformation mandate spanning more than IT | "Chief Transformation Officer", "Digital Transformation", "enterprise modernization", "transformation leader" | Multi-year modernization operator against live regulated operations without disruption |
+| **AI Transformation Lead** *(substance-check required)* | AI-specific transformation with real mandate | "AI transformation", "enterprise AI adoption", "agentic AI strategy" — plus substance signals: named problem, disclosed budget, existing data/infrastructure, named sponsor | Executive who can evaluate, govern, and adopt AI with discipline rather than theater |
+| **Enterprise Technology Strategy** *(VP/Director)* | Architecture-led strategy role, often sub-CTO scope | "enterprise architecture", "technology strategy", "VP technology strategy", "Director of technology strategy" | Strategic thinker with architecture instinct, multi-year planning, vendor + modernization discipline |
+| **Chief of Staff to CEO / Technology Chief of Staff** | Exec operator, translator between business and tech, influence-only | "Chief of Staff", "Technology Chief of Staff", "strategic advisor to CEO" | Senior operator running programs through influence; complexity-compressor; consensus-facilitator |
+| **Fractional / Advisory CTO** | Advisory seat, no line authority | "Fractional CTO", "advisory CTO", "interim CTO", "technology advisor" | Senior CTO experience on advisory cadence |
+
+**AI Transformation Lead — substance check:** When classifying a role as AI Transformation Lead, explicitly assess substance in the evaluation output.
+- **Signals of substance:** named business problem with metrics, disclosed budget or headcount for AI work, existing data or infrastructure referenced, named executive sponsor, concrete deliverables.
+- **Signals of theater:** "explore AI opportunities", "lead AI adoption" without specifics, "AI maturity journey" without targets, no budget named, buzzword-heavy ("cutting-edge", "bleeding-edge"), no existing data or process named.
+
+Substance-light roles don't auto-disqualify but the flag should surface in the evaluation for screening consideration.
+
+After detecting archetype, read `modes/_profile.md` for adaptive framing, proof-point mapping, role-shape rules, and anti-patterns.
 
 ## Global Rules
 
@@ -102,7 +116,7 @@ After detecting archetype, read `modes/_profile.md` for the user's specific fram
 ### ALWAYS
 
 0. **Cover letter:** If the form allows it, ALWAYS include one. Same visual design as CV. JD quotes mapped to proof points. 1 page max.
-1. Read cv.md, _profile.md, and article-digest.md (if exists) before evaluating
+1. Read cv.md, _profile.md, article-digest.md (if exists), and dml-experience.md (if exists) before evaluating
 1b. **First evaluation of each session:** Run `node cv-sync-check.mjs`. If warnings, notify user.
 2. Detect the role archetype and adapt framing per _profile.md
 3. Cite exact lines from CV when matching
@@ -113,7 +127,17 @@ After detecting archetype, read `modes/_profile.md` for the user's specific fram
 8. Native tech English for generated text. Short sentences, action verbs, no passive voice.
 8b. Case study URLs in PDF Professional Summary (recruiter may only read this).
 9. **Tracker additions as TSV** -- NEVER edit applications.md directly. Write TSV in `batch/tracker-additions/`.
-10. **Include `**URL:**` in every report header.**
+10. **Report header canonical format.** Every report begins with an H1 title, then these fields in order (first three are always required):
+    - `**#:** {tracker_number}` — integer, matches the report filename's leading number
+    - `**Company:** {name}` — short company name
+    - `**Role:** {title}` — role title
+    - `**Score:** {X.X/5}` — global score
+    - `**URL:** {url}` — original JD URL (mandatory)
+    - `**Legitimacy:** {tier}` — High Confidence / Proceed with Caution / Suspicious
+    - `**PDF:** {path-or-❌}` — path to generated PDF, or ❌ if none
+    - `**Verification:** {status}` — e.g., "confirmed (Playwright)" or "unconfirmed (batch mode)"
+    - `**Date:** {YYYY-MM-DD}`
+    - Additional mode-specific fields (e.g., `**Archetype:**`, `**Batch ID:**`) may follow.
 
 ### Tools
 
@@ -122,7 +146,7 @@ After detecting archetype, read `modes/_profile.md` for the user's specific fram
 | WebSearch | Comp research, trends, company culture, LinkedIn contacts, fallback for JDs |
 | WebFetch | Fallback for extracting JDs from static pages |
 | Playwright | Verify offers (browser_navigate + browser_snapshot). **NEVER 2+ agents with Playwright in parallel.** |
-| Read | cv.md, _profile.md, article-digest.md, cv-template.html |
+| Read | cv.md, _profile.md, article-digest.md, dml-experience.md, cv-template.html |
 | Write | Temporary HTML for PDF, applications.md, reports .md |
 | Edit | Update tracker |
 | Canva MCP | Optional visual CV generation. Duplicate base design, edit text, export PDF. Requires `cv.canva_resume_design_id` in profile.yml. |

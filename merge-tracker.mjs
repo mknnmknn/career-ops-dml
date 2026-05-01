@@ -34,7 +34,7 @@ mkdirSync(join(CAREER_OPS, 'data'), { recursive: true });
 mkdirSync(ADDITIONS_DIR, { recursive: true });
 
 // Canonical states and aliases
-const CANONICAL_STATES = ['Evaluated', 'Applied', 'Responded', 'Interview', 'Offer', 'Rejected', 'Discarded', 'SKIP'];
+const CANONICAL_STATES = ['Evaluated', 'Applied', 'Responded', 'Interview', 'Offer', 'Rejected', 'Discarded', 'SKIP', 'Needs JD'];
 
 function validateStatus(status) {
   const clean = status.replace(/\*\*/g, '').replace(/\s+\d{4}-\d{2}-\d{2}.*$/, '').trim();
@@ -56,6 +56,7 @@ function validateStatus(status) {
     'descartado': 'Discarded', 'descartada': 'Discarded', 'cerrada': 'Discarded', 'cancelada': 'Discarded',
     'no aplicar': 'SKIP', 'no_aplicar': 'SKIP', 'skip': 'SKIP', 'monitor': 'SKIP',
     'geo blocker': 'SKIP',
+    'needs jd': 'Needs JD', 'pending jd': 'Needs JD', 'jd unfetchable': 'Needs JD', 'unfetchable': 'Needs JD',
   };
 
   if (aliases[lower]) return aliases[lower];
@@ -67,8 +68,27 @@ function validateStatus(status) {
   return 'Evaluated';
 }
 
+// Common corporate suffixes (mirrors dedup-tracker.mjs); strip before matching.
+const COMPANY_SUFFIXES = [
+  'llp', 'llc', 'inc', 'incorporated', 'ltd', 'limited', 'corp', 'corporation',
+  'co', 'company', 'gmbh', 'ag', 'sa', 'spa', 'srl', 'plc', 'pty', 'bv',
+  'holdings', 'group', 'global', 'international', 'intl', 'us', 'usa',
+];
+
 function normalizeCompany(name) {
-  return name.toLowerCase().replace(/[^a-z0-9]/g, '');
+  let normalized = name.toLowerCase().replace(/[^a-z0-9 ]/g, '').trim();
+  let changed = true;
+  while (changed) {
+    changed = false;
+    for (const suffix of COMPANY_SUFFIXES) {
+      const re = new RegExp(`\\s+${suffix}$`);
+      if (re.test(normalized)) {
+        normalized = normalized.replace(re, '').trim();
+        changed = true;
+      }
+    }
+  }
+  return normalized.replace(/\s+/g, '');
 }
 
 // Tokens that almost every role shares — must NOT count as signal.
@@ -325,9 +345,13 @@ for (const file of tsvFiles) {
       skipped++;
     }
   } else {
-    // New entry — use the number from the TSV
-    const entryNum = addition.num > maxNum ? addition.num : ++maxNum;
-    if (addition.num > maxNum) maxNum = addition.num;
+    // New entry — ALWAYS use the report number from the TSV as the tracker row number.
+    // This collapses the dual-numbering system (tracker row # ↔ report #) into one,
+    // eliminating the JobID-vs-row-number confusion. Tracker rows may not be strictly
+    // monotonic in time, but they WILL match the report file they link to.
+    const reportNumFromLink = extractReportNum(addition.report);
+    const entryNum = reportNumFromLink || addition.num;
+    if (entryNum > maxNum) maxNum = entryNum;
 
     const newLine = `| ${entryNum} | ${addition.date} | ${addition.company} | ${addition.role} | ${addition.score} | ${addition.status} | ${addition.pdf} | ${addition.report} | ${addition.notes} |`;
     newLines.push(newLine);

@@ -6,58 +6,55 @@ daniel@dmlco.com | [linkedin.com/in/daniel-m-levine](https://linkedin.com/in/dan
 
 ---
 
-Accomplished technology leader with extensive experience driving enterprise-wide initiatives, including digital transformation, cloud modernization, and the development of AI-ready data foundations across diverse organizational environments — from highly regulated enterprises to nonprofits to startups. Leverages endless curiosity, creativity, and courage to provide strategic direction and tactical leadership across multiple domains.
+**Chief Technology Officer / Chief Information Officer.** Owned full enterprise IT at a 400-person, $40M+ nonprofit; 17 years prior P&L as founder; current advisory on enterprise architecture and AI.
 
-Track record of architecting scalable data platforms, modernizing legacy systems, and enabling automation, advanced analytics, and agentic AI at enterprise scale. Proven ability to align architecture vision with business outcomes, improve productivity and compliance, and guide executive decision-making through complex transformation initiatives. Trusted executive partner and senior leader for enterprise data strategy, modernization roadmaps, and AI enablement.
+Owned the full enterprise IT stack as CTO at Money Management International ($40M+ national consumer financial services nonprofit): infrastructure, information security, software development, business intelligence, contact center operations, helpdesk and end-user support, ePMO, and program delivery. CIO-scope responsibilities at SMB/midsize scale. $15M+ annual operating budget plus annual capex up to $12M+, 35+ direct (75+ extended) technology organization, member of the executive team with quarterly Board reporting and engagement.
+
+Preceded by 17 years founding and operating an independent web/IT consultancy (12 employees, $4M+ peak annual revenue) with full P&L ownership: financial management, HR, talent development, sales, and client delivery across a 50-client portfolio.
+
+Currently consulting on enterprise technology architecture and platform decisions, with concentration on AI architecture and implementation across customer communication platforms.
 
 ---
 
 ## Areas of Expertise
 
-- Enterprise Data Strategy
-- AI-Ready Architecture
-- Machine Learning Platforms
-- Metadata Model Development
-- Predictive Analytics Enablement
-- Digital Transformation Leadership
-- Cloud Platform Management
-- Legacy Systems Modernization
-- SDLC Improvement Practices
-- DevOps & CI/CD
-- Data Governance Frameworks
-- Risk Management Governance
-- Project & Program Management
-- Executive Stakeholder Engagement
-- Cross-Functional Team Leadership
+| | | |
+|---|---|---|
+| Enterprise Technology Strategy | Enterprise Architecture | Digital Transformation Leadership |
+| IT Operations & Infrastructure | Software Engineering & SDLC | Information Security & Cybersecurity |
+| Cloud Migration & Modernization | Legacy Platform Modernization | Business Continuity & DR |
+| Data, Analytics & BI Leadership | Contact Center & CX Operations | AI Architecture |
+| IT Financial Management | Enterprise PMO & Portfolio Governance | Vendor & Strategic Sourcing |
+| M&A Technology Integration | Technology Operating Model & Org Design | Regulatory Compliance & Audit Posture |
 
 ---
 
 ## Professional Experience
 
-### Technology Consultant
-**Independent Consultant** | Houston, TX | November 2024 – Present
+### Technology Advisor
+**Independent Consultant** | Houston, TX | January 2025 – Present
 
-Deliver specialized AI consulting focused on enterprise-grade generative and agentic AI solutions for call center and customer communications platforms. Provide solution architecture leadership and pre-sales technical expertise to support AI platform evaluation, vendor selection, and execution decisions. Enable executive stakeholders to assess architectural trade-offs and make informed AI adoption decisions aligned with enterprise strategy.
+Advisory work on enterprise technology architecture and AI-platform decisions, with current concentration on AI architecture and implementation for customer communication platforms.
 
-- Designed a structured, repeatable methodology to evaluate and compare generative AI architectures with primary emphasis on agentic systems and their enterprise suitability.
-- Engineered algorithmic evaluation frameworks to assess AI software platforms, integrated solutions, and standalone tools specifically for contact center and customer service environments.
+- Built an evaluation framework for a national CX consulting firm to assess AI-augmented contact-center architectures: hundreds of platform-functionality items mapped through core function groups and AI feature sets, against ~two dozen architectural decision categories (latency, RAG patterns, model agnosticism, API access requirements, redundancy) — surfacing fit and tradeoff inferences across vendor options during pre-sales and discovery.
+- In active use by the firm's sales staff and leadership during client engagements; currently in discussions to evolve the framework into an AI-driven evaluation platform.
 
 ---
 
 ### Chief Technology Officer
 **Money Management International** | Houston, TX | November 2010 – October 2024
 
-Directed enterprise-wide technology strategy and execution across infrastructure, support services, advanced analytics, business intelligence, and in-house software development. Delivered leadership, administrative oversight, and professional development for a technology organization of 35+ direct staff (75+ including embedded, extended, and global vendor teams) with annual operating budgets exceeding $15M. Managed IT budgeting, projections, variance analysis, and executive financial reporting within an overall organizational spend range of $30–50M annually. Fostered a culture of collaboration and transparency that produced highest employee retention and satisfaction results across the organization.
-
-- Advanced through progressive leadership roles from Front-End Technologist (DBA / SQL Architect) to IT Manager, Vice President of IT, and appointment as the first Chief Technology Officer in the organization's 45+ year history.
-- Led full enterprise-wide transformation of contact center / communications platform; directed solution design, multi-channel integration, risk-managed migration, and flawless day-one go-live with zero service disruption.
-- Orchestrated digital transformation that delivered industry-leading digital experiences and drove record revenue and service levels. Increased SEO and digital acquisition performance by over 200%. Directed complete rebuild of web properties, established enterprise change management discipline, launched multi-platform mobile applications, and embedded integrated digital and operational analytics throughout the organization.
-- Established a mission-aligned technology culture by embedding performance analytics into daily operations, which produced a sustained 10–20% improvement across key IT performance metrics.
-- Spearheaded multi-year transition to a digital-first, cloud-first, security-first enterprise model; instituted leading-edge InfoSec practices with full HIPAA and CARD Act compliance, attained and maintained 100% audited PCI-DSS certification over multiple years, and successfully migrated all enterprise workloads to cloud.
-- Doubled development throughput and reduced concept-to-deployment timelines by up to 20% year-over-year by modernizing Software Development Lifecycle (SDLC) governance through adoption of Agile delivery models.
-- Owned product roadmap and strategic prioritization for MMI's homegrown enterprise platform (ERP/CRM) over eight years, directing a 45–50 person delivery organization across BA, QA, and software development; architected the platform's evolution from a single-product tool to a variable multi-product financial platform, and operated a multi-factor prioritization model (ROI × user satisfaction × efficiency × cross-departmental equity) governing sprint-over-sprint decisions across 12+ executive and operations stakeholders.
-- Created Enterprise Project Management Organization (ePMO), leading to significant efficiency gains, improved strategic alignment, and 25% improvement on overall project budget and time adherence.
-- Maintained year-over-year budget adherence and accurate financial forecasting throughout major pandemic-related disruption and recovery.
+Progressed from DBA / SQL Architect through IT Manager and Vice President of IT before appointment as the organization's first Chief Technology Officer in its 45-year history; served in that role for 8 years. Led the technology function through multi-year modernization and multiple full enterprise migrations, under continuous PCI-DSS, HIPAA, and CARD Act oversight. Directed a 35+ direct (75+ extended) technology organization with $15M+ annual operating budget plus annual capex up to $12M+.
+- Led the digital transformation across web and mobile properties: full web rebuild, multi-platform mobile applications, and real-time integration between the digital channel and the enterprise platform. SEO and digital acquisition grew over 200%, conversion through digital channels more than tripled, and digital interactions rose to surpass counselor interactions.
+- Anchored operations, uptime, and configuration of the enterprise contact-center platform stack supporting a 400–500 person counselor workforce across major sites and remote agents, with software architecture calibrated for both topologies. Led the IT side of a CCaaS platform migration — a single-cutover transition with no parallel-run option — through day-one go-live with zero service disruption.
+- Owned the roadmap and architectural direction for MMI's proprietary enterprise platform (ERP/CRM) over 8 years, leading a 45–50 person delivery organization (15 direct + ~30 offshore across BA, QA, and software development). Drove the platform's transformation to a unified pattern-based architecture, consolidating MMI's full counseling activity range onto a single core system, including entities acquired through periodic M&A. Recalibrated priorities sprint-over-sprint between the dominant operations stakeholder and the broader organization, balancing new-feature demand against technical-debt remediation across 12+ executive and operations stakeholders.
+- Ran the infrastructure function with 15–20 people across systems administration, networking, and helpdesk, balancing keep-the-lights-on operations (hardware refresh, patching, network and service monitoring) against modernization (physical datacenter consolidation to cloud and hosted platforms, successive VDI and identity-platform transitions). Maintained 4 9s uptime across critical services with fully audited redundancy. Instituted financial visibility for infrastructure work, tying maintenance and project tasks to capex and ROI metrics.
+- Built the technology leadership bench through hands-on coaching of emerging leaders and active succession planning. By treating cross-team handoffs, information access, and team and individual behavior as design problems rather than soft skills, the technology function ranked first in the company on retention and annual NPS engagement for 5+ consecutive years.
+- Migrated all enterprise workloads to cloud across a multi-year program while sustaining 100% audited PCI-DSS certification, full HIPAA and CARD Act compliance, and continuous audit posture across all 50 states and multiple federal bodies including the CFPB. The cloud foundation supported a distributed national workforce through pandemic-era demand volatility with zero related layoffs.
+- Transformed the data and BI function from ad hoc reporting on disparate source systems to a modern data platform: enterprise data warehouse, cross-functional data governance with shared definitions and calculations, and end-to-end data consistency from digital channels through operational systems. Deployed production ML via DataRobot for credit and servicing use cases.
+- Modernized SDLC through full Agile transformation (initially SAFe 10-week cycles, later 2-week sprints), doubling software development throughput and reducing concept-to-deployment timelines up to 20% year over year. Selectively decomposed the platform from .NET/N-Tier toward microservices, going as far as service-decomposition benefits justified against operational complexity.
+- Moved the InfoSec audit function out of IT for clean separation of duties, while retaining architecture, implementation, and remediation responsibility across perimeter security, network segmentation, and vulnerability testing. Reached a zero-trust posture across the major operational and back-office functions.
+- Stood up MMI's Enterprise Project Management Organization (ePMO) from scratch — scope, governance, methodology, and measurement — consolidating non-IT projects under the IT-led framework. The ePMO delivered a 25% improvement in project budget and time adherence.
 
 ---
 
@@ -82,13 +79,13 @@ Directed enterprise-wide technology strategy and execution across infrastructure
 
 | Domain | Tools & Technologies |
 |--------|----------------------|
-| Artificial Intelligence & Architecture | Generative AI, Agentic AI, AI Architecture, LLM Platforms |
-| Cloud Platforms & DevOps | Azure Enterprise Platform, Azure DevOps, GitHub, Deployment & Orchestration Tools |
-| Data & Analytics Platforms | DataRobot, PowerBI, Tableau |
-| Databases & Data Technologies | Microsoft SQL Server (MSSQL), SQL, T-SQL, MySQL, PostgreSQL, SQLite |
-| Programming Languages & Frameworks | Python, JavaScript, Angular, React, HTML, CSS, ColdFusion, C-Type Languages |
-| Security, Compliance & Governance | PCI-DSS, HIPAA, GRC Programs |
-| Enterprise & Productivity Systems | ServiceNow, Freshworks, JIRA, Monday.com, Asana, Sitecore, WordPress, Microsoft 365, Google Workspace, Proprietary CMS & Productivity Platforms |
+| Cloud, DevOps & Enterprise IT Operations | Microsoft Azure (Enterprise & DevOps), GitHub, CI/CD pipelines, Entra ID / Azure AD, ITIL practices |
+| Data Platform & Analytics | Microsoft SQL Server, T-SQL, PostgreSQL, MySQL, Enterprise Data Warehouse, Power BI, Tableau, DataRobot |
+| Software Engineering & Architecture | .NET / C#, Python, PHP, Front-end (JavaScript, React, Angular, HTML/CSS), Microservices Architecture, REST APIs, Sitecore (DXP) |
+| AI & Automation | Anthropic (Claude), Microsoft (Copilot), OpenAI (ChatGPT), Google (Gemini), Agentic systems, RAG / knowledge systems |
+| Security & Compliance | PCI-DSS, HIPAA, CARD Act, Zero Trust Architecture, Vulnerability Management, GRC programs |
+| Contact Center & CX | CCaaS migration & integration, Omnichannel routing, AI-assisted coaching, Contact-center analytics integration, Workforce management, Genesys, NICE |
+| Enterprise Productivity & Service Management | ServiceNow (ITSM), JIRA, Asana, Monday, Freshworks |
 
 ---
 

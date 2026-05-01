@@ -7,6 +7,9 @@ Related files:
 - `modes/_profile.md` — user-layer personalization (archetypes, proof-points, operating model, anti-patterns)
 - `modes/scan_en.md` — English translation of `modes/scan.md` with practice-vs-spec annotations
 - `DATA_CONTRACT.md` — which files are system-layer vs. user-layer (maintained upstream)
+- `cv.md` — canonical role-targeted CV (source of truth for tailored runs)
+- `cv-generic.md` — generic-positioning resume for blind recruiter outreach and LinkedIn refresh; distinct from `cv.md` (role-targeted). See "Generic Positioning Principles" in `modes/_profile.md` for framing guardrails.
+- `article-digest.md` — proof points and intellectual positioning, including MMI Enterprise Platform, MMI Contact Center, and DMLCo Operating Profile sections drawn on for evaluations and CV tailoring.
 
 ---
 
@@ -127,3 +130,20 @@ All other scripts in `batch/` (recon-portals, analyze-scan-history, manual-scan-
 - **"Who's silently not being scanned?"** → run `node batch/analyze-scan-history.mjs`.
 - **"Which companies could be promoted to L2?"** → run `node batch/recon-portals.mjs --pretty`.
 - **"What's in my manual queue this week?"** → `data/manual-scan-log.md` or run `node batch/manual-scan-status.mjs`.
+
+---
+
+## Calibration log
+
+### 2026-04-30 — DNA reconciliation pass (Pass 1 + Pass 2 + new findings)
+
+Consolidation pass following two cv-generic.md drafting sessions on 2026-04-29. Applied Pass 1, Pass 2, and additional cross-file conflicts found in this session. See `patches/generic-cv-pass-1-notes-APPLIED.md`, `patches/generic-cv-pass-2-notes-APPLIED.md`, and `patches/reconciliation-2026-04-30-APPLIED.md` for full detail.
+
+**Key changes:**
+- `modes/_profile.md`: PM Positioning rewrite (dropped four-axis parenthetical, dropped single→multi-product framing, replaced Flagship Story #1); CC scope wording made more honest (dropped "owned end-to-end" overclaim); Proof-Point Anchors items 1, 3, 7, 8 extended; new "Generic Positioning Principles" section.
+- `cv.md`: summary block replaced with cv-generic.md's polished version; flat-list Areas of Expertise → 6×3 table (de-buzzworded per generic-CV principles); consultant role broadened from contact-center-only to architecture-and-AI-platforms; consultant date November 2024 → January 2025; Tech Proficiencies restructured to match cv-generic.md (with Genesys/NICE in Skills row, vendor-naming rule refined); MMI digital bullet polished (dropped "industry-leading"); MMI ERP/CRM bullet rewritten to architectural-transformation framing.
+- `cv-generic.md`: AE simplified ("AI Architecture & Vendor Evaluation" → "AI Architecture"; dropped "(Budget, P&L, Capex)" parenthetical); date November 2024 → January 2025.
+- `article-digest.md`: new sections "MMI — Enterprise Platform" (financial transaction core $1M/day @ 4 9s, Genesys → NICE durability, modernization arc) and "DMLCo — Operating Profile" (operating scale, business mix evolution, anti-framing on back-office sale).
+- `feedback_voice_anti_ai_smell.md`: appended resume-voice calibrations (canonical phrases that earned their place; patterns to avoid; structural defaults; linguistic-momentum failure mode).
+- `user_mmi_cc_facts.md`: corrected counselor scale (300+ → 400-500 with 2/3-in-centers framing); refined vendor-naming rule (OK in Skills row, not in transition narrative).
+- "Homegrown" → "proprietary" globally for the MMI enterprise platform.

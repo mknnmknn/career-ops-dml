@@ -10,8 +10,13 @@ batch/logs/*
 !batch/logs/.gitkeep
 batch/batch-state.tsv
 batch/batch-input.tsv
-batch/tracker-additions/*.tsv
+batch/tracker-additions/**/*.tsv
 !batch/tracker-additions/.gitkeep
+batch/scan-candidates*.tsv
+batch/recon-portals-latest.json
+batch/cv-data-*.json
+batch/run-*.log
+batch/archive/
 jds/*
 !jds/.gitkeep
 
